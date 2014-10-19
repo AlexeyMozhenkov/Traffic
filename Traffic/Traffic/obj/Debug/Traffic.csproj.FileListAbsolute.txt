@@ -1,0 +1,674 @@
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Traffic.dll.config
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Traffic.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Traffic.pdb
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Antlr3.Runtime.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\AspNet.ScriptManager.bootstrap.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\AspNet.ScriptManager.jQuery.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\EntityFramework.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\EntityFramework.SqlServer.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.FriendlyUrls.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Google.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.ScriptManager.MSAjax.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.ScriptManager.WebForms.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Web.Infrastructure.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Newtonsoft.Json.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Owin.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\System.Web.Optimization.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\System.Web.Providers.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\WebGrease.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\System.Web.Optimization.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Antlr3.Runtime.pdb
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Newtonsoft.Json.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.FriendlyUrls.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\EntityFramework.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\EntityFramework.SqlServer.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Google.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\System.Web.Optimization.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.AspNet.FriendlyUrls.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\EntityFramework.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\EntityFramework.SqlServer.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.Core.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.Owin.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\System.Web.Providers.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.Host.SystemWeb.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Facebook.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Google.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\obj\Debug\Traffic.csprojResolveAssemblyReference.cache
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\obj\Debug\Traffic.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\obj\Debug\Traffic.pdb
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\System.Net.Http.Formatting.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\System.Web.Http.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\System.Web.Http.WebHost.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\System.Net.Http.Formatting.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\System.Web.Http.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\System.Web.Http.WebHost.xml
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\System.Net.Http.Formatting.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\System.Web.Http.resources.dll
+c:\users\lildr_000\documents\visual studio 2013\Projects\Traffic\Traffic\bin\ru\System.Web.Http.WebHost.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Traffic.dll.config
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Traffic.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Traffic.pdb
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Antlr3.Runtime.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\AspNet.ScriptManager.bootstrap.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\AspNet.ScriptManager.jQuery.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\EntityFramework.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\EntityFramework.SqlServer.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.Google.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Web.Infrastructure.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Newtonsoft.Json.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Owin.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\System.Net.Http.Formatting.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\System.Web.Http.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\System.Web.Http.WebHost.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\System.Web.Optimization.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\System.Web.Providers.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\WebGrease.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\System.Net.Http.Formatting.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\System.Web.Http.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\System.Web.Http.WebHost.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\System.Web.Optimization.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Antlr3.Runtime.pdb
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Newtonsoft.Json.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\EntityFramework.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\EntityFramework.SqlServer.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.Google.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\System.Net.Http.Formatting.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\System.Web.Http.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\System.Web.Http.WebHost.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\System.Web.Optimization.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\EntityFramework.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\EntityFramework.SqlServer.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.Core.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\System.Web.Providers.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\Microsoft.Owin.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Facebook.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Google.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\obj\Debug\Traffic.csprojResolveAssemblyReference.cache
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\obj\Debug\Traffic.dll
+D:\Уроки\9 семестр\Курсовой\Traffic\Traffic\obj\Debug\Traffic.pdb
+D:\Работа\Project\Traffic\Traffic\bin\Traffic.dll.config
+D:\Работа\Project\Traffic\Traffic\bin\Traffic.dll
+D:\Работа\Project\Traffic\Traffic\bin\Traffic.pdb
+D:\Работа\Project\Traffic\Traffic\bin\Antlr3.Runtime.dll
+D:\Работа\Project\Traffic\Traffic\bin\AspNet.ScriptManager.bootstrap.dll
+D:\Работа\Project\Traffic\Traffic\bin\AspNet.ScriptManager.jQuery.dll
+D:\Работа\Project\Traffic\Traffic\bin\EntityFramework.dll
+D:\Работа\Project\Traffic\Traffic\bin\EntityFramework.SqlServer.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.Google.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Web.Infrastructure.dll
+D:\Работа\Project\Traffic\Traffic\bin\Newtonsoft.Json.dll
+D:\Работа\Project\Traffic\Traffic\bin\Owin.dll
+D:\Работа\Project\Traffic\Traffic\bin\System.Net.Http.Formatting.dll
+D:\Работа\Project\Traffic\Traffic\bin\System.Web.Http.dll
+D:\Работа\Project\Traffic\Traffic\bin\System.Web.Http.WebHost.dll
+D:\Работа\Project\Traffic\Traffic\bin\System.Web.Optimization.dll
+D:\Работа\Project\Traffic\Traffic\bin\System.Web.Providers.dll
+D:\Работа\Project\Traffic\Traffic\bin\WebGrease.dll
+D:\Работа\Project\Traffic\Traffic\bin\System.Net.Http.Formatting.xml
+D:\Работа\Project\Traffic\Traffic\bin\System.Web.Http.xml
+D:\Работа\Project\Traffic\Traffic\bin\System.Web.Http.WebHost.xml
+D:\Работа\Project\Traffic\Traffic\bin\System.Web.Optimization.xml
+D:\Работа\Project\Traffic\Traffic\bin\Antlr3.Runtime.pdb
+D:\Работа\Project\Traffic\Traffic\bin\Newtonsoft.Json.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Работа\Project\Traffic\Traffic\bin\EntityFramework.xml
+D:\Работа\Project\Traffic\Traffic\bin\EntityFramework.SqlServer.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.Google.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Работа\Project\Traffic\Traffic\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Работа\Project\Traffic\Traffic\bin\ru\System.Net.Http.Formatting.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\System.Web.Http.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\System.Web.Http.WebHost.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\System.Web.Optimization.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\EntityFramework.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\EntityFramework.SqlServer.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.Core.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\System.Web.Providers.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\Microsoft.Owin.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Facebook.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Google.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
+D:\Работа\Project\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\Работа\Project\Traffic\Traffic\obj\Debug\Traffic.dll
+D:\Работа\Project\Traffic\Traffic\obj\Debug\Traffic.pdb
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Traffic.dll.config
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Traffic.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Traffic.pdb
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Antlr3.Runtime.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\EntityFramework.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\EntityFramework.SqlServer.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Newtonsoft.Json.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Owin.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\System.Net.Http.Formatting.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\System.Web.Http.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\System.Web.Http.WebHost.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\System.Web.Optimization.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\System.Web.Providers.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\WebGrease.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\System.Net.Http.Formatting.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\System.Web.Http.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\System.Web.Http.WebHost.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\System.Web.Optimization.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Antlr3.Runtime.pdb
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Newtonsoft.Json.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\EntityFramework.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\EntityFramework.SqlServer.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\System.Net.Http.Formatting.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\System.Web.Http.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\System.Web.Http.WebHost.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\System.Web.Optimization.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\EntityFramework.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\System.Web.Providers.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\Microsoft.Owin.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\Microsoft.Owin.Security.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\obj\Debug\Traffic.dll
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\obj\Debug\Traffic.pdb
+C:\Users\lildr_000\Documents\Visual Studio 2013\Projects\Traffic_MAIN\Traffic MAIN\Traffic\obj\Debug\Traffic.csprojResolveAssemblyReference.cache
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Traffic.dll.config
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Traffic.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Traffic.pdb
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Antlr3.Runtime.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\AspNet.ScriptManager.bootstrap.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\AspNet.ScriptManager.jQuery.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\EntityFramework.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\EntityFramework.SqlServer.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Google.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Web.Infrastructure.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Newtonsoft.Json.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Owin.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\System.Net.Http.Formatting.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Http.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Http.WebHost.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Optimization.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Providers.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\WebGrease.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\System.Net.Http.Formatting.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Http.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Http.WebHost.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Optimization.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Antlr3.Runtime.pdb
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Newtonsoft.Json.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\EntityFramework.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\EntityFramework.SqlServer.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Google.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Net.Http.Formatting.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Web.Http.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Web.Http.WebHost.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Web.Optimization.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\EntityFramework.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\EntityFramework.SqlServer.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.AspNet.Identity.Core.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Web.Providers.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.Facebook.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.Google.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\obj\Debug\Traffic.dll
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\obj\Debug\Traffic.pdb
+D:\Работа\Project\Traffic MAIN 09.10.14\Traffic\obj\Debug\Traffic.csprojResolveAssemblyReference.cache
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Traffic.dll.config
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Traffic.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Traffic.pdb
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Antlr3.Runtime.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\AspNet.ScriptManager.bootstrap.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\AspNet.ScriptManager.jQuery.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\EntityFramework.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\EntityFramework.SqlServer.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Google.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Web.Infrastructure.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Newtonsoft.Json.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Owin.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Net.Http.Formatting.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Http.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Http.WebHost.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Optimization.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Providers.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\WebGrease.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Net.Http.Formatting.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Http.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Http.WebHost.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Optimization.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Antlr3.Runtime.pdb
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Newtonsoft.Json.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\EntityFramework.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\EntityFramework.SqlServer.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Google.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Net.Http.Formatting.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Web.Http.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Web.Http.WebHost.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Web.Optimization.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\EntityFramework.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\EntityFramework.SqlServer.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.AspNet.Identity.Core.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Web.Providers.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.Facebook.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.Google.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\obj\Debug\Traffic.csprojResolveAssemblyReference.cache
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\obj\Debug\Traffic.dll
+D:\Работа\zGitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\obj\Debug\Traffic.pdb
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\obj\Debug\Traffic.csprojResolveAssemblyReference.cache
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\obj\Debug\Traffic.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\obj\Debug\Traffic.pdb
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Traffic.dll.config
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Traffic.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Traffic.pdb
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Antlr3.Runtime.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\EntityFramework.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\EntityFramework.SqlServer.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Newtonsoft.Json.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Owin.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Net.Http.Formatting.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Http.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Http.WebHost.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Optimization.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Providers.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\WebGrease.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Net.Http.Formatting.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Http.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Http.WebHost.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\System.Web.Optimization.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Antlr3.Runtime.pdb
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Newtonsoft.Json.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\EntityFramework.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\EntityFramework.SqlServer.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Net.Http.Formatting.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Web.Http.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Web.Http.WebHost.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Web.Optimization.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\EntityFramework.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\System.Web.Providers.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\lildr_000\Documents\GitHub\GBRepository\Traffic MAIN 09.10.14\Traffic\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Traffic.dll.config
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Traffic.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Traffic.pdb
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Antlr3.Runtime.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\EntityFramework.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\EntityFramework.SqlServer.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Newtonsoft.Json.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Owin.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\System.Net.Http.Formatting.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\System.Web.Http.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\System.Web.Http.WebHost.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\System.Web.Optimization.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\System.Web.Providers.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\WebGrease.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\System.Net.Http.Formatting.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\System.Web.Http.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\System.Web.Http.WebHost.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\System.Web.Optimization.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Antlr3.Runtime.pdb
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Newtonsoft.Json.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\EntityFramework.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\EntityFramework.SqlServer.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\System.Net.Http.Formatting.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\System.Web.Http.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\System.Web.Http.WebHost.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\System.Web.Optimization.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\EntityFramework.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\System.Web.Providers.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.Owin.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\obj\Debug\Traffic.csprojResolveAssemblyReference.cache
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\obj\Debug\Traffic.dll
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\obj\Debug\Traffic.pdb
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Traffic.dll.config
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Traffic.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Traffic.pdb
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Antlr3.Runtime.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\EntityFramework.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\EntityFramework.SqlServer.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Newtonsoft.Json.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Owin.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\System.Net.Http.Formatting.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\System.Web.Http.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\System.Web.Http.WebHost.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\System.Web.Optimization.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\System.Web.Providers.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\WebGrease.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\System.Net.Http.Formatting.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\System.Web.Http.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\System.Web.Http.WebHost.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\System.Web.Optimization.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Antlr3.Runtime.pdb
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Newtonsoft.Json.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\EntityFramework.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\EntityFramework.SqlServer.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\System.Net.Http.Formatting.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\System.Web.Http.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\System.Web.Http.WebHost.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\System.Web.Optimization.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\EntityFramework.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\System.Web.Providers.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\obj\Debug\Traffic.csprojResolveAssemblyReference.cache
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\obj\Debug\Traffic.dll
+C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\obj\Debug\Traffic.pdb

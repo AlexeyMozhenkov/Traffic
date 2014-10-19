@@ -1,0 +1,1082 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="trafficModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="organizationID" />
+          </Key>
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="accountInfo" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Act">
+          <Key>
+            <PropertyRef Name="contractID" />
+            <PropertyRef Name="actNumber" />
+          </Key>
+          <Property Name="contractID" Type="bigint" Nullable="false" />
+          <Property Name="actNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="actType" Type="nvarchar" MaxLength="100" />
+          <Property Name="actDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ActPersons">
+          <Key>
+            <PropertyRef Name="contractID" />
+            <PropertyRef Name="organizationID" />
+            <PropertyRef Name="actNumber" />
+            <PropertyRef Name="role" />
+          </Key>
+          <Property Name="contactPersonID" Type="bigint" Nullable="false" />
+          <Property Name="contractID" Type="bigint" Nullable="false" />
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="actNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="role" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActTransportation">
+          <Key>
+            <PropertyRef Name="contractID" />
+            <PropertyRef Name="actNumber" />
+          </Key>
+          <Property Name="addressID" Type="bigint" Nullable="false" />
+          <Property Name="contractID" Type="bigint" Nullable="false" />
+          <Property Name="transportID" Type="bigint" Nullable="false" />
+          <Property Name="actNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CMR" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrailerID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="addressID" />
+          </Key>
+          <Property Name="addressID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="index" Type="nvarchar" MaxLength="10" />
+          <Property Name="state" Type="nvarchar" MaxLength="50" />
+          <Property Name="region" Type="nvarchar" MaxLength="50" />
+          <Property Name="district" Type="nvarchar" MaxLength="50" />
+          <Property Name="town" Type="nvarchar" MaxLength="50" />
+          <Property Name="street" Type="nvarchar" MaxLength="50" />
+          <Property Name="house" Type="nvarchar" MaxLength="50" />
+          <Property Name="flat" Type="nvarchar" MaxLength="50" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ContactPerson">
+          <Key>
+            <PropertyRef Name="contactPersonID" />
+          </Key>
+          <Property Name="contactPersonID" Type="bigint" Nullable="false" />
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="FIO" Type="nvarchar" MaxLength="200" />
+          <Property Name="tableNumber" Type="bigint" />
+          <Property Name="position" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="contactPersonID" />
+          </Key>
+          <Property Name="contactPersonID" Type="bigint" Nullable="false" />
+          <Property Name="contactType" Type="nvarchar" MaxLength="50" />
+          <Property Name="contactData" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="contractMaterialLiability">
+          <Key>
+            <PropertyRef Name="contractID" />
+          </Key>
+          <Property Name="contractID" Type="bigint" Nullable="false" />
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="tableNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="contractPlace" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ContractPersons">
+          <Key>
+            <PropertyRef Name="contractID" />
+            <PropertyRef Name="organizationID" />
+            <PropertyRef Name="role" />
+          </Key>
+          <Property Name="contactPersonID" Type="bigint" Nullable="false" />
+          <Property Name="contractID" Type="bigint" Nullable="false" />
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="role" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contracts">
+          <Key>
+            <PropertyRef Name="contractID" />
+          </Key>
+          <Property Name="contractID" Type="bigint" Nullable="false" />
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="contractNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="contractDate" Type="datetime" />
+          <Property Name="contractType" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ContractStreak">
+          <Key>
+            <PropertyRef Name="contractID" />
+          </Key>
+          <Property Name="contractID" Type="bigint" Nullable="false" />
+          <Property Name="contractDateFrom" Type="datetime" />
+          <Property Name="ContractDateUntil" Type="bigint" />
+          <Property Name="contractPrice" Type="money" />
+        </EntityType>
+        <EntityType Name="ContractTransportation">
+          <Key>
+            <PropertyRef Name="contractID" />
+          </Key>
+          <Property Name="contractID" Type="bigint" Nullable="false" />
+          <Property Name="contractDateUntil" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DrivingLicence">
+          <Key>
+            <PropertyRef Name="licenceNumber" />
+            <PropertyRef Name="organizationID" />
+            <PropertyRef Name="tableNumber" />
+          </Key>
+          <Property Name="licenceNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="A1" Type="bit" />
+          <Property Name="tableNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="A" Type="bit" />
+          <Property Name="B" Type="bit" />
+          <Property Name="C" Type="bit" />
+          <Property Name="D" Type="bit" />
+          <Property Name="BE" Type="bit" />
+          <Property Name="CE" Type="bit" />
+          <Property Name="DE" Type="bit" />
+          <Property Name="I" Type="bit" />
+          <Property Name="F" Type="bit" />
+          <Property Name="issueDate" Type="datetime" />
+          <Property Name="expiryDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="organizationID" />
+            <PropertyRef Name="tableNumber" />
+          </Key>
+          <Property Name="addressID" Type="bigint" Nullable="false" />
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="tableNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthDay" Type="datetime" Nullable="false" />
+          <Property Name="IDnumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="PassportSerie" Type="nvarchar" MaxLength="50" />
+          <Property Name="PassportNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="DatePassportUntil" Type="datetime" />
+          <Property Name="DatePassportFrom" Type="datetime" />
+          <Property Name="position" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="InternationalCard">
+          <Key>
+            <PropertyRef Name="registrationID" />
+          </Key>
+          <Property Name="registrationID" Type="bigint" Nullable="false" />
+          <Property Name="approvalCert" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dateFromApproval" Type="datetime" Nullable="false" />
+          <Property Name="dateUntil" Type="datetime" Nullable="false" />
+          <Property Name="transportID" Type="bigint" Nullable="false" />
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Maintenance">
+          <Key>
+            <PropertyRef Name="maintenanceID" />
+          </Key>
+          <Property Name="maintenanceID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="transportID" Type="bigint" Nullable="false" />
+          <Property Name="dateFrom" Type="datetime" Nullable="false" />
+          <Property Name="dateUntil" Type="datetime" Nullable="false" />
+          <Property Name="typeCostID" Type="bigint" Nullable="false" />
+          <Property Name="cost" Type="money" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="organizationID" />
+          </Key>
+          <Property Name="addressID" Type="bigint" Nullable="false" />
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="FullTitle" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ShortTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegistrationNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="INN" Type="nvarchar" MaxLength="50" />
+          <Property Name="KPP" Type="nvarchar" MaxLength="50" />
+          <Property Name="UNP" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="serviceID" />
+          </Key>
+          <Property Name="serviceID" Type="bigint" Nullable="false" />
+          <Property Name="price" Type="money" />
+        </EntityType>
+        <EntityType Name="ServicesActs">
+          <Key>
+            <PropertyRef Name="contractID" />
+            <PropertyRef Name="serviceID" />
+          </Key>
+          <Property Name="contractID" Type="bigint" Nullable="false" />
+          <Property Name="serviceID" Type="bigint" Nullable="false" />
+          <Property Name="actNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TechnicalInspection">
+          <Key>
+            <PropertyRef Name="transportID" />
+            <PropertyRef Name="dateFrom" />
+          </Key>
+          <Property Name="transportID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dateFrom" Type="datetime" Nullable="false" />
+          <Property Name="dateUntil" Type="datetime" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+          <Property Name="tax" Type="money" />
+        </EntityType>
+        <EntityType Name="Transport">
+          <Key>
+            <PropertyRef Name="transportID" />
+          </Key>
+          <Property Name="transportID" Type="bigint" Nullable="false" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" />
+          <Property Name="registrationNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="VIN" Type="nvarchar" MaxLength="50" />
+          <Property Name="transportType" Type="nvarchar" MaxLength="50" />
+          <Property Name="transportCategory" Type="nvarchar" MaxLength="10" />
+          <Property Name="transportMakingYear" Type="bigint" />
+          <Property Name="ecologyClass" Type="nvarchar" MaxLength="50" />
+          <Property Name="maxWeight" Type="real" />
+          <Property Name="weight" Type="real" />
+          <Property Name="engineType" Type="nvarchar" MaxLength="50" />
+          <Property Name="engineVolume" Type="real" />
+        </EntityType>
+        <EntityType Name="transportStateReport">
+          <Key>
+            <PropertyRef Name="reportID" />
+          </Key>
+          <Property Name="reportID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="routeID" Type="bigint" />
+          <Property Name="transportID" Type="bigint" Nullable="false" />
+          <Property Name="tableNumber" Type="bigint" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="notes" Type="nvarchar" MaxLength="250" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Trips">
+          <Key>
+            <PropertyRef Name="tripID" />
+          </Key>
+          <Property Name="tripID" Type="bigint" Nullable="false" />
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="tableNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tripNumber" Type="bigint" />
+          <Property Name="dateFrom" Type="date" />
+          <Property Name="dateUntil" Type="date" />
+          <Property Name="ATS" Type="bigint" />
+          <Property Name="beltoll" Type="money" />
+          <Property Name="salaryRate" Type="money" />
+          <Property Name="fuelPerOneKm" Type="money" />
+          <Property Name="tonnageRate" Type="money" />
+          <Property Name="fuelPricePerOneLitre" Type="money" />
+          <Property Name="adblue" Type="money" />
+          <Property Name="tripExpences" Type="money" />
+        </EntityType>
+        <EntityType Name="TypeCost">
+          <Key>
+            <PropertyRef Name="typeCostID" />
+          </Key>
+          <Property Name="typeCostID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="typeCostName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="repair" Type="bit" />
+          <Property Name="service" Type="bit" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="userID" Type="bigint" Nullable="false" />
+          <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ContractStreak_Contracts">
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="1" />
+          <End Role="ContractStreak" Type="Self.ContractStreak" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Contracts">
+              <PropertyRef Name="contractID" />
+            </Principal>
+            <Dependent Role="ContractStreak">
+              <PropertyRef Name="contractID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Organization">
+          <End Role="Organization" Type="Self.Organization" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="organizationID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="organizationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="trafficModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Act" EntityType="Self.Act" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ActPersons" EntityType="Self.ActPersons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ActTransportation" EntityType="Self.ActTransportation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactPerson" EntityType="Self.ContactPerson" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contractMaterialLiability" EntityType="Self.contractMaterialLiability" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContractPersons" EntityType="Self.ContractPersons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contracts" EntityType="Self.Contracts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContractStreak" EntityType="Self.ContractStreak" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContractTransportation" EntityType="Self.ContractTransportation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DrivingLicence" EntityType="Self.DrivingLicence" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InternationalCard" EntityType="Self.InternationalCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Maintenance" EntityType="Self.Maintenance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServicesActs" EntityType="Self.ServicesActs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TechnicalInspection" EntityType="Self.TechnicalInspection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transport" EntityType="Self.Transport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="transportStateReport" EntityType="Self.transportStateReport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trips" EntityType="Self.Trips" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeCost" EntityType="Self.TypeCost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ContractStreak_Contracts" Association="Self.FK_ContractStreak_Contracts">
+            <End Role="Contracts" EntitySet="Contracts" />
+            <End Role="ContractStreak" EntitySet="ContractStreak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Organization" Association="Self.FK_Employee_Organization">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="trafficModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="organizationID" />
+          </Key>
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="accountInfo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Act">
+          <Key>
+            <PropertyRef Name="contractID" />
+            <PropertyRef Name="actNumber" />
+          </Key>
+          <Property Name="contractID" Type="Int64" Nullable="false" />
+          <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="actType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="actDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ActPersons">
+          <Key>
+            <PropertyRef Name="contractID" />
+            <PropertyRef Name="organizationID" />
+            <PropertyRef Name="actNumber" />
+            <PropertyRef Name="role" />
+          </Key>
+          <Property Name="contactPersonID" Type="Int64" Nullable="false" />
+          <Property Name="contractID" Type="Int64" Nullable="false" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="role" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActTransportation">
+          <Key>
+            <PropertyRef Name="contractID" />
+            <PropertyRef Name="actNumber" />
+          </Key>
+          <Property Name="addressID" Type="Int64" Nullable="false" />
+          <Property Name="contractID" Type="Int64" Nullable="false" />
+          <Property Name="transportID" Type="Int64" Nullable="false" />
+          <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CMR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TrailerID" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="addressID" />
+          </Key>
+          <Property Name="addressID" Type="Guid" Nullable="false" />
+          <Property Name="index" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="region" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="district" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="town" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="house" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="flat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ContactPerson">
+          <Key>
+            <PropertyRef Name="contactPersonID" />
+          </Key>
+          <Property Name="contactPersonID" Type="Int64" Nullable="false" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="FIO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="tableNumber" Type="Int64" />
+          <Property Name="position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="contactPersonID" />
+          </Key>
+          <Property Name="contactPersonID" Type="Int64" Nullable="false" />
+          <Property Name="contactType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contactData" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="contractMaterialLiability">
+          <Key>
+            <PropertyRef Name="contractID" />
+          </Key>
+          <Property Name="contractID" Type="Int64" Nullable="false" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="tableNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contractPlace" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ContractPersons">
+          <Key>
+            <PropertyRef Name="contractID" />
+            <PropertyRef Name="organizationID" />
+            <PropertyRef Name="role" />
+          </Key>
+          <Property Name="contactPersonID" Type="Int64" Nullable="false" />
+          <Property Name="contractID" Type="Int64" Nullable="false" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="role" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contracts">
+          <Key>
+            <PropertyRef Name="contractID" />
+          </Key>
+          <Property Name="contractID" Type="Int64" Nullable="false" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="contractNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contractDate" Type="DateTime" Precision="3" />
+          <Property Name="contractType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ContractStreak" Relationship="Self.FK_ContractStreak_Contracts" FromRole="Contracts" ToRole="ContractStreak" />
+        </EntityType>
+        <EntityType Name="ContractStreak">
+          <Key>
+            <PropertyRef Name="contractID" />
+          </Key>
+          <Property Name="contractID" Type="Int64" Nullable="false" />
+          <Property Name="contractDateFrom" Type="DateTime" Precision="3" />
+          <Property Name="ContractDateUntil" Type="Int64" />
+          <Property Name="contractPrice" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Contracts" Relationship="Self.FK_ContractStreak_Contracts" FromRole="ContractStreak" ToRole="Contracts" />
+        </EntityType>
+        <EntityType Name="ContractTransportation">
+          <Key>
+            <PropertyRef Name="contractID" />
+          </Key>
+          <Property Name="contractID" Type="Int64" Nullable="false" />
+          <Property Name="contractDateUntil" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="DrivingLicence">
+          <Key>
+            <PropertyRef Name="licenceNumber" />
+            <PropertyRef Name="organizationID" />
+            <PropertyRef Name="tableNumber" />
+          </Key>
+          <Property Name="licenceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="A1" Type="Boolean" />
+          <Property Name="tableNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="A" Type="Boolean" />
+          <Property Name="B" Type="Boolean" />
+          <Property Name="C" Type="Boolean" />
+          <Property Name="D" Type="Boolean" />
+          <Property Name="BE" Type="Boolean" />
+          <Property Name="CE" Type="Boolean" />
+          <Property Name="DE" Type="Boolean" />
+          <Property Name="I" Type="Boolean" />
+          <Property Name="F" Type="Boolean" />
+          <Property Name="issueDate" Type="DateTime" Precision="3" />
+          <Property Name="expiryDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="organizationID" />
+            <PropertyRef Name="tableNumber" />
+          </Key>
+          <Property Name="addressID" Type="Int64" Nullable="false" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="tableNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ParentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDay" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IDnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PassportSerie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PassportNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DatePassportUntil" Type="DateTime" Precision="3" />
+          <Property Name="DatePassportFrom" Type="DateTime" Precision="3" />
+          <Property Name="position" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Organization" Relationship="Self.FK_Employee_Organization" FromRole="Employee" ToRole="Organization" />
+        </EntityType>
+        <EntityType Name="InternationalCard">
+          <Key>
+            <PropertyRef Name="registrationID" />
+          </Key>
+          <Property Name="registrationID" Type="Int64" Nullable="false" />
+          <Property Name="approvalCert" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dateFromApproval" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateUntil" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="transportID" Type="Int64" Nullable="false" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Maintenance">
+          <Key>
+            <PropertyRef Name="maintenanceID" />
+          </Key>
+          <Property Name="maintenanceID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="transportID" Type="Int64" Nullable="false" />
+          <Property Name="dateFrom" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateUntil" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="typeCostID" Type="Int64" Nullable="false" />
+          <Property Name="cost" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="organizationID" />
+          </Key>
+          <Property Name="addressID" Type="Int64" Nullable="false" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="FullTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ShortTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegistrationNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="INN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KPP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UNP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Organization" FromRole="Organization" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="serviceID" />
+          </Key>
+          <Property Name="serviceID" Type="Int64" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="ServicesActs">
+          <Key>
+            <PropertyRef Name="contractID" />
+            <PropertyRef Name="serviceID" />
+          </Key>
+          <Property Name="contractID" Type="Int64" Nullable="false" />
+          <Property Name="serviceID" Type="Int64" Nullable="false" />
+          <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TechnicalInspection">
+          <Key>
+            <PropertyRef Name="transportID" />
+            <PropertyRef Name="dateFrom" />
+          </Key>
+          <Property Name="transportID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dateFrom" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateUntil" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="tax" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Transport">
+          <Key>
+            <PropertyRef Name="transportID" />
+          </Key>
+          <Property Name="transportID" Type="Int64" Nullable="false" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="registrationNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="transportType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="transportCategory" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="transportMakingYear" Type="Int64" />
+          <Property Name="ecologyClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="maxWeight" Type="Single" />
+          <Property Name="weight" Type="Single" />
+          <Property Name="engineType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="engineVolume" Type="Single" />
+        </EntityType>
+        <EntityType Name="transportStateReport">
+          <Key>
+            <PropertyRef Name="reportID" />
+          </Key>
+          <Property Name="reportID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="routeID" Type="Int64" />
+          <Property Name="transportID" Type="Int64" Nullable="false" />
+          <Property Name="tableNumber" Type="Int64" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="notes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Trips">
+          <Key>
+            <PropertyRef Name="tripID" />
+          </Key>
+          <Property Name="tripID" Type="Int64" Nullable="false" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="tableNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tripNumber" Type="Int64" />
+          <Property Name="dateFrom" Type="DateTime" Precision="0" />
+          <Property Name="dateUntil" Type="DateTime" Precision="0" />
+          <Property Name="ATS" Type="Int64" />
+          <Property Name="beltoll" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="salaryRate" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="fuelPerOneKm" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="tonnageRate" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="fuelPricePerOneLitre" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="adblue" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="tripExpences" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="TypeCost">
+          <Key>
+            <PropertyRef Name="typeCostID" />
+          </Key>
+          <Property Name="typeCostID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="typeCostName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="repair" Type="Boolean" />
+          <Property Name="service" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="userID" Type="Int64" Nullable="false" />
+          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ContractStreak_Contracts">
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="1" />
+          <End Role="ContractStreak" Type="Self.ContractStreak" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Contracts">
+              <PropertyRef Name="contractID" />
+            </Principal>
+            <Dependent Role="ContractStreak">
+              <PropertyRef Name="contractID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Organization">
+          <End Role="Organization" Type="Self.Organization" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="organizationID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="organizationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="trafficEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" />
+          <EntitySet Name="Act" EntityType="Self.Act" />
+          <EntitySet Name="ActPersons" EntityType="Self.ActPersons" />
+          <EntitySet Name="ActTransportation" EntityType="Self.ActTransportation" />
+          <EntitySet Name="Address" EntityType="Self.Address" />
+          <EntitySet Name="ContactPerson" EntityType="Self.ContactPerson" />
+          <EntitySet Name="Contacts" EntityType="Self.Contacts" />
+          <EntitySet Name="contractMaterialLiability" EntityType="Self.contractMaterialLiability" />
+          <EntitySet Name="ContractPersons" EntityType="Self.ContractPersons" />
+          <EntitySet Name="Contracts" EntityType="Self.Contracts" />
+          <EntitySet Name="ContractStreak" EntityType="Self.ContractStreak" />
+          <EntitySet Name="ContractTransportation" EntityType="Self.ContractTransportation" />
+          <EntitySet Name="DrivingLicence" EntityType="Self.DrivingLicence" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="InternationalCard" EntityType="Self.InternationalCard" />
+          <EntitySet Name="Maintenance" EntityType="Self.Maintenance" />
+          <EntitySet Name="Organization" EntityType="Self.Organization" />
+          <EntitySet Name="Services" EntityType="Self.Services" />
+          <EntitySet Name="ServicesActs" EntityType="Self.ServicesActs" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TechnicalInspection" EntityType="Self.TechnicalInspection" />
+          <EntitySet Name="Transport" EntityType="Self.Transport" />
+          <EntitySet Name="transportStateReport" EntityType="Self.transportStateReport" />
+          <EntitySet Name="Trips" EntityType="Self.Trips" />
+          <EntitySet Name="TypeCost" EntityType="Self.TypeCost" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_ContractStreak_Contracts" Association="Self.FK_ContractStreak_Contracts">
+            <End Role="Contracts" EntitySet="Contracts" />
+            <End Role="ContractStreak" EntitySet="ContractStreak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Organization" Association="Self.FK_Employee_Organization">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="trafficModelStoreContainer" CdmEntityContainer="trafficEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="trafficModel.Accounts">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="accountInfo" ColumnName="accountInfo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Act">
+            <EntityTypeMapping TypeName="trafficModel.Act">
+              <MappingFragment StoreEntitySet="Act">
+                <ScalarProperty Name="contractID" ColumnName="contractID" />
+                <ScalarProperty Name="actNumber" ColumnName="actNumber" />
+                <ScalarProperty Name="actType" ColumnName="actType" />
+                <ScalarProperty Name="actDate" ColumnName="actDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActPersons">
+            <EntityTypeMapping TypeName="trafficModel.ActPersons">
+              <MappingFragment StoreEntitySet="ActPersons">
+                <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
+                <ScalarProperty Name="contractID" ColumnName="contractID" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="actNumber" ColumnName="actNumber" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActTransportation">
+            <EntityTypeMapping TypeName="trafficModel.ActTransportation">
+              <MappingFragment StoreEntitySet="ActTransportation">
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="contractID" ColumnName="contractID" />
+                <ScalarProperty Name="transportID" ColumnName="transportID" />
+                <ScalarProperty Name="actNumber" ColumnName="actNumber" />
+                <ScalarProperty Name="CMR" ColumnName="CMR" />
+                <ScalarProperty Name="TrailerID" ColumnName="TrailerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Address">
+            <EntityTypeMapping TypeName="trafficModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="index" ColumnName="index" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="region" ColumnName="region" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="town" ColumnName="town" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="house" ColumnName="house" />
+                <ScalarProperty Name="flat" ColumnName="flat" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactPerson">
+            <EntityTypeMapping TypeName="trafficModel.ContactPerson">
+              <MappingFragment StoreEntitySet="ContactPerson">
+                <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+                <ScalarProperty Name="position" ColumnName="position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="trafficModel.Contacts">
+              <MappingFragment StoreEntitySet="Contacts">
+                <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
+                <ScalarProperty Name="contactType" ColumnName="contactType" />
+                <ScalarProperty Name="contactData" ColumnName="contactData" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contractMaterialLiability">
+            <EntityTypeMapping TypeName="trafficModel.contractMaterialLiability">
+              <MappingFragment StoreEntitySet="contractMaterialLiability">
+                <ScalarProperty Name="contractID" ColumnName="contractID" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+                <ScalarProperty Name="contractPlace" ColumnName="contractPlace" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContractPersons">
+            <EntityTypeMapping TypeName="trafficModel.ContractPersons">
+              <MappingFragment StoreEntitySet="ContractPersons">
+                <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
+                <ScalarProperty Name="contractID" ColumnName="contractID" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contracts">
+            <EntityTypeMapping TypeName="trafficModel.Contracts">
+              <MappingFragment StoreEntitySet="Contracts">
+                <ScalarProperty Name="contractID" ColumnName="contractID" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="contractNumber" ColumnName="contractNumber" />
+                <ScalarProperty Name="contractDate" ColumnName="contractDate" />
+                <ScalarProperty Name="contractType" ColumnName="contractType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContractStreak">
+            <EntityTypeMapping TypeName="trafficModel.ContractStreak">
+              <MappingFragment StoreEntitySet="ContractStreak">
+                <ScalarProperty Name="contractID" ColumnName="contractID" />
+                <ScalarProperty Name="contractDateFrom" ColumnName="contractDateFrom" />
+                <ScalarProperty Name="ContractDateUntil" ColumnName="ContractDateUntil" />
+                <ScalarProperty Name="contractPrice" ColumnName="contractPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContractTransportation">
+            <EntityTypeMapping TypeName="trafficModel.ContractTransportation">
+              <MappingFragment StoreEntitySet="ContractTransportation">
+                <ScalarProperty Name="contractID" ColumnName="contractID" />
+                <ScalarProperty Name="contractDateUntil" ColumnName="contractDateUntil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DrivingLicence">
+            <EntityTypeMapping TypeName="trafficModel.DrivingLicence">
+              <MappingFragment StoreEntitySet="DrivingLicence">
+                <ScalarProperty Name="licenceNumber" ColumnName="licenceNumber" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="A1" ColumnName="A1" />
+                <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="BE" ColumnName="BE" />
+                <ScalarProperty Name="CE" ColumnName="CE" />
+                <ScalarProperty Name="DE" ColumnName="DE" />
+                <ScalarProperty Name="I" ColumnName="I" />
+                <ScalarProperty Name="F" ColumnName="F" />
+                <ScalarProperty Name="issueDate" ColumnName="issueDate" />
+                <ScalarProperty Name="expiryDate" ColumnName="expiryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="trafficModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="ParentName" ColumnName="ParentName" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+                <ScalarProperty Name="IDnumber" ColumnName="IDnumber" />
+                <ScalarProperty Name="PassportSerie" ColumnName="PassportSerie" />
+                <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+                <ScalarProperty Name="DatePassportUntil" ColumnName="DatePassportUntil" />
+                <ScalarProperty Name="DatePassportFrom" ColumnName="DatePassportFrom" />
+                <ScalarProperty Name="position" ColumnName="position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InternationalCard">
+            <EntityTypeMapping TypeName="trafficModel.InternationalCard">
+              <MappingFragment StoreEntitySet="InternationalCard">
+                <ScalarProperty Name="registrationID" ColumnName="registrationID" />
+                <ScalarProperty Name="approvalCert" ColumnName="approvalCert" />
+                <ScalarProperty Name="dateFromApproval" ColumnName="dateFromApproval" />
+                <ScalarProperty Name="dateUntil" ColumnName="dateUntil" />
+                <ScalarProperty Name="transportID" ColumnName="transportID" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Maintenance">
+            <EntityTypeMapping TypeName="trafficModel.Maintenance">
+              <MappingFragment StoreEntitySet="Maintenance">
+                <ScalarProperty Name="maintenanceID" ColumnName="maintenanceID" />
+                <ScalarProperty Name="transportID" ColumnName="transportID" />
+                <ScalarProperty Name="dateFrom" ColumnName="dateFrom" />
+                <ScalarProperty Name="dateUntil" ColumnName="dateUntil" />
+                <ScalarProperty Name="typeCostID" ColumnName="typeCostID" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organization">
+            <EntityTypeMapping TypeName="trafficModel.Organization">
+              <MappingFragment StoreEntitySet="Organization">
+                <ScalarProperty Name="addressID" ColumnName="addressID" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="FullTitle" ColumnName="FullTitle" />
+                <ScalarProperty Name="ShortTitle" ColumnName="ShortTitle" />
+                <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+                <ScalarProperty Name="INN" ColumnName="INN" />
+                <ScalarProperty Name="KPP" ColumnName="KPP" />
+                <ScalarProperty Name="UNP" ColumnName="UNP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="trafficModel.Services">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServicesActs">
+            <EntityTypeMapping TypeName="trafficModel.ServicesActs">
+              <MappingFragment StoreEntitySet="ServicesActs">
+                <ScalarProperty Name="contractID" ColumnName="contractID" />
+                <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+                <ScalarProperty Name="actNumber" ColumnName="actNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="trafficModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TechnicalInspection">
+            <EntityTypeMapping TypeName="trafficModel.TechnicalInspection">
+              <MappingFragment StoreEntitySet="TechnicalInspection">
+                <ScalarProperty Name="transportID" ColumnName="transportID" />
+                <ScalarProperty Name="dateFrom" ColumnName="dateFrom" />
+                <ScalarProperty Name="dateUntil" ColumnName="dateUntil" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="tax" ColumnName="tax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transport">
+            <EntityTypeMapping TypeName="trafficModel.Transport">
+              <MappingFragment StoreEntitySet="Transport">
+                <ScalarProperty Name="transportID" ColumnName="transportID" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="registrationNumber" ColumnName="registrationNumber" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="transportType" ColumnName="transportType" />
+                <ScalarProperty Name="transportCategory" ColumnName="transportCategory" />
+                <ScalarProperty Name="transportMakingYear" ColumnName="transportMakingYear" />
+                <ScalarProperty Name="ecologyClass" ColumnName="ecologyClass" />
+                <ScalarProperty Name="maxWeight" ColumnName="maxWeight" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="engineType" ColumnName="engineType" />
+                <ScalarProperty Name="engineVolume" ColumnName="engineVolume" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transportStateReport">
+            <EntityTypeMapping TypeName="trafficModel.transportStateReport">
+              <MappingFragment StoreEntitySet="transportStateReport">
+                <ScalarProperty Name="reportID" ColumnName="reportID" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="routeID" ColumnName="routeID" />
+                <ScalarProperty Name="transportID" ColumnName="transportID" />
+                <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="location" ColumnName="location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trips">
+            <EntityTypeMapping TypeName="trafficModel.Trips">
+              <MappingFragment StoreEntitySet="Trips">
+                <ScalarProperty Name="tripID" ColumnName="tripID" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+                <ScalarProperty Name="tripNumber" ColumnName="tripNumber" />
+                <ScalarProperty Name="dateFrom" ColumnName="dateFrom" />
+                <ScalarProperty Name="dateUntil" ColumnName="dateUntil" />
+                <ScalarProperty Name="ATS" ColumnName="ATS" />
+                <ScalarProperty Name="beltoll" ColumnName="beltoll" />
+                <ScalarProperty Name="salaryRate" ColumnName="salaryRate" />
+                <ScalarProperty Name="fuelPerOneKm" ColumnName="fuelPerOneKm" />
+                <ScalarProperty Name="tonnageRate" ColumnName="tonnageRate" />
+                <ScalarProperty Name="fuelPricePerOneLitre" ColumnName="fuelPricePerOneLitre" />
+                <ScalarProperty Name="adblue" ColumnName="adblue" />
+                <ScalarProperty Name="tripExpences" ColumnName="tripExpences" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeCost">
+            <EntityTypeMapping TypeName="trafficModel.TypeCost">
+              <MappingFragment StoreEntitySet="TypeCost">
+                <ScalarProperty Name="typeCostID" ColumnName="typeCostID" />
+                <ScalarProperty Name="typeCostName" ColumnName="typeCostName" />
+                <ScalarProperty Name="repair" ColumnName="repair" />
+                <ScalarProperty Name="service" ColumnName="service" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="trafficModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
