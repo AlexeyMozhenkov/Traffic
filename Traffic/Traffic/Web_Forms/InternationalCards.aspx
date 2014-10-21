@@ -7,7 +7,7 @@
         <asp:MultiView ID="mv_Main" runat="server" ActiveViewIndex="0">
             <asp:View ID="view_DataGrid" runat="server">
                 <asp:GridView ID="DataGrid" runat="server" AllowPaging="True"
-                    CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="20" Width="100%" >
+                    CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="20" Width="100%" AutoGenerateColumns="False" >
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />

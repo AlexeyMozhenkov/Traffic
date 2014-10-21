@@ -39,9 +39,11 @@ namespace Traffic
 
         protected void GridDataBind()
         {
-            List<InternationalCardClass> List = InternationalCardClass.ReadAllCards();
-            DataGrid.DataSource = List;
-            //DataGrid.DataBind();
+            InternationalCardClass card = new InternationalCardClass(1, 1, "1", DateTime.Today, DateTime.Today,1);
+            List<InternationalCardClass> MyList= new List<InternationalCardClass>(); //InternationalCardClass.ReadAllCards();
+            MyList.Add(card);
+            DataGrid.DataSource = MyList;
+            DataGrid.DataBind();
             
         }
 
