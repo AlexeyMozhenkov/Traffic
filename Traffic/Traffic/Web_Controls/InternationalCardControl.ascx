@@ -117,7 +117,7 @@
     </asp:TableRow>
     <asp:TableRow runat="server" HorizontalAlign="Center" VerticalAlign="Middle">
         <asp:TableCell runat="server">
-            <asp:Button ID="btn_AddEdit" runat="server" Text="Add" Width="100" />
+            <asp:Button ID="btn_AddEdit" runat="server" Text="Add" Width="100" OnClick="btn_AddEdit_Click" />
 
         </asp:TableCell>
 

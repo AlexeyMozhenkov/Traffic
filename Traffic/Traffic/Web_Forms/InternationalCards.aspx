@@ -7,11 +7,11 @@
         <asp:MultiView ID="mv_Main" runat="server" ActiveViewIndex="0">
             <asp:View ID="view_DataGrid" runat="server">
                 <asp:GridView ID="DataGrid" runat="server" AllowPaging="True"
-                    CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="20" Width="100%" AutoGenerateColumns="False" >
+                    CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="20" Width="100%" >
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
-                        <asp:BoundField DataField="RegistrationID" HeaderText="RegistrationID" />
+                        <%--<asp:BoundField DataField="RegistrationID" HeaderText="RegistrationID" />
                         <asp:BoundField DataField="TransportID" HeaderText="TransportID" />
                         <asp:BoundField DataField="ApprovalCert" HeaderText="ApprovalCert" />
                         <asp:BoundField DataField="OrganizationID" HeaderText="OrganizationID" />
@@ -19,7 +19,7 @@
                         <asp:BoundField DataField="DateUntil" HeaderText="DateUntil" />
                         <asp:BoundField DataField="Model" HeaderText="Model" />
                         <asp:BoundField DataField="RegNumber" HeaderText="RegNumber" />
-                        <asp:BoundField DataField="OrgName" HeaderText="OrgName" />
+                        <asp:BoundField DataField="OrgName" HeaderText="OrgName" />--%>
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -32,7 +32,7 @@
                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+                <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>--%>
                 <hr />
                 <div id="filter">
                     <asp:Label ID="lbl_Filter" runat="server" Text="Filter"></asp:Label>
@@ -50,12 +50,11 @@
                     <br />
                 </div>
                 <div id="modify">
-                    <asp:Button ID="btn_Add" runat="server" Text="Add" Width="120px" CssClass="btnAlign"
-                        OnClick="btn_Add_Click" />
+                    <asp:Button ID="btn_Add" runat="server" Text="Add" Width="120px" CssClass="btnAlign" OnClick="btn_Add_Click" />
                     <br />
-                    <asp:Button ID="btn_Edit" runat="server" Text="Edit" Width="120px" CssClass="btnAlign" />
+                    <asp:Button ID="btn_Edit" runat="server" Text="Edit" Width="120px" CssClass="btnAlign" OnClick="btn_Edit_Click" />
                     <br />
-                    <asp:Button ID="btn_Delete" runat="server" Text="Delete" Width="120px" CssClass="btnAlign"
+                    <asp:Button ID="btn_Delete" runat="server" Text="Delete" Width="120px" CssClass="btnAlign" OnClick="btn_Delete_Click"
                         Font-Names="Segoe UI" />
                     <br />
                 </div>

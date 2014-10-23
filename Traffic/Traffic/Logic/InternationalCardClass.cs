@@ -73,11 +73,12 @@ namespace Traffic
             }
         }
         public static void AddInternationalCard(long RegistrationID,
-                                            long TransportID,
                                             string ApprovalCert,
-                                            long OrganizationID,
                                             DateTime DateFrom,
-                                            DateTime DateUntil)
+                                            DateTime DateUntil,
+                                            long TransportID,
+                                            long OrganizationID
+                                            )
         {
             using (var db = new trafficEntities())
             {
@@ -165,8 +166,13 @@ namespace Traffic
                 db.SaveChanges();
             }
         }
-        public static void EditByTransportID(long registrationID, long transportID, string approvalCert,
-                                       DateTime dateFrom, DateTime dateUntil, long organizationID)
+        public static void EditByTransportID(
+            long registrationID,
+            string approvalCert,
+            DateTime dateFrom,
+            DateTime dateUntil,
+            long transportID,
+            long organizationID)
         {
             using (var db = new trafficEntities())
             {

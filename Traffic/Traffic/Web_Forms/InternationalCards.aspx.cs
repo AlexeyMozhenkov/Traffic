@@ -32,18 +32,20 @@ namespace Traffic
                 btn_Edit.Enabled = false;
                 btn_Delete.Enabled = false;
             }
-
+            btn_Edit.Enabled = true;
+            btn_Delete.Enabled = true;
             DetailedInfoForm.CancelClickedEvent += DetailedInfoForm_CancelClickedEvent;
             DetailedInfoForm.SavedDataEvent += DetailedInfoForm_SavedDataEvent;
         }
 
         protected void GridDataBind()
         {
-            InternationalCardClass card = new InternationalCardClass(1, 1, "1", DateTime.Today, DateTime.Today,1);
-            List<InternationalCardClass> MyList= new List<InternationalCardClass>(); //InternationalCardClass.ReadAllCards();
-            MyList.Add(card);
+            //InternationalCardClass card = new InternationalCardClass(1, 1, "1", DateTime.Today, DateTime.Today, 1);
+            //List<InternationalCardClass> MyList = new List<InternationalCardClass>(); 
+            //MyList.Add(card);
+            List<InternationalCardClass> MyList = InternationalCardClass.ReadAllCards();
             DataGrid.DataSource = MyList;
-            DataGrid.DataBind();
+            //DataGrid.DataBind();
             
         }
 
@@ -59,8 +61,61 @@ namespace Traffic
         }
         protected void btn_Add_Click(object sender, EventArgs e)
         {
-
+            DetailedInfoForm.SetAddMode();
             mv_Main.SetActiveView(view_Detailed);
+        }
+
+        protected void btn_Edit_Click(object sender, EventArgs e)
+        {
+            //DetailedInfoForm.SetEditMode();
+            InternationalCardClass updateItem = new InternationalCardClass();
+            List<InternationalCardClass> List =InternationalCardClass.ReadAllCards();
+            for (int i = 0; i < List.Count; i++)
+            {
+                //if (DataGrid.SelectedRow.Cells[1].Text == MyList[i].RegistrationID.ToString())
+                if (List.Count.ToString() == List[i].RegistrationID.ToString())
+                {
+                    updateItem = List[i];
+                    break;
+                }
+            }
+
+            if (updateItem != null)
+            {
+                //Fill data from selected row into detailed view
+                DetailedInfoForm.par_1 = updateItem.RegistrationID;
+                DetailedInfoForm.par_2 = updateItem.ApprovalCert;
+                DetailedInfoForm.par_3 = updateItem.DateFrom;
+                DetailedInfoForm.par_4 = updateItem.DateUntil;
+                DetailedInfoForm.par_5 = updateItem.TransportID;
+                DetailedInfoForm.par_6 = updateItem.OrganizationID;
+                DetailedInfoForm.SetEditMode(updateItem.RegistrationID);
+                mv_Main.SetActiveView(view_Detailed);
+            }
+            //else 
+            //{
+            //    DetailedInfoForm.par_1 = 0;
+            //    mv_Main.SetActiveView(view_Detailed);
+            //}
+        }
+
+        protected void btn_Delete_Click(object sender, EventArgs e)
+        {
+            InternationalCardClass deleteItem = new InternationalCardClass();
+            List<InternationalCardClass> List = InternationalCardClass.ReadAllCards();
+            for (int i = 0; i < List.Count; i++)
+            {
+                //if (DataGrid.SelectedRow.Cells[1].Text == List[i].RegistrationID.ToString())
+                if (List.Count.ToString() == List[i].RegistrationID.ToString())
+                {
+                    deleteItem = List[i];
+                    break;
+                }
+            }
+            if (deleteItem != null)
+                InternationalCardClass.DeleteByTransportID(deleteItem.RegistrationID);
+            GridDataBind();
+
         }
     }
 }
