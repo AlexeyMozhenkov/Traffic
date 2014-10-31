@@ -157,6 +157,33 @@ namespace Traffic {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator vldr_5;
         
         /// <summary>
+        /// lbl_6 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_6;
+        
+        /// <summary>
+        /// txt_6 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_6;
+        
+        /// <summary>
+        /// vldr_6 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator vldr_6;
+        
+        /// <summary>
         /// valr_Summary элемент управления.
         /// </summary>
         /// <remarks>

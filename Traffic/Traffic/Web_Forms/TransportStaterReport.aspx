@@ -6,13 +6,12 @@
     <div id="container">
         <asp:MultiView ID="mv_Main" runat="server" ActiveViewIndex="0">
             <asp:View ID="view_DataGrid" runat="server">
-                <asp:GridView ID="grv_TransportStaterReportDataGrid" runat="server" AllowPaging="True"
-                    CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="20" Width="100%"
-                    AutoGenerateColumns="False" DataKeyNames="ID">
+                <asp:GridView ID="DataGrid" runat="server" AllowPaging="True"
+                    CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="20" Width="100%" OnSelectedIndexChanged="DataGrid_SelectedIndexChanged" >
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
-                        <asp:BoundField DataField="addressID" HeaderText="Address ID " />
+                        <%--<asp:BoundField DataField="addressID" HeaderText="Address ID " />
                         <asp:BoundField DataField="organizationID" HeaderText="Organization ID" />
                         <asp:BoundField DataField="tableNumber" HeaderText="Table Number " />
                         <asp:BoundField DataField="FirstName" HeaderText="First Name " />
@@ -25,7 +24,7 @@
                         <asp:BoundField DataField="DatePassportUntil" 
                             HeaderText="Date Passport Until" />
                         <asp:BoundField DataField="DatePassportFrom" HeaderText="Date Passport From" />
-                        <asp:BoundField DataField="position" HeaderText="Position" />
+                        <asp:BoundField DataField="position" HeaderText="Position" />--%>
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -57,11 +56,11 @@
                 </div>
                 <div id="modify">
                     <asp:Button ID="btn_Add" runat="server" Text="Add" Width="120px" CssClass="btnAlign"
-                        OnClick="btn_Add_Click" />
+                        OnClick="btn_Add_Click" Height="21px" />
                     <br />
-                    <asp:Button ID="btn_Edit" runat="server" Text="Edit" Width="120px" CssClass="btnAlign" />
+                    <asp:Button ID="btn_Edit" runat="server" Text="Edit" Width="120px" CssClass="btnAlign" OnClick="btn_Edit_Click" />
                     <br />
-                    <asp:Button ID="btn_Delete" runat="server" Text="Delete" Width="120px" CssClass="btnAlign"
+                    <asp:Button ID="btn_Delete" runat="server" Text="Delete" Width="120px" CssClass="btnAlign" OnClick="btn_Delete_Click"
                         Font-Names="Segoe UI" />
                     <br />
                 </div>

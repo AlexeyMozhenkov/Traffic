@@ -6,15 +6,15 @@ namespace Traffic
 {
     public class InternationalCardClass
     {
-        public long RegistrationID;
-        public long TransportID;
-        public string ApprovalCert;
-        public long OrganizationID;
-        public DateTime DateFrom;
-        public DateTime DateUntil;
-        public string Model;
-        public string RegNumber;
-        public string OrgName;
+        public long RegistrationID { get; set; }
+        public long TransportID { get; set; }
+        public string ApprovalCert { get; set; }
+        public long OrganizationID { get; set; }
+        public DateTime DateFrom { get; set; }
+        public DateTime DateUntil { get; set; }
+        public string Model { get; set; }
+        public string RegNumber { get; set; }
+        public string OrgName { get; set; }
         public InternationalCardClass()
         {
 

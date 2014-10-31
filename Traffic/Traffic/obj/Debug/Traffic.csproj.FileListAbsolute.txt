@@ -594,7 +594,6 @@ C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.Owi
 C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\obj\Debug\Traffic.csprojResolveAssemblyReference.cache
 C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\obj\Debug\Traffic.dll
 C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\obj\Debug\Traffic.pdb
 C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bin\Traffic.dll.config
@@ -672,3 +671,4 @@ C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\bi
 C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\obj\Debug\Traffic.csprojResolveAssemblyReference.cache
 C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\obj\Debug\Traffic.dll
 C:\Users\Алексей\Documents\Visual Studio 2013\Projects\Traffic\Traffic\obj\Debug\Traffic.pdb
+C:\Users\lildr_000\Documents\GitHub\Traffic\Traffic\Traffic\obj\Debug\Traffic.csprojResolveAssemblyReference.cache

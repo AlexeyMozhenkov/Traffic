@@ -6,6 +6,20 @@
     Font-Names="Segoe UI" Height="550px" Font-Size="Small" Width="450px" OnLoad="Page_Load">
     <asp:TableRow runat="server">
         <asp:TableCell runat="server">
+            <asp:Label ID="Label1" runat="server" Text="ID Отчета"></asp:Label>
+
+        </asp:TableCell>
+
+        <asp:TableCell runat="server">
+
+            <asp:TextBox ID="txt_0" runat="server" Width="200px" Enabled="false"></asp:TextBox>
+        </asp:TableCell>
+
+        <asp:TableCell runat="server" ForeColor="#CC0000">
+        </asp:TableCell>
+    </asp:TableRow>
+    <asp:TableRow runat="server">
+        <asp:TableCell runat="server">
             <asp:Label ID="lbl_1" runat="server" Text="ID Организации"></asp:Label>
 
         </asp:TableCell>
@@ -81,7 +95,7 @@
         </asp:TableCell>
 
         <asp:TableCell runat="server">
-            <asp:TextBox ID="txt_5" runat="server" Width="200px" MaxLength="50"></asp:TextBox>
+            <asp:TextBox ID="txt_5" runat="server" Width="200px" MaxLength="50" TextMode="MultiLine"></asp:TextBox>
 
         </asp:TableCell>
 
@@ -135,7 +149,7 @@
     </asp:TableRow>
     <asp:TableRow runat="server" HorizontalAlign="Center" VerticalAlign="Middle">
         <asp:TableCell runat="server">
-            <asp:Button ID="btn_AddEdit" runat="server" Text="Add" Width="100" />
+            <asp:Button ID="btn_AddEdit" runat="server" Text="Add" Width="100" OnClick="btn_AddEdit_Click"/>
 
         </asp:TableCell>
 

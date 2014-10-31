@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Traffic
 {
-    public partial class TransportStaterReport : System.Web.UI.Page
+    public partial class TechnicalInspections : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,7 +39,7 @@ namespace Traffic
 
         protected void GridDataBind()
         {
-            List<transportStateReport> List = TransportStateReportLogic.ReadAllTransportStateReports();
+            List<TechnicalInspection> List = TechnicalInspectionLogic.ReadAll();
             DataGrid.DataSource = List;
             DataGrid.DataBind();
 
@@ -63,11 +63,11 @@ namespace Traffic
 
         protected void btn_Edit_Click(object sender, EventArgs e)
         {
-            transportStateReport updateItem = new transportStateReport();
-            List<transportStateReport> List = TransportStateReportLogic.ReadAllTransportStateReports();
+            TechnicalInspection updateItem = new TechnicalInspection();
+            List<TechnicalInspection> List = TechnicalInspectionLogic.ReadAll();
             for (int i = 0; i < List.Count; i++)
             {
-                if (DataGrid.SelectedRow.Cells[1].Text == List[i].reportID.ToString())
+                if (DataGrid.SelectedRow.Cells[1].Text == List[i].transportID.ToString())
                 {
                     updateItem = List[i];
                     break;
@@ -77,33 +77,30 @@ namespace Traffic
             if (updateItem != null)
             {
                 //Fill data from selected row into detailed view
-                DetailedInfoForm.par_0 = updateItem.reportID;
-                DetailedInfoForm.par_1 = updateItem.organizationID;
-                DetailedInfoForm.par_2 = updateItem.routeID;
-                DetailedInfoForm.par_3 = updateItem.transportID;
-                DetailedInfoForm.par_4 = updateItem.tableNumber;
-                DetailedInfoForm.par_5 = updateItem.status;
-                DetailedInfoForm.par_6 = updateItem.notes;
-                DetailedInfoForm.par_7 = updateItem.location;
-                DetailedInfoForm.SetEditMode(updateItem.reportID);
+                DetailedInfoForm.par_1 = updateItem.transportID;
+                DetailedInfoForm.par_2 = updateItem.dateFrom;
+                DetailedInfoForm.par_3 = updateItem.dateUntil;
+                DetailedInfoForm.par_4 = updateItem.Cost;
+                DetailedInfoForm.par_5 = updateItem.tax;
+                DetailedInfoForm.SetEditMode(updateItem.transportID);
                 mv_Main.SetActiveView(view_Detailed);
             }
         }
 
         protected void btn_Delete_Click(object sender, EventArgs e)
         {
-            transportStateReport deleteItem = new transportStateReport();
-            List<transportStateReport> List = TransportStateReportLogic.ReadAllTransportStateReports();
+            TechnicalInspection deleteItem = new TechnicalInspection();
+            List<TechnicalInspection> List = TechnicalInspectionLogic.ReadAll();
             for (int i = 0; i < List.Count; i++)
             {
-                if (DataGrid.SelectedRow.Cells[1].Text == List[i].reportID.ToString())
+                if (DataGrid.SelectedRow.Cells[1].Text == List[i].transportID.ToString())
                 {
                     deleteItem = List[i];
                     break;
                 }
             }
             if (deleteItem != null)
-                TransportStateReportLogic.DeleteByID(deleteItem.reportID);
+                TechnicalInspectionLogic.DeleteByID(deleteItem.transportID);
             GridDataBind();
 
         }
@@ -116,5 +113,7 @@ namespace Traffic
                 btn_Delete.Enabled = true;
             }
         }
+
+
     }
 }

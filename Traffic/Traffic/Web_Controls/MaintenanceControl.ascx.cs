@@ -22,6 +22,77 @@ namespace Traffic
 
         protected string SwitchUrl { get; private set; }
 
+        public long par_1
+        {
+            get
+            {
+                return long.Parse(txt_1.Text);
+            }
+            set
+            {
+                txt_1.Text = value.ToString();
+            }
+        }
+
+        public long par_2
+        {
+            get
+            {
+                return long.Parse(txt_2.Text);
+            }
+            set
+            {
+                txt_2.Text = value.ToString();
+            }
+        }
+
+        public DateTime par_3
+        {
+            get
+            {
+                return DateTime.Parse(txt_3.Text);
+            }
+            set
+            {
+                txt_3.Text = value.ToString("yyyy-MM-dd");
+            }
+        }
+
+        public DateTime par_4
+        {
+            get
+            {
+                return DateTime.Parse(txt_4.Text);
+            }
+            set
+            {
+                txt_4.Text = value.ToString("yyyy-MM-dd");
+            }
+        }
+
+        public long par_5
+        {
+            get
+            {
+                return long.Parse(txt_5.Text);
+            }
+            set
+            {
+                txt_5.Text = value.ToString();
+            }
+        }
+        public decimal par_6
+        {
+            get
+            {
+                return decimal.Parse(txt_6.Text);
+            }
+            set
+            {
+                txt_6.Text = value.ToString();
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -29,13 +100,14 @@ namespace Traffic
                 IsEdit = false;
                 ViewState["EditMode"] = IsEdit;
             }
-            _txtFields = new List<TextBox>(5)
+            _txtFields = new List<TextBox>(6)
             {
                 txt_1,
                 txt_2,
                 txt_3,
                 txt_4,
-                txt_5
+                txt_5,
+                txt_6,
                 
             };
 
@@ -71,6 +143,51 @@ namespace Traffic
             ClearControlFields();
         }
 
+        protected void btn_AddEdit_Click(object sender, EventArgs e)
+        {
+            //Add row
+
+            if (IsEdit == false)
+                try
+                {
+                    txt_1.ToString();
+                    MaintenanceClass.AddMaintenanceClass(
+                        par_1,
+                        par_2,
+                        par_3,
+                        par_4,
+                        par_5,
+                        par_6
+                        );
+                }
+                catch (ArgumentNullException)
+                {
+                    Response.Write("Couldn't insert empty row into database");
+                }
+            else
+                try
+                {
+                    MaintenanceClass.EditByID(
+                        par_1,
+                        par_2,
+                        par_3,
+                        par_4,
+                        par_5,
+                        par_6
+                        );
+                }
+                catch (ArgumentNullException)
+                {
+                    Response.Write("Couldn't edit this object");
+                }
+            if (SavedDataEvent != null)
+            {
+                SavedDataEvent();
+            }
+
+            ClearControlFields();
+
+        }
         private void ClearControlFields()
         {
             foreach (TextBox txtField in _txtFields)
@@ -79,5 +196,25 @@ namespace Traffic
             }
         }
 
+        public void SetEditMode(long identity)
+        {
+            IsEdit = true;
+            ViewState["EditMode"] = IsEdit;
+            ViewState["EditID"] = identity;
+            txt_1.ReadOnly = IsEdit;
+            btn_AddEdit.Text = "Edit";
+            //necessary if style is changed:    //txt_01.Visible = false;
+            //txt_1.Visible = true;
+        }
+        public void SetAddMode()
+        {
+            IsEdit = false;
+            ViewState["EditMode"] = IsEdit;
+            //txt_1.Visible = false;
+            txt_1.Visible = true;
+            txt_1.ReadOnly = false;
+            btn_AddEdit.Text = "ADD";
+            ClearControlFields();
+        }
     }
 }

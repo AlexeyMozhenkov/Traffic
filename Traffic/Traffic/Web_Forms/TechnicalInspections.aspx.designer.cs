@@ -10,7 +10,7 @@
 namespace Traffic {
     
     
-    public partial class Maintenance {
+    public partial class TechnicalInspections {
         
         /// <summary>
         /// mv_Main элемент управления.
@@ -31,13 +31,22 @@ namespace Traffic {
         protected global::System.Web.UI.WebControls.View view_DataGrid;
         
         /// <summary>
-        /// _DataGrid элемент управления.
+        /// DataGrid элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView _DataGrid;
+        protected global::System.Web.UI.WebControls.GridView DataGrid;
+        
+        /// <summary>
+        /// SqlDataSource1 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
         /// lbl_Filter элемент управления.
@@ -127,6 +136,6 @@ namespace Traffic {
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::Traffic.MaintenanceControl DetailedInfoForm;
+        protected global::Traffic.TechnicalInspectionControl DetailedInfoForm;
     }
 }

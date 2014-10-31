@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Traffic
 {
-    public partial class TransportStaterReport : System.Web.UI.Page
+    public partial class Maintenances : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,14 +37,6 @@ namespace Traffic
             DetailedInfoForm.SavedDataEvent += DetailedInfoForm_SavedDataEvent;
         }
 
-        protected void GridDataBind()
-        {
-            List<transportStateReport> List = TransportStateReportLogic.ReadAllTransportStateReports();
-            DataGrid.DataSource = List;
-            DataGrid.DataBind();
-
-        }
-
         void DetailedInfoForm_CancelClickedEvent()
         {
             mv_Main.SetActiveView(view_DataGrid);
@@ -57,17 +49,25 @@ namespace Traffic
         }
         protected void btn_Add_Click(object sender, EventArgs e)
         {
-            DetailedInfoForm.SetAddMode();
+
             mv_Main.SetActiveView(view_Detailed);
         }
 
+        protected void GridDataBind()
+        {
+            List<MaintenanceClass> List = MaintenanceClass.ReadAllMaintenanceClasses();
+            DataGrid.DataSource = List;
+            DataGrid.DataBind();
+        }
+
+
         protected void btn_Edit_Click(object sender, EventArgs e)
         {
-            transportStateReport updateItem = new transportStateReport();
-            List<transportStateReport> List = TransportStateReportLogic.ReadAllTransportStateReports();
+            MaintenanceClass updateItem = new MaintenanceClass();
+            List<MaintenanceClass> List = MaintenanceClass.ReadAllMaintenanceClasses();
             for (int i = 0; i < List.Count; i++)
             {
-                if (DataGrid.SelectedRow.Cells[1].Text == List[i].reportID.ToString())
+                if (DataGrid.SelectedRow.Cells[1].Text == List[i].maintenanceID.ToString())
                 {
                     updateItem = List[i];
                     break;
@@ -77,33 +77,31 @@ namespace Traffic
             if (updateItem != null)
             {
                 //Fill data from selected row into detailed view
-                DetailedInfoForm.par_0 = updateItem.reportID;
-                DetailedInfoForm.par_1 = updateItem.organizationID;
-                DetailedInfoForm.par_2 = updateItem.routeID;
-                DetailedInfoForm.par_3 = updateItem.transportID;
-                DetailedInfoForm.par_4 = updateItem.tableNumber;
-                DetailedInfoForm.par_5 = updateItem.status;
-                DetailedInfoForm.par_6 = updateItem.notes;
-                DetailedInfoForm.par_7 = updateItem.location;
-                DetailedInfoForm.SetEditMode(updateItem.reportID);
+                DetailedInfoForm.par_1 = updateItem.maintenanceID;
+                DetailedInfoForm.par_2 = updateItem.transportID;
+                DetailedInfoForm.par_3 = updateItem.dateFrom;
+                DetailedInfoForm.par_4 = updateItem.dateUntil;
+                DetailedInfoForm.par_5 = updateItem.typeCostID;
+                DetailedInfoForm.par_6 = updateItem.cost;
+                DetailedInfoForm.SetEditMode(updateItem.maintenanceID);
                 mv_Main.SetActiveView(view_Detailed);
             }
         }
 
         protected void btn_Delete_Click(object sender, EventArgs e)
         {
-            transportStateReport deleteItem = new transportStateReport();
-            List<transportStateReport> List = TransportStateReportLogic.ReadAllTransportStateReports();
+            MaintenanceClass deleteItem = new MaintenanceClass();
+            List<MaintenanceClass> List = MaintenanceClass.ReadAllMaintenanceClasses();
             for (int i = 0; i < List.Count; i++)
             {
-                if (DataGrid.SelectedRow.Cells[1].Text == List[i].reportID.ToString())
+                if (DataGrid.SelectedRow.Cells[1].Text == List[i].maintenanceID.ToString())
                 {
                     deleteItem = List[i];
                     break;
                 }
             }
             if (deleteItem != null)
-                TransportStateReportLogic.DeleteByID(deleteItem.reportID);
+                MaintenanceClass.DeleteByID(deleteItem.maintenanceID);
             GridDataBind();
 
         }
@@ -116,5 +114,7 @@ namespace Traffic
                 btn_Delete.Enabled = true;
             }
         }
+
     }
+
 }

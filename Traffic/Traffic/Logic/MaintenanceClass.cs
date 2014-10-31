@@ -7,13 +7,20 @@ namespace Traffic
 {
     public class MaintenanceClass
     {
-        public long maintenanceID;
-        public long transportID;
-        public DateTime dateFrom;
-        public DateTime dateUntil;
-        public bool service;
-        public bool repair;
-        public decimal cost;
+        public long maintenanceID { get; set; }
+        public long transportID { get; set; }
+        public DateTime dateFrom { get; set; }
+        public DateTime dateUntil { get; set; }
+
+        public long typeCostID { get; set; }
+        public bool service { get; set; }
+        public bool repair { get; set; }
+        public decimal cost { get; set; }
+
+        public MaintenanceClass()
+        {
+            
+        }
         public MaintenanceClass(long MaintenanceID)
         {
             maintenanceID = MaintenanceID;
@@ -21,6 +28,7 @@ namespace Traffic
             transportID = _maintenance.transportID;
             dateFrom = _maintenance.dateFrom;
             dateUntil = _maintenance.dateUntil;
+            typeCostID = _maintenance.typeCostID;
             cost = (decimal)_maintenance.cost;
             TypeCost TC = TypeCostLogic.SearchByID(_maintenance.typeCostID);
             service = (bool)TC.service;

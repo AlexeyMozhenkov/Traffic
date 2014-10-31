@@ -172,9 +172,9 @@
     <Content Include="Web_Forms\Organizations.aspx" />
     <Content Include="Web_Forms\TransportStaterReport.aspx" />
     <Content Include="Web_Controls\TechnicalInspectionControl.ascx" />
-    <Content Include="Web_Forms\TechnicalInspection.aspx" />
+    <Content Include="Web_Forms\TechnicalInspections.aspx" />
     <Content Include="Web_Controls\MaintenanceControl.ascx" />
-    <Content Include="Web_Forms\Maintenance.aspx" />
+    <Content Include="Web_Forms\Maintenances.aspx" />
     <Content Include="Web_Controls\InternationalCardControl.ascx" />
     <Content Include="Web_Forms\InternationalCards.aspx" />
     <Content Include="Web_Forms\LogistPage.aspx" />
@@ -345,12 +345,12 @@
     <Compile Include="Logic\MaintenanceClass.cs" />
     <Compile Include="Logic\MaintenanceLogic.cs" />
     <Compile Include="Logic\OrganizationsLogic.cs" />
+    <Compile Include="Logic\TechnicalInspectionLogic.cs" />
     <Compile Include="Logic\TransportLogic.cs" />
     <Compile Include="Logic\TransportStateReportLogic.cs" />
     <Compile Include="Logic\TypeCostLogic.cs" />
     <Compile Include="Maintenance.cs">
       <DependentUpon>TrafficEntities.tt</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Organization.cs">
       <DependentUpon>TrafficEntities.tt</DependentUpon>
@@ -366,7 +366,6 @@
     </Compile>
     <Compile Include="TechnicalInspection.cs">
       <DependentUpon>TrafficEntities.tt</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TrafficEntities.Context.cs">
       <AutoGen>True</AutoGen>
@@ -449,12 +448,12 @@
     <Compile Include="Web_Controls\TechnicalInspectionControl.ascx.designer.cs">
       <DependentUpon>TechnicalInspectionControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Web_Forms\TechnicalInspection.aspx.cs">
-      <DependentUpon>TechnicalInspection.aspx</DependentUpon>
+    <Compile Include="Web_Forms\TechnicalInspections.aspx.cs">
+      <DependentUpon>TechnicalInspections.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Web_Forms\TechnicalInspection.aspx.designer.cs">
-      <DependentUpon>TechnicalInspection.aspx</DependentUpon>
+    <Compile Include="Web_Forms\TechnicalInspections.aspx.designer.cs">
+      <DependentUpon>TechnicalInspections.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web_Controls\MaintenanceControl.ascx.cs">
       <DependentUpon>MaintenanceControl.ascx</DependentUpon>
@@ -463,12 +462,12 @@
     <Compile Include="Web_Controls\MaintenanceControl.ascx.designer.cs">
       <DependentUpon>MaintenanceControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Web_Forms\Maintenance.aspx.cs">
-      <DependentUpon>Maintenance.aspx</DependentUpon>
+    <Compile Include="Web_Forms\Maintenances.aspx.cs">
+      <DependentUpon>Maintenances.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Web_Forms\Maintenance.aspx.designer.cs">
-      <DependentUpon>Maintenance.aspx</DependentUpon>
+    <Compile Include="Web_Forms\Maintenances.aspx.designer.cs">
+      <DependentUpon>Maintenances.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web_Controls\InternationalCardControl.ascx.cs">
       <DependentUpon>InternationalCardControl.ascx</DependentUpon>
