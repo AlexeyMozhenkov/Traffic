@@ -14,37 +14,189 @@ namespace Traffic
     {
         public event CancelClickedDelegate CancelClickedEvent;
         public event SavedDataDelegate SavedDataEvent;
-        private List<TextBox> _txtFields;
-        public bool IsEdit { get; set; }
         protected string CurrentView { get; private set; }
 
         protected string AlternateView { get; private set; }
 
         protected string SwitchUrl { get; private set; }
 
+        private List<TextBox> _txtFields;
+        public bool IsEdit { get; set; }
+        public bool IsVisible { get; set; }
+
+        public int Identity { get; set; }
+        public long par_1
+        {
+            get
+            {
+                return long.Parse(txt_1.Text);
+            }
+            set
+            {
+                txt_1.Text = value.ToString();
+            }
+        }
+        public long par_2
+        {
+            get
+            {
+                return long.Parse(txt_2.Text);
+            }
+            set
+            {
+                txt_2.Text = value.ToString();
+            }
+        }
+        public string par_3
+        {
+            get
+            {
+                return txt_3.Text;
+            }
+            set
+            {
+                txt_3.Text = value;
+            }
+        }
+
+        public string par_4
+        {
+            get
+            {
+                return txt_4.Text;
+            }
+            set
+            {
+                txt_4.Text = value;
+            }
+        }
+        public string par_5
+        {
+            get
+            {
+                return txt_5.Text;
+            }
+            set
+            {
+                txt_5.Text = value;
+            }
+        }
+
+        public string par_6
+        {
+            get
+            {
+                return txt_6.Text;
+            }
+            set
+            {
+                txt_6.Text = value;
+            }
+        }
+        public DateTime par_7
+        {
+            get
+            {
+                return DateTime.Parse(txt_7.Text);
+            }
+            set
+            {
+
+                txt_7.Text = value.ToString("yyyy-MM-dd");
+            }
+        }
+
+        public string par_8
+        {
+            get
+            {
+                return txt_8.Text;
+            }
+            set
+            {
+                txt_8.Text = value;
+            }
+        }
+
+        public string par_9
+        {
+            get
+            {
+                return txt_9.Text;
+            }
+            set
+            {
+                txt_9.Text = value;
+            }
+        }
+
+        public string par_10
+        {
+            get
+            {
+                return txt_10.Text;
+            }
+            set
+            {
+                txt_10.Text = value;
+            }
+        }
+
+        public DateTime par_11
+        {
+            get
+            {
+                return DateTime.Parse(txt_11.Text);
+            }
+            set
+            {
+
+                txt_11.Text = value.ToString("yyyy-MM-dd");
+            }
+        }
+
+        public DateTime par_12
+        {
+            get
+            {
+                return DateTime.Parse(txt_12.Text);
+            }
+            set
+            {
+
+                txt_12.Text = value.ToString("yyyy-MM-dd");
+            }
+        }
+        public string par_13
+        {
+            get
+            {
+                return txt_13.Text;
+            }
+            set
+            {
+                txt_13.Text = value;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
                 IsEdit = false;
                 ViewState["EditMode"] = IsEdit;
             }
-            _txtFields = new List<TextBox>(13)
+            if (ViewState["EditID"] != null)
+                txt_1.Text = ViewState["EditID"].ToString();
+            _txtFields = new List<TextBox>(8)
             {
                 txt_1,
                 txt_2,
                 txt_3,
                 txt_4,
-                txt_5,
-                txt_6,
-                txt_7,
-                txt_8,
-                txt_9,
-                txt_10,
-                txt_11,
-                txt_12,
-                txt_13
+                txt_5
             };
+
 
             IsEdit = (bool)ViewState["EditMode"];
 
@@ -75,7 +227,66 @@ namespace Traffic
             {
                 this.CancelClickedEvent();
             }
+        }
+
+        protected void btn_AddEdit_Click(object sender, EventArgs e)
+        {
+            //Add row
+
+            if (IsEdit == false)
+                try
+                {
+                    txt_1.ToString();
+                    EmployeeLogic.Add(
+                        par_1,
+                        par_2,
+                        par_3,
+                        par_4,
+                        par_5,
+                        par_6,
+                        par_7,
+                        par_8,
+                        par_9,
+                        par_10,
+                        par_11,
+                        par_12,
+                        par_13
+                        );
+                }
+                catch (ArgumentNullException)
+                {
+                    Response.Write("Couldn't insert empty row into database");
+                }
+            else
+                try
+                {
+                    EmployeeLogic.Edit(
+                        par_1,
+                        par_2,
+                        par_3,
+                        par_4,
+                        par_5,
+                        par_6,
+                        par_7,
+                        par_8,
+                        par_9,
+                        par_10,
+                        par_11,
+                        par_12,
+                        par_13
+                        );
+                }
+                catch (ArgumentNullException)
+                {
+                    Response.Write("Couldn't edit this object");
+                }
+            if (SavedDataEvent != null)
+            {
+                SavedDataEvent();
+            }
+
             ClearControlFields();
+
         }
 
         private void ClearControlFields()
@@ -86,5 +297,23 @@ namespace Traffic
             }
         }
 
+        public void SetEditMode(long identity)
+        {
+            IsEdit = true;
+            ViewState["EditMode"] = IsEdit;
+            ViewState["EditID"] = identity;
+            txt_1.ReadOnly = IsEdit;
+            btn_AddEdit.Text = "Edit";
+        }
+        public void SetAddMode()
+        {
+            IsEdit = false;
+            ViewState["EditMode"] = IsEdit;
+            txt_1.Visible = true;
+            txt_1.ReadOnly = false;
+            btn_AddEdit.Text = "ADD";
+            ClearControlFields();
+        }
     }
+
 }

@@ -16,7 +16,9 @@
         <br />
         <asp:Button ID="btn_5" runat="server"  class="btn btn-primary btn-large" Width="500px" Text="Регистрация дополнительных услуг по клиентским отправлениям" ></asp:Button>
         <br />
+        <asp:Button ID="btn_6" runat="server"  class="btn btn-primary btn-large" Width="500px" Text="Контракты" PostBackUrl="~/Web_Forms/ContractsPage.aspx" ></asp:Button>
         <br />
+        <asp:Button ID="btn_7" runat="server"  class="btn btn-primary btn-large" Width="500px" Text="Путевые листы" PostBackUrl="~/Web_Forms/WaybillsPrintPage.aspx" ></asp:Button>
         <br />
     </div>
     </asp:Content>

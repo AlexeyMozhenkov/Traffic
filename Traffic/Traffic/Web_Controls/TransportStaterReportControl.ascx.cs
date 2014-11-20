@@ -227,7 +227,7 @@ namespace Traffic
             IsEdit = true;
             ViewState["EditMode"] = IsEdit;
             ViewState["EditID"] = identity;
-            txt_1.ReadOnly = IsEdit;
+            txt_0.ReadOnly = IsEdit;
             btn_AddEdit.Text = "Edit";
             //necessary if style is changed:    //txt_01.Visible = false;
             //txt_1.Visible = true;
@@ -237,8 +237,8 @@ namespace Traffic
             IsEdit = false;
             ViewState["EditMode"] = IsEdit;
             //txt_1.Visible = false;
-            txt_1.Visible = true;
-            txt_1.ReadOnly = false;
+            txt_0.Visible = true;
+            txt_0.ReadOnly = false;
             btn_AddEdit.Text = "ADD";
             ClearControlFields();
         }

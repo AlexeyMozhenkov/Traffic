@@ -38,7 +38,7 @@
                 Получить данные о сотрудниках
             </p>
             <p>
-                <a class="btn btn-default" href="Employee.aspx">Начать &raquo;</a>
+                <a class="btn btn-default" href="Web_Forms/EmployeePage.aspx">Начать &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">

@@ -160,6 +160,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Web_Controls\ContractsControl.ascx" />
     <Content Include="Web_Controls\OrganizationsControl.ascx" />
     <Content Include="Web_Forms\About.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -169,6 +170,7 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Web_Forms\DriverPage.aspx" />
     <Content Include="Web_Controls\TransportStaterReportControl.ascx" />
+    <Content Include="Web_Forms\ContractsPage.aspx" />
     <Content Include="Web_Forms\Organizations.aspx" />
     <Content Include="Web_Forms\TransportStaterReport.aspx" />
     <Content Include="Web_Controls\TechnicalInspectionControl.ascx" />
@@ -190,8 +192,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Web_Forms\WaybillsPrintPage.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Web_Forms\Employee.aspx" />
+    <Content Include="Web_Forms\EmployeePage.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -341,13 +344,16 @@
     <Compile Include="InternationalCard.cs">
       <DependentUpon>TrafficEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Logic\EmployeeLogic.cs" />
     <Compile Include="Logic\InternationalCardClass.cs" />
     <Compile Include="Logic\MaintenanceClass.cs" />
     <Compile Include="Logic\MaintenanceLogic.cs" />
+    <Compile Include="Logic\ContractsLogic.cs" />
     <Compile Include="Logic\OrganizationsLogic.cs" />
     <Compile Include="Logic\TechnicalInspectionLogic.cs" />
     <Compile Include="Logic\TransportLogic.cs" />
     <Compile Include="Logic\TransportStateReportLogic.cs" />
+    <Compile Include="Logic\WaybillsLogic.cs" />
     <Compile Include="Logic\TypeCostLogic.cs" />
     <Compile Include="Maintenance.cs">
       <DependentUpon>TrafficEntities.tt</DependentUpon>
@@ -397,6 +403,13 @@
     <Compile Include="Users.cs">
       <DependentUpon>TrafficEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Web_Controls\ContractsControl.ascx.cs">
+      <DependentUpon>ContractsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_Controls\ContractsControl.ascx.designer.cs">
+      <DependentUpon>ContractsControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Web_Controls\OrganizationsControl.ascx.cs">
       <DependentUpon>OrganizationsControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -426,6 +439,13 @@
     </Compile>
     <Compile Include="Web_Controls\TransportStaterReportControl.ascx.designer.cs">
       <DependentUpon>TransportStaterReportControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web_Forms\ContractsPage.aspx.cs">
+      <DependentUpon>ContractsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_Forms\ContractsPage.aspx.designer.cs">
+      <DependentUpon>ContractsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web_Forms\Organizations.aspx.cs">
       <DependentUpon>Organizations.aspx</DependentUpon>
@@ -523,12 +543,12 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Web_Forms\Employee.aspx.cs">
-      <DependentUpon>Employee.aspx</DependentUpon>
+    <Compile Include="Web_Forms\EmployeePage.aspx.cs">
+      <DependentUpon>EmployeePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Web_Forms\Employee.aspx.designer.cs">
-      <DependentUpon>Employee.aspx</DependentUpon>
+    <Compile Include="Web_Forms\EmployeePage.aspx.designer.cs">
+      <DependentUpon>EmployeePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -565,6 +585,13 @@
     </Compile>
     <Compile Include="Web_Controls\TransportControl.ascx.designer.cs">
       <DependentUpon>TransportControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web_Forms\WaybillsPrintPage.aspx.cs">
+      <DependentUpon>WaybillsPrintPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_Forms\WaybillsPrintPage.aspx.designer.cs">
+      <DependentUpon>WaybillsPrintPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

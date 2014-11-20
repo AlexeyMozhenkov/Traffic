@@ -26,7 +26,7 @@
 
         <asp:TableCell runat="server">
 
-            <asp:TextBox ID="txt_1" runat="server" Width="200px" ></asp:TextBox>
+            <asp:TextBox ID="txt_1" runat="server" Width="200px" Enabled="True"></asp:TextBox>
         </asp:TableCell>
 
         <asp:TableCell runat="server" ForeColor="#CC0000">
