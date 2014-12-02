@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Data.SqlClient;
+using System.Configuration;
 namespace Traffic
 {
     public class EmployeeLogic
@@ -84,5 +85,46 @@ namespace Traffic
                 db.SaveChanges();
             }
         }
+
+        public static List<Employee> GetFilteredUsersInfo(string filterString)
+        {
+            List<Employee> retList = new List<Employee>();
+
+            string sqlQuery = string.Format("select * from Users where NAME like '%{0}%'", filterString);
+
+            SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["trafficEntities"].ConnectionString);
+
+            _conn.Open();
+
+            using (SqlCommand cmd = new SqlCommand(sqlQuery, _conn))
+            {
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    retList.Add(new Employee
+                    {
+                        addressID = (long)dr["addressID"],
+                        organizationID = (long)dr["organizationID"],
+                        tableNumber = (string)dr["tableNumber"],
+                        FirstName = (string)dr["FirstName"],
+                        LastName = (string)dr["LastName"],
+                        ParentName = (string)dr["ParentName"],
+                        BirthDay = (DateTime)dr["BirthDay"],
+                        IDnumber = (string)dr["IDnumber"],
+                        PassportSerie = (string)dr["PassportSerie"],
+                        PassportNumber = (string)dr["PassportNumber"],
+                        DatePassportUntil = (DateTime)dr["DatePassportUntil"],
+                        DatePassportFrom = (DateTime)dr["DatePassportFrom"],
+                        position = (string)dr["position"]
+                    });
+                }
+                dr.Close();
+            }
+
+            _conn.Close();
+
+            return retList;
+        }
+
     }
 }
