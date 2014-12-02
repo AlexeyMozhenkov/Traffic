@@ -90,9 +90,9 @@ namespace Traffic
         {
             List<Employee> retList = new List<Employee>();
 
-            string sqlQuery = string.Format("select * from Users where NAME like '%{0}%'", filterString);
+            string sqlQuery = string.Format("select * from Users where LastName like '%{0}%'", filterString);
 
-            SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["trafficEntities"].ConnectionString);
+            SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
             _conn.Open();
 
