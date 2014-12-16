@@ -9,7 +9,7 @@ using System.Text;
 using Traffic.WordTemplates;
 namespace Traffic
 {
-    public partial class ContractsPage : System.Web.UI.Page
+    public partial class Requests : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,7 +44,7 @@ namespace Traffic
 
         protected void GridDataBind()
         {
-            List<Contracts> List = ContractsLogic.ReadAll();
+            List<Request> List = RequestsLogic.ReadAll();
             DataGrid.DataSource = List;
             DataGrid.DataBind();
         }
@@ -72,12 +72,12 @@ namespace Traffic
         {
             //DetailedInfoForm.SetEditMode();
 
-            Contracts updateRow = new Contracts();
+            Request updateRow = new Request();
 
-            List<Contracts> List = ContractsLogic.ReadAll();
+            List<Request> List = RequestsLogic.ReadAll();
             for (int i = 0; i < List.Count; i++)
             {
-                if (DataGrid.SelectedRow.Cells[1].Text == List[i].contractID.ToString())
+                if (DataGrid.SelectedRow.Cells[1].Text == List[i].RequestNumber.ToString())
                 {
                     updateRow = List[i];
                     break;
@@ -87,13 +87,19 @@ namespace Traffic
             if (updateRow != null)
             {
                 //Fill data from selected row into detailed view
-                DetailedInfoForm.par_1 = updateRow.contractID;
-                DetailedInfoForm.par_2 = updateRow.PerformerID;
-                DetailedInfoForm.par_3 = updateRow.CustomerID;
-                DetailedInfoForm.par_4 = updateRow.ContractNumber;
-                DetailedInfoForm.par_5 = (DateTime)updateRow.DateFrom;
-                DetailedInfoForm.par_6 = (DateTime)updateRow.DateUntil;
-                DetailedInfoForm.par_7 = updateRow.Place;
+                DetailedInfoForm.par_1 = updateRow.RequestNumber;
+                DetailedInfoForm.par_2 = updateRow.contractID;
+                DetailedInfoForm.par_3 = updateRow.transportID;
+                DetailedInfoForm.par_4 = (DateTime)updateRow.RequestDate;
+                DetailedInfoForm.par_5 = updateRow.Sender;
+                DetailedInfoForm.par_6 = updateRow.Recipient;
+                DetailedInfoForm.par_7 = updateRow.Shipment;
+                DetailedInfoForm.par_8 = updateRow.OffloadingPlace;
+                DetailedInfoForm.par_9 = updateRow.NumberOfSeats;
+                DetailedInfoForm.par_10 = updateRow.Packing;
+                DetailedInfoForm.par_11 = updateRow.Cost;
+                DetailedInfoForm.par_12 = updateRow.SpecialNotes;
+
                 DetailedInfoForm.SetEditMode(updateRow.contractID);
                 mv_Main.SetActiveView(view_Detailed);
             }
@@ -111,9 +117,9 @@ namespace Traffic
 
         protected void btn_Delete_Click(object sender, EventArgs e)
         {
-            Contracts deleteRow = new Contracts();
+            Request deleteRow = new Request();
 
-            List<Contracts> List = ContractsLogic.ReadAll();
+            List<Request> List = RequestsLogic.ReadAll();
             for (int i = 0; i < List.Count; i++)
             {
                 if (DataGrid.SelectedRow.Cells[1].Text == List[i].contractID.ToString())
@@ -123,14 +129,14 @@ namespace Traffic
                 }
             }
             if (deleteRow != null)
-                ContractsLogic.DeleteByID(deleteRow.contractID);
+                RequestsLogic.DeleteByID(deleteRow.contractID);
             GridDataBind();
 
         }
 
         protected void btn_Show_Click(object sender, EventArgs e)
         {
-            List<Contracts> List = ContractsLogic.ReadFiltered(txt_Filter.Text.ToString());
+            List<Request> List = RequestsLogic.ReadFiltered(txt_Filter.Text.ToString());
             DataGrid.DataSource = List;
             DataGrid.DataBind();
 
@@ -159,7 +165,7 @@ namespace Traffic
         protected void btn_GetFile_Click(object sender, EventArgs e)
         {
             var path = Path.Combine(HttpContext.Current.Request.PhysicalApplicationPath, "App_Data");//получить папку с файлами
-            var invoice = new СontractTamplate(path);//создать класс с шаблоном
+            var invoice = new RequestTamplate(path);//создать класс с шаблоном
             invoice.Fill(Int64.Parse(DataGrid.SelectedRow.Cells[1].Text));//заполнить
             //invoice.Fill(1);//заполнить
             var tmpFilePath = Path.GetTempFileName();//создать и получить имя временного файла
@@ -170,7 +176,7 @@ namespace Traffic
                 File.Delete(tmpFilePath);//удалить его
             Response.Clear();//очистить ответ
             Response.ContentType = "application/msword";//выбрать тип содержимого
-            Response.AddHeader("Content-Disposition", "attachment; filename=Договор.docx");//присоеденненые данные и имя файла
+            Response.AddHeader("Content-Disposition", "attachment; filename=Заявка.docx");//присоеденненые данные и имя файла
             Response.BinaryWrite(tmpFileBytes);//записать байты в ответ
             Response.Flush();//очистить буфер ответа
             Response.Close();//закрыть поток

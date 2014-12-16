@@ -17,7 +17,7 @@
         <asp:TableCell runat="server" ForeColor="#CC0000">
 
             <asp:RequiredFieldValidator ID="vldr_1" runat="server" ErrorMessage="Юридический адрес: поле не заполнено"
-                Text="*" ControlToValidate="txt_1" Display="Static" Enabled="True"></asp:RequiredFieldValidator>
+                Text="*" ControlToValidate="txt_1" MaxLength="150"></asp:RequiredFieldValidator>
         </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow runat="server">
@@ -184,7 +184,7 @@
         </asp:TableCell>
 
         <asp:TableCell runat="server">
-            <asp:TextBox ID="txt_11" runat="server" Width="200px" MaxLength="50"></asp:TextBox>
+            <asp:TextBox ID="txt_11" runat="server" Width="200px" MaxLength="150"></asp:TextBox>
 
         </asp:TableCell>
 

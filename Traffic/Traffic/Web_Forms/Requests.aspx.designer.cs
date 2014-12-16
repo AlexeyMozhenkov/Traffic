@@ -10,7 +10,7 @@
 namespace Traffic {
     
     
-    public partial class ContractsPage {
+    public partial class Requests {
         
         /// <summary>
         /// mv_Main элемент управления.
@@ -136,6 +136,6 @@ namespace Traffic {
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::Traffic.ContractsControl DetailedInfoForm;
+        protected global::Traffic.RequestsControl DetailedInfoForm;
     }
 }

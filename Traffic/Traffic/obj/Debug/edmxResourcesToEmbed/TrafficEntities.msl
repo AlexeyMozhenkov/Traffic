@@ -374,5 +374,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Request">
+      <EntityTypeMapping TypeName="TrafficModel.Request">
+        <MappingFragment StoreEntitySet="Request">
+          <ScalarProperty Name="SpecialNotes" ColumnName="SpecialNotes" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Packing" ColumnName="Packing" />
+          <ScalarProperty Name="NumberOfSeats" ColumnName="NumberOfSeats" />
+          <ScalarProperty Name="OffloadingPlace" ColumnName="OffloadingPlace" />
+          <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+          <ScalarProperty Name="Recipient" ColumnName="Recipient" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="transportID" ColumnName="transportID" />
+          <ScalarProperty Name="contractID" ColumnName="contractID" />
+          <ScalarProperty Name="RequestNumber" ColumnName="RequestNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -206,7 +206,7 @@
     <Key>
       <PropertyRef Name="organizationID" />
     </Key>
-    <Property Name="addressID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="addressID" Type="nvarchar" MaxLength="150" Nullable="false" />
     <Property Name="organizationID" Type="bigint" Nullable="false" />
     <Property Name="FullTitle" Type="nvarchar" MaxLength="150" Nullable="false" />
     <Property Name="ShortTitle" Type="nvarchar" MaxLength="50" />
@@ -217,9 +217,26 @@
     <Property Name="OKPO" Type="nvarchar" MaxLength="50" />
     <Property Name="directorID" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="rs" Type="nvarchar" MaxLength="50" />
-    <Property Name="bankInfo" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankInfo" Type="nvarchar" MaxLength="150" />
     <Property Name="ks" Type="nvarchar" MaxLength="50" />
     <Property Name="BIK" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="RequestNumber" />
+    </Key>
+    <Property Name="RequestNumber" Type="bigint" Nullable="false" />
+    <Property Name="contractID" Type="bigint" Nullable="false" />
+    <Property Name="transportID" Type="bigint" Nullable="false" />
+    <Property Name="RequestDate" Type="datetime" Nullable="false" />
+    <Property Name="Sender" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Recipient" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Shipment" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OffloadingPlace" Type="nvarchar" MaxLength="100" />
+    <Property Name="NumberOfSeats" Type="nvarchar" MaxLength="100" />
+    <Property Name="Packing" Type="nvarchar" MaxLength="100" />
+    <Property Name="Cost" Type="money" Nullable="false" />
+    <Property Name="SpecialNotes" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Services">
     <Key>
@@ -400,6 +417,7 @@
     <EntitySet Name="InternationalCard" EntityType="Self.InternationalCard" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Maintenance" EntityType="Self.Maintenance" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ServicesActs" EntityType="Self.ServicesActs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TechnicalInspection" EntityType="Self.TechnicalInspection" Schema="dbo" store:Type="Tables" />

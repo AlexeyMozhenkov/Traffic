@@ -1,7 +1,7 @@
-﻿<%@ Page Title="Контракты" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="ContractsPage.aspx.cs" Inherits="Traffic.ContractsPage" %>
+﻿<%@ Page Title="Заявки" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="Requests.aspx.cs" Inherits="Traffic.Requests" %>
 
-<%@ Register Src="~/Web_Controls/ContractsControl.ascx" TagPrefix="uc1" TagName="DetailedInfo" %>
+<%@ Register Src="~/Web_Controls/RequestsControl.ascx" TagPrefix="uc1" TagName="DetailedInfo" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
     <div id="container">
@@ -33,7 +33,7 @@
                         GroupName="Filter" Text="All records" OnCheckedChanged="rbtn_AllUsers_CheckedChanged" />
                     <br />
                     <asp:RadioButton ID="rbtn_Filtered" runat="server" AutoPostBack="True" GroupName="Filter"
-                        Text="Organization ID" OnCheckedChanged="rbtn_Filtered_CheckedChanged" />
+                        Text="Request" OnCheckedChanged="rbtn_Filtered_CheckedChanged" />
                     <br />
                     <asp:TextBox ID="txt_Filter" runat="server" Width="210px" Enabled="False"></asp:TextBox>
                     <br />
@@ -50,7 +50,7 @@
                     <asp:Button ID="btn_Delete" runat="server" Text="Delete" Width="120px" CssClass="btnAlign"
                         Font-Names="Segoe UI" OnClick="btn_Delete_Click" />
                     <br />
-                    <asp:Button ID="btn_GetFile" runat="server" Text="Print Contract" Width="120px" CssClass="btnAlign"
+                    <asp:Button ID="btn_GetFile" runat="server" Text="Print Request" Width="120px" CssClass="btnAlign"
                         Font-Names="Segoe UI" OnClick="btn_GetFile_Click"  />
                     <br />
                 </div>

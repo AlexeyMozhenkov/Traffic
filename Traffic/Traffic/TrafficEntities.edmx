@@ -211,7 +211,7 @@
           <Key>
             <PropertyRef Name="organizationID" />
           </Key>
-          <Property Name="addressID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="addressID" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="organizationID" Type="bigint" Nullable="false" />
           <Property Name="FullTitle" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="ShortTitle" Type="nvarchar" MaxLength="50" />
@@ -222,9 +222,26 @@
           <Property Name="OKPO" Type="nvarchar" MaxLength="50" />
           <Property Name="directorID" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="rs" Type="nvarchar" MaxLength="50" />
-          <Property Name="bankInfo" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankInfo" Type="nvarchar" MaxLength="150" />
           <Property Name="ks" Type="nvarchar" MaxLength="50" />
           <Property Name="BIK" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="RequestNumber" />
+          </Key>
+          <Property Name="RequestNumber" Type="bigint" Nullable="false" />
+          <Property Name="contractID" Type="bigint" Nullable="false" />
+          <Property Name="transportID" Type="bigint" Nullable="false" />
+          <Property Name="RequestDate" Type="datetime" Nullable="false" />
+          <Property Name="Sender" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Recipient" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Shipment" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="OffloadingPlace" Type="nvarchar" MaxLength="100" />
+          <Property Name="NumberOfSeats" Type="nvarchar" MaxLength="100" />
+          <Property Name="Packing" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+          <Property Name="SpecialNotes" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Services">
           <Key>
@@ -405,6 +422,7 @@
           <EntitySet Name="InternationalCard" EntityType="Self.InternationalCard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Maintenance" EntityType="Self.Maintenance" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ServicesActs" EntityType="Self.ServicesActs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TechnicalInspection" EntityType="Self.TechnicalInspection" Schema="dbo" store:Type="Tables" />
@@ -637,7 +655,7 @@
           <Key>
             <PropertyRef Name="organizationID" />
           </Key>
-          <Property Name="addressID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="addressID" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="organizationID" Type="Int64" Nullable="false" />
           <Property Name="FullTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ShortTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -648,7 +666,7 @@
           <Property Name="OKPO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="directorID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="rs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="bankInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankInfo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="ks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="BIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Organization" FromRole="Organization" ToRole="Employee" />
@@ -850,7 +868,25 @@
             <End Role="Organization" EntitySet="Organization" />
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
+          <EntitySet Name="Request" EntityType="TrafficModel.Request" />
         </EntityContainer>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="RequestNumber" />
+          </Key>
+          <Property Name="RequestNumber" Type="Int64" Nullable="false" />
+          <Property Name="contractID" Type="Int64" Nullable="false" />
+          <Property Name="transportID" Type="Int64" Nullable="false" />
+          <Property Name="RequestDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sender" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Recipient" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OffloadingPlace" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NumberOfSeats" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Packing" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="SpecialNotes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1227,6 +1263,24 @@
                 <ScalarProperty Name="soecialEquipmentTime" ColumnName="soecialEquipmentTime" />
                 <ScalarProperty Name="FLMrestOnDeparture" ColumnName="FLMrestOnDeparture" />
                 <ScalarProperty Name="FLMrestOnReturn" ColumnName="FLMrestOnReturn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Request">
+            <EntityTypeMapping TypeName="TrafficModel.Request">
+              <MappingFragment StoreEntitySet="Request">
+                <ScalarProperty Name="SpecialNotes" ColumnName="SpecialNotes" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Packing" ColumnName="Packing" />
+                <ScalarProperty Name="NumberOfSeats" ColumnName="NumberOfSeats" />
+                <ScalarProperty Name="OffloadingPlace" ColumnName="OffloadingPlace" />
+                <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+                <ScalarProperty Name="Recipient" ColumnName="Recipient" />
+                <ScalarProperty Name="Sender" ColumnName="Sender" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="transportID" ColumnName="transportID" />
+                <ScalarProperty Name="contractID" ColumnName="contractID" />
+                <ScalarProperty Name="RequestNumber" ColumnName="RequestNumber" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
