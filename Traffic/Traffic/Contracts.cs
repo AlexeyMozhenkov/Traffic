@@ -15,10 +15,12 @@ namespace Traffic
     public partial class Contracts
     {
         public long contractID { get; set; }
-        public long organizationID { get; set; }
-        public string contractNumber { get; set; }
-        public Nullable<System.DateTime> contractDate { get; set; }
-        public string contractType { get; set; }
+        public long PerformerID { get; set; }
+        public long CustomerID { get; set; }
+        public string ContractNumber { get; set; }
+        public Nullable<System.DateTime> DateFrom { get; set; }
+        public Nullable<System.DateTime> DateUntil { get; set; }
+        public string Place { get; set; }
     
         public virtual ContractStreak ContractStreak { get; set; }
     }

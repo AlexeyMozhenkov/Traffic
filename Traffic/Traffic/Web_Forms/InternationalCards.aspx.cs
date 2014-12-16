@@ -9,6 +9,7 @@ namespace Traffic
 {
     public partial class InternationalCards : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -113,6 +114,38 @@ namespace Traffic
                 btn_Edit.Enabled = true;
                 btn_Delete.Enabled = true;
             }
+        }
+
+        protected void btn_Show_Click(object sender, EventArgs e)
+        {
+            List<InternationalCardClass> List = InternationalCardClass.ReadFiltered(txt_Filter.Text.ToString());
+            DataGrid.DataSource = List;
+            DataGrid.DataBind();
+
+            btn_Edit.Enabled = false;
+            btn_Delete.Enabled = false;
+            DataGrid.SelectedIndex = -1;
+        }
+
+
+        protected void rbtn_AllUsers_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_Filter.Text = string.Empty;
+            txt_Filter.Enabled = false;
+            btn_Show.Enabled = false;
+            GridDataBind();
+        }
+
+
+        protected void rbtn_Filtered_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_Filter.Enabled = true;
+            btn_Show.Enabled = true;
+        }
+
+        protected void txt_Filter_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

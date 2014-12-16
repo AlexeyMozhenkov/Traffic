@@ -7,7 +7,7 @@
     <div id="container">
         <asp:MultiView ID="mv_Main" runat="server" ActiveViewIndex="0">
             <asp:View ID="view_DataGrid" runat="server">
-                <asp:GridView ID="DataGrid" runat="server" AllowPaging="True"  DataKeyNames="organizationID"
+                <asp:GridView ID="DataGrid" runat="server" AllowPaging="True"  
                     CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="20" Width="100%" OnSelectedIndexChanged="TransportDataGrid_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
@@ -30,15 +30,15 @@
                     <asp:Label ID="lbl_Filter" runat="server" Text="Filter"></asp:Label>
                     <br />
                     <asp:RadioButton ID="rbtn_AllUsers" runat="server" AutoPostBack="True" Checked="True"
-                        GroupName="Filter" Text="All records" />
+                        GroupName="Filter" Text="All records" OnCheckedChanged="rbtn_AllUsers_CheckedChanged" />
                     <br />
                     <asp:RadioButton ID="rbtn_Filtered" runat="server" AutoPostBack="True" GroupName="Filter"
-                        Text="Name contains" />
+                        Text="Organization ID" OnCheckedChanged="rbtn_Filtered_CheckedChanged" />
                     <br />
                     <asp:TextBox ID="txt_Filter" runat="server" Width="210px" Enabled="False"></asp:TextBox>
                     <br />
                     <asp:Button ID="btn_Show" runat="server" Text="Show" Width="120px" CssClass="btnAlign"
-                        Enabled="False" />
+                        Enabled="False" OnClick="btn_Show_Click" />
                     <br />
                 </div>
                 <div id="modify">

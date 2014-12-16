@@ -13,7 +13,6 @@ namespace Traffic
             using (var db = new trafficEntities())
             {
                 var query = from o in db.Contracts
-                            orderby o.organizationID
                             select o;
                 foreach (var org in query)
                 {
@@ -22,15 +21,43 @@ namespace Traffic
             }
             return (AllItems);
         }
-        public static void Add(long contractID, long organizationID, string contractNumber, DateTime contractDate, string contractType)
+
+        public static List<Contracts> ReadFiltered(string filterString)
+        {
+            long id;
+            try
+            {
+                id = Int64.Parse(filterString);
+            }
+            catch (Exception ex)
+            {
+                id = 0;
+                //throw ex;     
+            }
+            List<Contracts> AllItems = new List<Contracts>();
+            using (var db = new trafficEntities())
+            {
+                var query = from o in db.Contracts
+                            where o.contractID == id
+                            select o;
+                foreach (var org in query)
+                {
+                    AllItems.Add(org);
+                }
+            }
+            return (AllItems);
+        }
+        public static void Add(long contractID, long PerformerID, long CustomerID, string ContractNumber, DateTime DateFrom, DateTime DateUntil, string Place)
         {
             var Item = new Contracts
             {
                 contractID = contractID,
-                organizationID = organizationID,
-                contractNumber = contractNumber,
-                contractDate = contractDate,
-                contractType = contractType
+                PerformerID = PerformerID,
+                CustomerID = CustomerID,
+                ContractNumber = ContractNumber,
+                DateFrom = DateFrom,
+                DateUntil = DateUntil,
+                Place = Place
             };
             using (var db = new trafficEntities())
             {
@@ -38,7 +65,7 @@ namespace Traffic
                 db.SaveChanges();
             }
         }
-        public static void Edit(long contractID, long organizationID, string contractNumber, DateTime contractDate, string contractType)
+        public static void Edit(long contractID, long PerformerID, long CustomerID, string ContractNumber, DateTime DateFrom, DateTime DateUntil, string Place)
         {
             using (var db = new trafficEntities())
             {
@@ -47,10 +74,12 @@ namespace Traffic
                                select o;
                 Contracts updateItem = queryOrg.First();
                 updateItem.contractID = contractID;
-                updateItem.organizationID = organizationID;
-                updateItem.contractNumber = contractNumber;
-                updateItem.contractDate = contractDate;
-                updateItem.contractType = contractType;
+                updateItem.PerformerID = PerformerID;
+                updateItem.CustomerID = CustomerID;
+                updateItem.ContractNumber = ContractNumber;
+                updateItem.DateFrom = DateFrom;
+                updateItem.DateUntil = DateUntil;
+                updateItem.Place = Place;
                 db.SaveChanges();
             }
         }

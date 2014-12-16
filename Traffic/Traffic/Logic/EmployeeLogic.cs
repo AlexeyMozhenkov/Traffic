@@ -23,6 +23,23 @@ namespace Traffic
             }
             return (AllItems);
         }
+
+        public static List<Employee> ReadFiltered(string filterString)
+        {
+            List<Employee> AllItems = new List<Employee>();
+            using (var db = new trafficEntities())
+            {
+                var query = from o in db.Employee
+                            where o.LastName.Contains(filterString)
+                            orderby o.organizationID
+                            select o;
+                foreach (var org in query)
+                {
+                    AllItems.Add(org);
+                }
+            }
+            return (AllItems);
+        }
         public static void Add(long addressID, long organizationID, string tableNumber, string FirstName, string LastName, string ParentName, DateTime BirthDay, string IDnumber, string PassportSerie, string PassportNumber, DateTime DatePassportUntil, DateTime DatePassportFrom, string position)
         {
             var Item = new Employee
@@ -88,9 +105,9 @@ namespace Traffic
 
         public static List<Employee> GetFilteredUsersInfo(string filterString)
         {
-            List<Employee> retList = new List<Employee>();
+            List<Employee> FilteredList = new List<Employee>();
 
-            string sqlQuery = string.Format("select * from Users where LastName like '%{0}%'", filterString);
+            string sqlQuery = string.Format("select * from Employee where LastName like '%{0}%'", filterString);
 
             SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
@@ -101,7 +118,7 @@ namespace Traffic
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    retList.Add(new Employee
+                    FilteredList.Add(new Employee
                     {
                         addressID = (long)dr["addressID"],
                         organizationID = (long)dr["organizationID"],
@@ -123,7 +140,7 @@ namespace Traffic
 
             _conn.Close();
 
-            return retList;
+            return FilteredList;
         }
 
     }

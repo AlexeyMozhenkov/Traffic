@@ -22,6 +22,22 @@ namespace Traffic
             }
             return (AllTransports);
         }
+        public static List<Transport> ReadFiltered(string filterString)
+        {
+            List<Transport> AllTransports = new List<Transport>();
+            using (var db = new trafficEntities())
+            {
+                var query = from t in db.Transport
+                            where t.registrationNumber.Contains(filterString)
+                            orderby t.transportID
+                            select t;
+                foreach (var tr in query)
+                {
+                    AllTransports.Add(tr);
+                }
+            }
+            return (AllTransports);
+        }
         public static void AddTransport(
             long transportID, 
             string model,

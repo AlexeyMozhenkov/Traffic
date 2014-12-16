@@ -6,7 +6,7 @@
     Font-Names="Segoe UI" Height="589px" Font-Size="Small" Width="458px" OnLoad="Page_Load" style="margin-right: 23px; margin-top: 0px">
     <asp:TableRow runat="server">
         <asp:TableCell runat="server">
-            <asp:Label ID="lbl_1" runat="server" Text="ID Контракта"></asp:Label>
+            <asp:Label ID="lbl_1" runat="server" Text="ID Договора"></asp:Label>
 
         </asp:TableCell>
 
@@ -16,14 +16,14 @@
 
         <asp:TableCell runat="server" ForeColor="#CC0000">
 
-            <asp:RequiredFieldValidator ID="vldr_1" runat="server" ErrorMessage="ID Контракта: поле не заполнено"
+            <asp:RequiredFieldValidator ID="vldr_1" runat="server" ErrorMessage="ID Договора: поле не заполнено"
                 Text="*" ControlToValidate="txt_1" Display="Static" Enabled="True"></asp:RequiredFieldValidator>
         </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow runat="server">
 
         <asp:TableCell runat="server">
-            <asp:Label ID="lbl_2" runat="server" Text="ID Организации"></asp:Label>
+            <asp:Label ID="lbl_2" runat="server" Text="Исполнитель(ID)"></asp:Label>
 
         </asp:TableCell>
 
@@ -32,13 +32,13 @@
         </asp:TableCell>
 
         <asp:TableCell runat="server" ForeColor="#CC0000">
-            <asp:RequiredFieldValidator ID="vldr_2" runat="server" ErrorMessage="ID Организации: поле не заполнено"
+            <asp:RequiredFieldValidator ID="vldr_2" runat="server" ErrorMessage="Исполнитель(ID): поле не заполнено"
                 Text="*" ControlToValidate="txt_2" Display="Static" Enabled="True"></asp:RequiredFieldValidator>
         </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow runat="server">
         <asp:TableCell runat="server">
-            <asp:Label ID="lbl_3" runat="server" Text="Номер Контракта"
+            <asp:Label ID="lbl_3" runat="server" Text="Заказчик(ID)"
                 Width="200px"></asp:Label>
 
         </asp:TableCell>
@@ -49,42 +49,80 @@
         </asp:TableCell>
 
         <asp:TableCell runat="server" ForeColor="#CC0000">
-            <asp:RequiredFieldValidator ID="vldr_3" runat="server" ErrorMessage="Номер Контракта: поле не заполнено"
+            <asp:RequiredFieldValidator ID="vldr_3" runat="server" ErrorMessage="Заказчик(ID): поле не заполнено"
                 Text="*" Display="Static" ControlToValidate="txt_3"></asp:RequiredFieldValidator>
 
         </asp:TableCell>
     </asp:TableRow>
+
     <asp:TableRow runat="server">
         <asp:TableCell runat="server">
-            <asp:Label ID="lbl_4" runat="server" Text="Дата Контракта"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Номер Договора"
+                Width="200px"></asp:Label>
 
         </asp:TableCell>
 
         <asp:TableCell runat="server">
-            <asp:TextBox ID="txt_4" runat="server" Width="200px" TextMode="Date"></asp:TextBox>
+            <asp:TextBox ID="txt_4" runat="server" Width="200px" MaxLength="50" ></asp:TextBox>
 
         </asp:TableCell>
 
         <asp:TableCell runat="server" ForeColor="#CC0000">
-            <asp:RequiredFieldValidator ID="vldr_4" runat="server" ErrorMessage="Дата Контракта: поле не заполнено"
-                ControlToValidate="txt_4" Display="Dynamic" Text="*"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Номер Договора: поле не заполнено"
+                Text="*" Display="Static" ControlToValidate="txt_4"></asp:RequiredFieldValidator>
+
+        </asp:TableCell>
+    </asp:TableRow>
+
+    <asp:TableRow runat="server">
+        <asp:TableCell runat="server">
+            <asp:Label ID="lbl_4" runat="server" Text="Дата заключения"></asp:Label>
+
+        </asp:TableCell>
+
+        <asp:TableCell runat="server">
+            <asp:TextBox ID="txt_5" runat="server" Width="200px" TextMode="Date"></asp:TextBox>
+
+        </asp:TableCell>
+
+        <asp:TableCell runat="server" ForeColor="#CC0000">
+            <asp:RequiredFieldValidator ID="vldr_4" runat="server" ErrorMessage="Дата заключения: поле не заполнено"
+                ControlToValidate="txt_5" Display="Dynamic" Text="*"></asp:RequiredFieldValidator>
+
+        </asp:TableCell>
+    </asp:TableRow>
+
+     <asp:TableRow runat="server">
+        <asp:TableCell runat="server">
+            <asp:Label ID="Label2" runat="server" Text="Срок действия"></asp:Label>
+
+        </asp:TableCell>
+
+        <asp:TableCell runat="server">
+            <asp:TextBox ID="txt_6" runat="server" Width="200px" TextMode="Date"></asp:TextBox>
+
+        </asp:TableCell>
+
+        <asp:TableCell runat="server" ForeColor="#CC0000">
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Срок действия: поле не заполнено"
+                ControlToValidate="txt_6" Display="Dynamic" Text="*"></asp:RequiredFieldValidator>
 
         </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow runat="server">
         <asp:TableCell runat="server">
-            <asp:Label ID="lbl_5" runat="server" Text="Тип Контракта"></asp:Label>
+            <asp:Label ID="lbl_5" runat="server" Text="Место заключения"></asp:Label>
 
         </asp:TableCell>
 
         <asp:TableCell runat="server">
-            <asp:TextBox ID="txt_5" runat="server" Width="200px" MaxLength="50"></asp:TextBox>
+            <asp:TextBox ID="txt_7" runat="server" Width="200px" MaxLength="50"></asp:TextBox>
 
         </asp:TableCell>
 
         <asp:TableCell runat="server" ForeColor="#CC0000">
-            <asp:RequiredFieldValidator ID="vldr_5" runat="server" ErrorMessage="Тип Контракта: поле не заполнено"
-                ControlToValidate="txt_5" Text="*"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="vldr_5" runat="server" ErrorMessage="Место заключения: поле не заполнено"
+                ControlToValidate="txt_7" Text="*"></asp:RequiredFieldValidator>
 
         </asp:TableCell>
     </asp:TableRow>

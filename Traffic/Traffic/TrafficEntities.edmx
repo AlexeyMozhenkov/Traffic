@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="trafficModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище TrafficModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accounts">
           <Key>
             <PropertyRef Name="organizationID" />
@@ -62,6 +62,22 @@
           <Property Name="flat" Type="nvarchar" MaxLength="50" />
           <Property Name="type" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Battery">
+          <Key>
+            <PropertyRef Name="batteryID" />
+          </Key>
+          <Property Name="batteryID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="factory" Type="nvarchar" MaxLength="50" />
+          <Property Name="createDate" Type="date" />
+          <Property Name="transportID" Type="bigint" Nullable="false" />
+          <Property Name="startDate" Type="nchar" MaxLength="10" />
+          <Property Name="endDate" Type="nchar" MaxLength="10" />
+          <Property Name="mileageMonth" Type="nchar" MaxLength="10" />
+          <Property Name="mileageFromStart" Type="nchar" MaxLength="10" />
+          <Property Name="status" Type="nchar" MaxLength="10" />
+          <Property Name="endReason" Type="nchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="ContactPerson">
           <Key>
             <PropertyRef Name="contactPersonID" />
@@ -105,10 +121,12 @@
             <PropertyRef Name="contractID" />
           </Key>
           <Property Name="contractID" Type="bigint" Nullable="false" />
-          <Property Name="organizationID" Type="bigint" Nullable="false" />
-          <Property Name="contractNumber" Type="nvarchar" MaxLength="50" />
-          <Property Name="contractDate" Type="datetime" />
-          <Property Name="contractType" Type="nvarchar" MaxLength="100" />
+          <Property Name="PerformerID" Type="bigint" Nullable="false" />
+          <Property Name="CustomerID" Type="bigint" Nullable="false" />
+          <Property Name="ContractNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateFrom" Type="datetime" />
+          <Property Name="DateUntil" Type="datetime" />
+          <Property Name="Place" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="ContractStreak">
           <Key>
@@ -193,7 +211,7 @@
           <Key>
             <PropertyRef Name="organizationID" />
           </Key>
-          <Property Name="addressID" Type="bigint" Nullable="false" />
+          <Property Name="addressID" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="organizationID" Type="bigint" Nullable="false" />
           <Property Name="FullTitle" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="ShortTitle" Type="nvarchar" MaxLength="50" />
@@ -201,6 +219,12 @@
           <Property Name="INN" Type="nvarchar" MaxLength="50" />
           <Property Name="KPP" Type="nvarchar" MaxLength="50" />
           <Property Name="UNP" Type="nvarchar" MaxLength="50" />
+          <Property Name="OKPO" Type="nvarchar" MaxLength="50" />
+          <Property Name="directorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="rs" Type="nvarchar" MaxLength="50" />
+          <Property Name="bankInfo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ks" Type="nvarchar" MaxLength="50" />
+          <Property Name="BIK" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Services">
           <Key>
@@ -218,16 +242,6 @@
           <Property Name="serviceID" Type="bigint" Nullable="false" />
           <Property Name="actNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="TechnicalInspection">
           <Key>
             <PropertyRef Name="transportID" />
@@ -238,6 +252,21 @@
           <Property Name="dateUntil" Type="datetime" Nullable="false" />
           <Property Name="Cost" Type="money" Nullable="false" />
           <Property Name="tax" Type="money" />
+        </EntityType>
+        <EntityType Name="Tire">
+          <Key>
+            <PropertyRef Name="TireID" />
+          </Key>
+          <Property Name="TireID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="state" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="model" Type="nvarchar" MaxLength="100" />
+          <Property Name="factoryNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="mileageNorm" Type="float" />
+          <Property Name="cost" Type="money" />
+          <Property Name="provider" Type="nvarchar" MaxLength="50" />
+          <Property Name="organizationID" Type="bigint" Nullable="false" />
+          <Property Name="MileageFromStart" Type="float" />
         </EntityType>
         <EntityType Name="Transport">
           <Key>
@@ -306,6 +335,33 @@
           <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Waybills">
+          <Key>
+            <PropertyRef Name="waybillID" />
+          </Key>
+          <Property Name="waybillID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="waybillNumber" Type="int" />
+          <Property Name="creationDate" Type="date" />
+          <Property Name="carrierID" Type="bigint" />
+          <Property Name="carID" Type="bigint" />
+          <Property Name="trailerID" Type="int" />
+          <Property Name="driversTableNumber" Type="int" />
+          <Property Name="speedometerOnDeparture" Type="float" />
+          <Property Name="speedometerOnReturn" Type="float" />
+          <Property Name="departureDateShedule" Type="date" />
+          <Property Name="departureTimeShedule" Type="time" Precision="7" />
+          <Property Name="departureDateFact" Type="date" />
+          <Property Name="departureTimeFact" Type="time" Precision="7" />
+          <Property Name="returnDateShedule" Type="date" />
+          <Property Name="returnTimeShedule" Type="time" Precision="7" />
+          <Property Name="returnDateFact" Type="date" />
+          <Property Name="returnTimeFact" Type="time" Precision="7" />
+          <Property Name="zeroMileage" Type="float" />
+          <Property Name="engineTime" Type="float" />
+          <Property Name="soecialEquipmentTime" Type="float" />
+          <Property Name="FLMrestOnDeparture" Type="float" />
+          <Property Name="FLMrestOnReturn" Type="float" />
+        </EntityType>
         <Association Name="FK_ContractStreak_Contracts">
           <End Role="Contracts" Type="Self.Contracts" Multiplicity="1" />
           <End Role="ContractStreak" Type="Self.ContractStreak" Multiplicity="0..1" />
@@ -330,12 +386,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="trafficModelStoreContainer">
+        <EntityContainer Name="Хранилище TrafficModelContainer">
           <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Act" EntityType="Self.Act" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ActPersons" EntityType="Self.ActPersons" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ActTransportation" EntityType="Self.ActTransportation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Battery" EntityType="Self.Battery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ContactPerson" EntityType="Self.ContactPerson" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="contractMaterialLiability" EntityType="Self.contractMaterialLiability" Schema="dbo" store:Type="Tables" />
@@ -350,13 +407,14 @@
           <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ServicesActs" EntityType="Self.ServicesActs" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TechnicalInspection" EntityType="Self.TechnicalInspection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tire" EntityType="Self.Tire" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transport" EntityType="Self.Transport" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="transportStateReport" EntityType="Self.transportStateReport" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Trips" EntityType="Self.Trips" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeCost" EntityType="Self.TypeCost" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Waybills" EntityType="Self.Waybills" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ContractStreak_Contracts" Association="Self.FK_ContractStreak_Contracts">
             <End Role="Contracts" EntitySet="Contracts" />
             <End Role="ContractStreak" EntitySet="ContractStreak" />
@@ -369,7 +427,7 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="trafficModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="TrafficModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Accounts">
           <Key>
             <PropertyRef Name="organizationID" />
@@ -427,6 +485,22 @@
           <Property Name="flat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Battery">
+          <Key>
+            <PropertyRef Name="batteryID" />
+          </Key>
+          <Property Name="batteryID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="factory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="createDate" Type="DateTime" Precision="0" />
+          <Property Name="transportID" Type="Int64" Nullable="false" />
+          <Property Name="startDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="endDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="mileageMonth" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="mileageFromStart" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="endReason" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
         <EntityType Name="ContactPerson">
           <Key>
             <PropertyRef Name="contactPersonID" />
@@ -470,11 +544,13 @@
             <PropertyRef Name="contractID" />
           </Key>
           <Property Name="contractID" Type="Int64" Nullable="false" />
-          <Property Name="organizationID" Type="Int64" Nullable="false" />
-          <Property Name="contractNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="contractDate" Type="DateTime" Precision="3" />
-          <Property Name="contractType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ContractStreak" Relationship="Self.FK_ContractStreak_Contracts" FromRole="Contracts" ToRole="ContractStreak" />
+          <Property Name="PerformerID" Type="Int64" Nullable="false" />
+          <Property Name="CustomerID" Type="Int64" Nullable="false" />
+          <Property Name="ContractNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateFrom" Type="DateTime" Precision="3" />
+          <Property Name="DateUntil" Type="DateTime" Precision="3" />
+          <Property Name="Place" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ContractStreak">
           <Key>
@@ -561,7 +637,7 @@
           <Key>
             <PropertyRef Name="organizationID" />
           </Key>
-          <Property Name="addressID" Type="Int64" Nullable="false" />
+          <Property Name="addressID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="organizationID" Type="Int64" Nullable="false" />
           <Property Name="FullTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ShortTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -569,6 +645,12 @@
           <Property Name="INN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KPP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UNP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OKPO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="directorID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="rs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bankInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Organization" FromRole="Organization" ToRole="Employee" />
         </EntityType>
         <EntityType Name="Services">
@@ -587,16 +669,6 @@
           <Property Name="serviceID" Type="Int64" Nullable="false" />
           <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="TechnicalInspection">
           <Key>
             <PropertyRef Name="transportID" />
@@ -607,6 +679,21 @@
           <Property Name="dateUntil" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="tax" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Tire">
+          <Key>
+            <PropertyRef Name="TireID" />
+          </Key>
+          <Property Name="TireID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="state" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="factoryNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mileageNorm" Type="Double" />
+          <Property Name="cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="provider" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="MileageFromStart" Type="Double" />
         </EntityType>
         <EntityType Name="Transport">
           <Key>
@@ -675,6 +762,33 @@
           <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityType Name="Waybills">
+          <Key>
+            <PropertyRef Name="waybillID" />
+          </Key>
+          <Property Name="waybillID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="waybillNumber" Type="Int32" />
+          <Property Name="creationDate" Type="DateTime" Precision="0" />
+          <Property Name="carrierID" Type="Int64" />
+          <Property Name="carID" Type="Int64" />
+          <Property Name="trailerID" Type="Int32" />
+          <Property Name="driversTableNumber" Type="Int32" />
+          <Property Name="speedometerOnDeparture" Type="Double" />
+          <Property Name="speedometerOnReturn" Type="Double" />
+          <Property Name="departureDateShedule" Type="DateTime" Precision="0" />
+          <Property Name="departureTimeShedule" Type="Time" Precision="7" />
+          <Property Name="departureDateFact" Type="DateTime" Precision="0" />
+          <Property Name="departureTimeFact" Type="Time" Precision="7" />
+          <Property Name="returnDateShedule" Type="DateTime" Precision="0" />
+          <Property Name="returnTimeShedule" Type="Time" Precision="7" />
+          <Property Name="returnDateFact" Type="DateTime" Precision="0" />
+          <Property Name="returnTimeFact" Type="Time" Precision="7" />
+          <Property Name="zeroMileage" Type="Double" />
+          <Property Name="engineTime" Type="Double" />
+          <Property Name="soecialEquipmentTime" Type="Double" />
+          <Property Name="FLMrestOnDeparture" Type="Double" />
+          <Property Name="FLMrestOnReturn" Type="Double" />
+        </EntityType>
         <Association Name="FK_ContractStreak_Contracts">
           <End Role="Contracts" Type="Self.Contracts" Multiplicity="1" />
           <End Role="ContractStreak" Type="Self.ContractStreak" Multiplicity="0..1" />
@@ -705,6 +819,7 @@
           <EntitySet Name="ActPersons" EntityType="Self.ActPersons" />
           <EntitySet Name="ActTransportation" EntityType="Self.ActTransportation" />
           <EntitySet Name="Address" EntityType="Self.Address" />
+          <EntitySet Name="Battery" EntityType="Self.Battery" />
           <EntitySet Name="ContactPerson" EntityType="Self.ContactPerson" />
           <EntitySet Name="Contacts" EntityType="Self.Contacts" />
           <EntitySet Name="contractMaterialLiability" EntityType="Self.contractMaterialLiability" />
@@ -719,13 +834,14 @@
           <EntitySet Name="Organization" EntityType="Self.Organization" />
           <EntitySet Name="Services" EntityType="Self.Services" />
           <EntitySet Name="ServicesActs" EntityType="Self.ServicesActs" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="TechnicalInspection" EntityType="Self.TechnicalInspection" />
+          <EntitySet Name="Tire" EntityType="Self.Tire" />
           <EntitySet Name="Transport" EntityType="Self.Transport" />
           <EntitySet Name="transportStateReport" EntityType="Self.transportStateReport" />
           <EntitySet Name="Trips" EntityType="Self.Trips" />
           <EntitySet Name="TypeCost" EntityType="Self.TypeCost" />
           <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="Waybills" EntityType="Self.Waybills" />
           <AssociationSet Name="FK_ContractStreak_Contracts" Association="Self.FK_ContractStreak_Contracts">
             <End Role="Contracts" EntitySet="Contracts" />
             <End Role="ContractStreak" EntitySet="ContractStreak" />
@@ -740,9 +856,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="trafficModelStoreContainer" CdmEntityContainer="trafficEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище TrafficModelContainer" CdmEntityContainer="trafficEntities">
           <EntitySetMapping Name="Accounts">
-            <EntityTypeMapping TypeName="trafficModel.Accounts">
+            <EntityTypeMapping TypeName="TrafficModel.Accounts">
               <MappingFragment StoreEntitySet="Accounts">
                 <ScalarProperty Name="organizationID" ColumnName="organizationID" />
                 <ScalarProperty Name="accountInfo" ColumnName="accountInfo" />
@@ -750,7 +866,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Act">
-            <EntityTypeMapping TypeName="trafficModel.Act">
+            <EntityTypeMapping TypeName="TrafficModel.Act">
               <MappingFragment StoreEntitySet="Act">
                 <ScalarProperty Name="contractID" ColumnName="contractID" />
                 <ScalarProperty Name="actNumber" ColumnName="actNumber" />
@@ -760,7 +876,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ActPersons">
-            <EntityTypeMapping TypeName="trafficModel.ActPersons">
+            <EntityTypeMapping TypeName="TrafficModel.ActPersons">
               <MappingFragment StoreEntitySet="ActPersons">
                 <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
                 <ScalarProperty Name="contractID" ColumnName="contractID" />
@@ -771,7 +887,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ActTransportation">
-            <EntityTypeMapping TypeName="trafficModel.ActTransportation">
+            <EntityTypeMapping TypeName="TrafficModel.ActTransportation">
               <MappingFragment StoreEntitySet="ActTransportation">
                 <ScalarProperty Name="addressID" ColumnName="addressID" />
                 <ScalarProperty Name="contractID" ColumnName="contractID" />
@@ -783,7 +899,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Address">
-            <EntityTypeMapping TypeName="trafficModel.Address">
+            <EntityTypeMapping TypeName="TrafficModel.Address">
               <MappingFragment StoreEntitySet="Address">
                 <ScalarProperty Name="addressID" ColumnName="addressID" />
                 <ScalarProperty Name="index" ColumnName="index" />
@@ -798,8 +914,25 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Battery">
+            <EntityTypeMapping TypeName="TrafficModel.Battery">
+              <MappingFragment StoreEntitySet="Battery">
+                <ScalarProperty Name="batteryID" ColumnName="batteryID" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="factory" ColumnName="factory" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="transportID" ColumnName="transportID" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="mileageMonth" ColumnName="mileageMonth" />
+                <ScalarProperty Name="mileageFromStart" ColumnName="mileageFromStart" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="endReason" ColumnName="endReason" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ContactPerson">
-            <EntityTypeMapping TypeName="trafficModel.ContactPerson">
+            <EntityTypeMapping TypeName="TrafficModel.ContactPerson">
               <MappingFragment StoreEntitySet="ContactPerson">
                 <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
                 <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -810,7 +943,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Contacts">
-            <EntityTypeMapping TypeName="trafficModel.Contacts">
+            <EntityTypeMapping TypeName="TrafficModel.Contacts">
               <MappingFragment StoreEntitySet="Contacts">
                 <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
                 <ScalarProperty Name="contactType" ColumnName="contactType" />
@@ -819,7 +952,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="contractMaterialLiability">
-            <EntityTypeMapping TypeName="trafficModel.contractMaterialLiability">
+            <EntityTypeMapping TypeName="TrafficModel.contractMaterialLiability">
               <MappingFragment StoreEntitySet="contractMaterialLiability">
                 <ScalarProperty Name="contractID" ColumnName="contractID" />
                 <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -829,7 +962,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ContractPersons">
-            <EntityTypeMapping TypeName="trafficModel.ContractPersons">
+            <EntityTypeMapping TypeName="TrafficModel.ContractPersons">
               <MappingFragment StoreEntitySet="ContractPersons">
                 <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
                 <ScalarProperty Name="contractID" ColumnName="contractID" />
@@ -839,18 +972,20 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Contracts">
-            <EntityTypeMapping TypeName="trafficModel.Contracts">
+            <EntityTypeMapping TypeName="TrafficModel.Contracts">
               <MappingFragment StoreEntitySet="Contracts">
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="DateUntil" ColumnName="DateUntil" />
+                <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="PerformerID" ColumnName="PerformerID" />
                 <ScalarProperty Name="contractID" ColumnName="contractID" />
-                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
-                <ScalarProperty Name="contractNumber" ColumnName="contractNumber" />
-                <ScalarProperty Name="contractDate" ColumnName="contractDate" />
-                <ScalarProperty Name="contractType" ColumnName="contractType" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ContractStreak">
-            <EntityTypeMapping TypeName="trafficModel.ContractStreak">
+            <EntityTypeMapping TypeName="TrafficModel.ContractStreak">
               <MappingFragment StoreEntitySet="ContractStreak">
                 <ScalarProperty Name="contractID" ColumnName="contractID" />
                 <ScalarProperty Name="contractDateFrom" ColumnName="contractDateFrom" />
@@ -860,7 +995,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ContractTransportation">
-            <EntityTypeMapping TypeName="trafficModel.ContractTransportation">
+            <EntityTypeMapping TypeName="TrafficModel.ContractTransportation">
               <MappingFragment StoreEntitySet="ContractTransportation">
                 <ScalarProperty Name="contractID" ColumnName="contractID" />
                 <ScalarProperty Name="contractDateUntil" ColumnName="contractDateUntil" />
@@ -868,7 +1003,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DrivingLicence">
-            <EntityTypeMapping TypeName="trafficModel.DrivingLicence">
+            <EntityTypeMapping TypeName="TrafficModel.DrivingLicence">
               <MappingFragment StoreEntitySet="DrivingLicence">
                 <ScalarProperty Name="licenceNumber" ColumnName="licenceNumber" />
                 <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -889,7 +1024,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employee">
-            <EntityTypeMapping TypeName="trafficModel.Employee">
+            <EntityTypeMapping TypeName="TrafficModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
                 <ScalarProperty Name="addressID" ColumnName="addressID" />
                 <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -908,7 +1043,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="InternationalCard">
-            <EntityTypeMapping TypeName="trafficModel.InternationalCard">
+            <EntityTypeMapping TypeName="TrafficModel.InternationalCard">
               <MappingFragment StoreEntitySet="InternationalCard">
                 <ScalarProperty Name="registrationID" ColumnName="registrationID" />
                 <ScalarProperty Name="approvalCert" ColumnName="approvalCert" />
@@ -920,7 +1055,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Maintenance">
-            <EntityTypeMapping TypeName="trafficModel.Maintenance">
+            <EntityTypeMapping TypeName="TrafficModel.Maintenance">
               <MappingFragment StoreEntitySet="Maintenance">
                 <ScalarProperty Name="maintenanceID" ColumnName="maintenanceID" />
                 <ScalarProperty Name="transportID" ColumnName="transportID" />
@@ -932,7 +1067,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Organization">
-            <EntityTypeMapping TypeName="trafficModel.Organization">
+            <EntityTypeMapping TypeName="TrafficModel.Organization">
               <MappingFragment StoreEntitySet="Organization">
                 <ScalarProperty Name="addressID" ColumnName="addressID" />
                 <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -942,11 +1077,17 @@
                 <ScalarProperty Name="INN" ColumnName="INN" />
                 <ScalarProperty Name="KPP" ColumnName="KPP" />
                 <ScalarProperty Name="UNP" ColumnName="UNP" />
+                <ScalarProperty Name="OKPO" ColumnName="OKPO" />
+                <ScalarProperty Name="directorID" ColumnName="directorID" />
+                <ScalarProperty Name="rs" ColumnName="rs" />
+                <ScalarProperty Name="bankInfo" ColumnName="bankInfo" />
+                <ScalarProperty Name="ks" ColumnName="ks" />
+                <ScalarProperty Name="BIK" ColumnName="BIK" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Services">
-            <EntityTypeMapping TypeName="trafficModel.Services">
+            <EntityTypeMapping TypeName="TrafficModel.Services">
               <MappingFragment StoreEntitySet="Services">
                 <ScalarProperty Name="serviceID" ColumnName="serviceID" />
                 <ScalarProperty Name="price" ColumnName="price" />
@@ -954,7 +1095,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ServicesActs">
-            <EntityTypeMapping TypeName="trafficModel.ServicesActs">
+            <EntityTypeMapping TypeName="TrafficModel.ServicesActs">
               <MappingFragment StoreEntitySet="ServicesActs">
                 <ScalarProperty Name="contractID" ColumnName="contractID" />
                 <ScalarProperty Name="serviceID" ColumnName="serviceID" />
@@ -962,19 +1103,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="trafficModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TechnicalInspection">
-            <EntityTypeMapping TypeName="trafficModel.TechnicalInspection">
+            <EntityTypeMapping TypeName="TrafficModel.TechnicalInspection">
               <MappingFragment StoreEntitySet="TechnicalInspection">
                 <ScalarProperty Name="transportID" ColumnName="transportID" />
                 <ScalarProperty Name="dateFrom" ColumnName="dateFrom" />
@@ -984,8 +1114,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Tire">
+            <EntityTypeMapping TypeName="TrafficModel.Tire">
+              <MappingFragment StoreEntitySet="Tire">
+                <ScalarProperty Name="TireID" ColumnName="TireID" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="factoryNumber" ColumnName="factoryNumber" />
+                <ScalarProperty Name="mileageNorm" ColumnName="mileageNorm" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="provider" ColumnName="provider" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="MileageFromStart" ColumnName="MileageFromStart" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Transport">
-            <EntityTypeMapping TypeName="trafficModel.Transport">
+            <EntityTypeMapping TypeName="TrafficModel.Transport">
               <MappingFragment StoreEntitySet="Transport">
                 <ScalarProperty Name="transportID" ColumnName="transportID" />
                 <ScalarProperty Name="model" ColumnName="model" />
@@ -1003,7 +1149,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="transportStateReport">
-            <EntityTypeMapping TypeName="trafficModel.transportStateReport">
+            <EntityTypeMapping TypeName="TrafficModel.transportStateReport">
               <MappingFragment StoreEntitySet="transportStateReport">
                 <ScalarProperty Name="reportID" ColumnName="reportID" />
                 <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -1017,7 +1163,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Trips">
-            <EntityTypeMapping TypeName="trafficModel.Trips">
+            <EntityTypeMapping TypeName="TrafficModel.Trips">
               <MappingFragment StoreEntitySet="Trips">
                 <ScalarProperty Name="tripID" ColumnName="tripID" />
                 <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -1037,7 +1183,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TypeCost">
-            <EntityTypeMapping TypeName="trafficModel.TypeCost">
+            <EntityTypeMapping TypeName="TrafficModel.TypeCost">
               <MappingFragment StoreEntitySet="TypeCost">
                 <ScalarProperty Name="typeCostID" ColumnName="typeCostID" />
                 <ScalarProperty Name="typeCostName" ColumnName="typeCostName" />
@@ -1047,12 +1193,40 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="trafficModel.Users">
+            <EntityTypeMapping TypeName="TrafficModel.Users">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="organizationID" ColumnName="organizationID" />
                 <ScalarProperty Name="userID" ColumnName="userID" />
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Waybills">
+            <EntityTypeMapping TypeName="TrafficModel.Waybills">
+              <MappingFragment StoreEntitySet="Waybills">
+                <ScalarProperty Name="waybillID" ColumnName="waybillID" />
+                <ScalarProperty Name="waybillNumber" ColumnName="waybillNumber" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+                <ScalarProperty Name="carrierID" ColumnName="carrierID" />
+                <ScalarProperty Name="carID" ColumnName="carID" />
+                <ScalarProperty Name="trailerID" ColumnName="trailerID" />
+                <ScalarProperty Name="driversTableNumber" ColumnName="driversTableNumber" />
+                <ScalarProperty Name="speedometerOnDeparture" ColumnName="speedometerOnDeparture" />
+                <ScalarProperty Name="speedometerOnReturn" ColumnName="speedometerOnReturn" />
+                <ScalarProperty Name="departureDateShedule" ColumnName="departureDateShedule" />
+                <ScalarProperty Name="departureTimeShedule" ColumnName="departureTimeShedule" />
+                <ScalarProperty Name="departureDateFact" ColumnName="departureDateFact" />
+                <ScalarProperty Name="departureTimeFact" ColumnName="departureTimeFact" />
+                <ScalarProperty Name="returnDateShedule" ColumnName="returnDateShedule" />
+                <ScalarProperty Name="returnTimeShedule" ColumnName="returnTimeShedule" />
+                <ScalarProperty Name="returnDateFact" ColumnName="returnDateFact" />
+                <ScalarProperty Name="returnTimeFact" ColumnName="returnTimeFact" />
+                <ScalarProperty Name="zeroMileage" ColumnName="zeroMileage" />
+                <ScalarProperty Name="engineTime" ColumnName="engineTime" />
+                <ScalarProperty Name="soecialEquipmentTime" ColumnName="soecialEquipmentTime" />
+                <ScalarProperty Name="FLMrestOnDeparture" ColumnName="FLMrestOnDeparture" />
+                <ScalarProperty Name="FLMrestOnReturn" ColumnName="FLMrestOnReturn" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1073,7 +1247,7 @@
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

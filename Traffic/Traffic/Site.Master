@@ -15,16 +15,7 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-    <style type="text/css">
-        .auto-style1 {
-            font-size: medium;
-        }
-        .auto-style2 {
-            font-weight: normal;
-        }
-    </style>
-
-</head>
+    </head>
 <body>
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -80,11 +71,6 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p class="auto-style1"><b class="auto-style2">&copy; <%: DateTime.Now.Year %> - <span>
-                    &quot;Учет автотранспорта&quot; 2014</span></b></p>
-            </footer>
         </div>
     </form>
 </body>

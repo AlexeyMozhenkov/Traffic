@@ -14,7 +14,7 @@ namespace Traffic
             if (!IsPostBack)
             {
                 GridDataBind();
-                rbtn_AllUsers.Checked = true;
+                //rbtn_AllUsers.Checked = true;
                 btn_Edit.Enabled = false;
                 btn_Delete.Enabled = false;
                 DataGrid.SelectedIndex = -1;

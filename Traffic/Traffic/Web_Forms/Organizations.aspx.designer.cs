@@ -112,6 +112,15 @@ namespace Traffic {
         protected global::System.Web.UI.WebControls.Button btn_Delete;
         
         /// <summary>
+        /// btn_GetFile элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_GetFile;
+        
+        /// <summary>
         /// view_Detailed элемент управления.
         /// </summary>
         /// <remarks>

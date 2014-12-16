@@ -22,6 +22,33 @@ namespace Traffic
             }
             return (All);
         }
+
+        public static List<transportStateReport> ReadFiltered(string filterString)
+        {
+            long id;
+            try
+            {
+                id = Int64.Parse(filterString);
+            }
+            catch (Exception ex)
+            {
+                id = 0;
+                //throw ex;     
+            }
+            List<transportStateReport> All = new List<transportStateReport>();
+            using (var db = new trafficEntities())
+            {
+                var query = from tc in db.transportStateReport
+                            where tc.organizationID == id
+                            orderby tc.reportID
+                            select tc;
+                foreach (var tc in query)
+                {
+                    All.Add(tc);
+                }
+            }
+            return (All);
+        }
         public static void AddReport( long organizationID, long? routeID, long transportID, long tableNumber, string status, string notes, string location)
         {
             var Item = new transportStateReport {

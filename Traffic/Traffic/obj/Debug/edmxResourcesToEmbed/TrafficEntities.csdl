@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="trafficModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="TrafficModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Accounts">
     <Key>
       <PropertyRef Name="organizationID" />
@@ -57,6 +57,22 @@
     <Property Name="flat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="Battery">
+    <Key>
+      <PropertyRef Name="batteryID" />
+    </Key>
+    <Property Name="batteryID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="factory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createDate" Type="DateTime" Precision="0" />
+    <Property Name="transportID" Type="Int64" Nullable="false" />
+    <Property Name="startDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="endDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="mileageMonth" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="mileageFromStart" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="endReason" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
   <EntityType Name="ContactPerson">
     <Key>
       <PropertyRef Name="contactPersonID" />
@@ -100,11 +116,13 @@
       <PropertyRef Name="contractID" />
     </Key>
     <Property Name="contractID" Type="Int64" Nullable="false" />
-    <Property Name="organizationID" Type="Int64" Nullable="false" />
-    <Property Name="contractNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="contractDate" Type="DateTime" Precision="3" />
-    <Property Name="contractType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ContractStreak" Relationship="Self.FK_ContractStreak_Contracts" FromRole="Contracts" ToRole="ContractStreak" />
+    <Property Name="PerformerID" Type="Int64" Nullable="false" />
+    <Property Name="CustomerID" Type="Int64" Nullable="false" />
+    <Property Name="ContractNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateFrom" Type="DateTime" Precision="3" />
+    <Property Name="DateUntil" Type="DateTime" Precision="3" />
+    <Property Name="Place" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="ContractStreak">
     <Key>
@@ -191,7 +209,7 @@
     <Key>
       <PropertyRef Name="organizationID" />
     </Key>
-    <Property Name="addressID" Type="Int64" Nullable="false" />
+    <Property Name="addressID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="organizationID" Type="Int64" Nullable="false" />
     <Property Name="FullTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="ShortTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -199,6 +217,12 @@
     <Property Name="INN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="KPP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="UNP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OKPO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="directorID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="rs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bankInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Organization" FromRole="Organization" ToRole="Employee" />
   </EntityType>
   <EntityType Name="Services">
@@ -217,16 +241,6 @@
     <Property Name="serviceID" Type="Int64" Nullable="false" />
     <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="TechnicalInspection">
     <Key>
       <PropertyRef Name="transportID" />
@@ -237,6 +251,21 @@
     <Property Name="dateUntil" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="tax" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Tire">
+    <Key>
+      <PropertyRef Name="TireID" />
+    </Key>
+    <Property Name="TireID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="state" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="factoryNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mileageNorm" Type="Double" />
+    <Property Name="cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="provider" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="MileageFromStart" Type="Double" />
   </EntityType>
   <EntityType Name="Transport">
     <Key>
@@ -305,6 +334,33 @@
     <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
+  <EntityType Name="Waybills">
+    <Key>
+      <PropertyRef Name="waybillID" />
+    </Key>
+    <Property Name="waybillID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="waybillNumber" Type="Int32" />
+    <Property Name="creationDate" Type="DateTime" Precision="0" />
+    <Property Name="carrierID" Type="Int64" />
+    <Property Name="carID" Type="Int64" />
+    <Property Name="trailerID" Type="Int32" />
+    <Property Name="driversTableNumber" Type="Int32" />
+    <Property Name="speedometerOnDeparture" Type="Double" />
+    <Property Name="speedometerOnReturn" Type="Double" />
+    <Property Name="departureDateShedule" Type="DateTime" Precision="0" />
+    <Property Name="departureTimeShedule" Type="Time" Precision="7" />
+    <Property Name="departureDateFact" Type="DateTime" Precision="0" />
+    <Property Name="departureTimeFact" Type="Time" Precision="7" />
+    <Property Name="returnDateShedule" Type="DateTime" Precision="0" />
+    <Property Name="returnTimeShedule" Type="Time" Precision="7" />
+    <Property Name="returnDateFact" Type="DateTime" Precision="0" />
+    <Property Name="returnTimeFact" Type="Time" Precision="7" />
+    <Property Name="zeroMileage" Type="Double" />
+    <Property Name="engineTime" Type="Double" />
+    <Property Name="soecialEquipmentTime" Type="Double" />
+    <Property Name="FLMrestOnDeparture" Type="Double" />
+    <Property Name="FLMrestOnReturn" Type="Double" />
+  </EntityType>
   <Association Name="FK_ContractStreak_Contracts">
     <End Role="Contracts" Type="Self.Contracts" Multiplicity="1" />
     <End Role="ContractStreak" Type="Self.ContractStreak" Multiplicity="0..1" />
@@ -335,6 +391,7 @@
     <EntitySet Name="ActPersons" EntityType="Self.ActPersons" />
     <EntitySet Name="ActTransportation" EntityType="Self.ActTransportation" />
     <EntitySet Name="Address" EntityType="Self.Address" />
+    <EntitySet Name="Battery" EntityType="Self.Battery" />
     <EntitySet Name="ContactPerson" EntityType="Self.ContactPerson" />
     <EntitySet Name="Contacts" EntityType="Self.Contacts" />
     <EntitySet Name="contractMaterialLiability" EntityType="Self.contractMaterialLiability" />
@@ -349,13 +406,14 @@
     <EntitySet Name="Organization" EntityType="Self.Organization" />
     <EntitySet Name="Services" EntityType="Self.Services" />
     <EntitySet Name="ServicesActs" EntityType="Self.ServicesActs" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="TechnicalInspection" EntityType="Self.TechnicalInspection" />
+    <EntitySet Name="Tire" EntityType="Self.Tire" />
     <EntitySet Name="Transport" EntityType="Self.Transport" />
     <EntitySet Name="transportStateReport" EntityType="Self.transportStateReport" />
     <EntitySet Name="Trips" EntityType="Self.Trips" />
     <EntitySet Name="TypeCost" EntityType="Self.TypeCost" />
     <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="Waybills" EntityType="Self.Waybills" />
     <AssociationSet Name="FK_ContractStreak_Contracts" Association="Self.FK_ContractStreak_Contracts">
       <End Role="Contracts" EntitySet="Contracts" />
       <End Role="ContractStreak" EntitySet="ContractStreak" />

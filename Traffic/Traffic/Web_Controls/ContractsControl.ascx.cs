@@ -47,39 +47,64 @@ namespace Traffic
                 txt_2.Text = value.ToString();
             }
         }
-        public string par_3
+        public long par_3
         {
             get
             {
-                return txt_3.Text;
+                return long.Parse(txt_3.Text);
             }
             set
             {
-                txt_3.Text = value;
+                txt_3.Text = value.ToString();
             }
         }
 
-        public DateTime par_4
+        public string par_4
         {
             get
             {
-                return DateTime.Parse(txt_4.Text);
+                return txt_4.Text;
+            }
+            set
+            {
+                txt_4.Text = value;
+            }
+        }
+
+        public DateTime par_5
+        {
+            get
+            {
+                return DateTime.Parse(txt_5.Text);
             }
             set
             {
 
-                txt_4.Text = value.ToString("yyyy-MM-dd");
+                txt_5.Text = value.ToString("yyyy-MM-dd");
             }
         }
-        public string par_5
+
+        public DateTime par_6
         {
             get
             {
-                return txt_5.Text;
+                return DateTime.Parse(txt_6.Text);
             }
             set
             {
-                txt_5.Text = value;
+
+                txt_6.Text = value.ToString("yyyy-MM-dd");
+            }
+        }
+        public string par_7
+        {
+            get
+            {
+                return txt_7.Text;
+            }
+            set
+            {
+                txt_7.Text = value;
             }
         }
 
@@ -95,13 +120,15 @@ namespace Traffic
             }
             if (ViewState["EditID"] != null)
                 txt_1.Text = ViewState["EditID"].ToString();
-            _txtFields = new List<TextBox>(8)
+            _txtFields = new List<TextBox>(7)
             {
                 txt_1,
                 txt_2,
                 txt_3,
                 txt_4,
-                txt_5
+                txt_5,
+                txt_6,
+                txt_7
             };
 
 
@@ -149,7 +176,9 @@ namespace Traffic
                         par_2,
                         par_3,
                         par_4,
-                        par_5
+                        par_5,
+                        par_6,
+                        par_7
                         );
                 }
                 catch (ArgumentNullException)
@@ -164,7 +193,9 @@ namespace Traffic
                         par_2,
                         par_3,
                         par_4,
-                        par_5
+                        par_5,
+                        par_6,
+                        par_7
                         );
                 }
                 catch (ArgumentNullException)

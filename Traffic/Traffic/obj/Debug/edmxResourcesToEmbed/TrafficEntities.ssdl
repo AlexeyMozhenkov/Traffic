@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="trafficModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Хранилище TrafficModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Accounts">
     <Key>
       <PropertyRef Name="organizationID" />
@@ -57,6 +57,22 @@
     <Property Name="flat" Type="nvarchar" MaxLength="50" />
     <Property Name="type" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="Battery">
+    <Key>
+      <PropertyRef Name="batteryID" />
+    </Key>
+    <Property Name="batteryID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="factory" Type="nvarchar" MaxLength="50" />
+    <Property Name="createDate" Type="date" />
+    <Property Name="transportID" Type="bigint" Nullable="false" />
+    <Property Name="startDate" Type="nchar" MaxLength="10" />
+    <Property Name="endDate" Type="nchar" MaxLength="10" />
+    <Property Name="mileageMonth" Type="nchar" MaxLength="10" />
+    <Property Name="mileageFromStart" Type="nchar" MaxLength="10" />
+    <Property Name="status" Type="nchar" MaxLength="10" />
+    <Property Name="endReason" Type="nchar" MaxLength="10" />
+  </EntityType>
   <EntityType Name="ContactPerson">
     <Key>
       <PropertyRef Name="contactPersonID" />
@@ -100,10 +116,12 @@
       <PropertyRef Name="contractID" />
     </Key>
     <Property Name="contractID" Type="bigint" Nullable="false" />
-    <Property Name="organizationID" Type="bigint" Nullable="false" />
-    <Property Name="contractNumber" Type="nvarchar" MaxLength="50" />
-    <Property Name="contractDate" Type="datetime" />
-    <Property Name="contractType" Type="nvarchar" MaxLength="100" />
+    <Property Name="PerformerID" Type="bigint" Nullable="false" />
+    <Property Name="CustomerID" Type="bigint" Nullable="false" />
+    <Property Name="ContractNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateFrom" Type="datetime" />
+    <Property Name="DateUntil" Type="datetime" />
+    <Property Name="Place" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="ContractStreak">
     <Key>
@@ -188,7 +206,7 @@
     <Key>
       <PropertyRef Name="organizationID" />
     </Key>
-    <Property Name="addressID" Type="bigint" Nullable="false" />
+    <Property Name="addressID" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="organizationID" Type="bigint" Nullable="false" />
     <Property Name="FullTitle" Type="nvarchar" MaxLength="150" Nullable="false" />
     <Property Name="ShortTitle" Type="nvarchar" MaxLength="50" />
@@ -196,6 +214,12 @@
     <Property Name="INN" Type="nvarchar" MaxLength="50" />
     <Property Name="KPP" Type="nvarchar" MaxLength="50" />
     <Property Name="UNP" Type="nvarchar" MaxLength="50" />
+    <Property Name="OKPO" Type="nvarchar" MaxLength="50" />
+    <Property Name="directorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="rs" Type="nvarchar" MaxLength="50" />
+    <Property Name="bankInfo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ks" Type="nvarchar" MaxLength="50" />
+    <Property Name="BIK" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Services">
     <Key>
@@ -213,16 +237,6 @@
     <Property Name="serviceID" Type="bigint" Nullable="false" />
     <Property Name="actNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="TechnicalInspection">
     <Key>
       <PropertyRef Name="transportID" />
@@ -233,6 +247,21 @@
     <Property Name="dateUntil" Type="datetime" Nullable="false" />
     <Property Name="Cost" Type="money" Nullable="false" />
     <Property Name="tax" Type="money" />
+  </EntityType>
+  <EntityType Name="Tire">
+    <Key>
+      <PropertyRef Name="TireID" />
+    </Key>
+    <Property Name="TireID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="state" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="model" Type="nvarchar" MaxLength="100" />
+    <Property Name="factoryNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="mileageNorm" Type="float" />
+    <Property Name="cost" Type="money" />
+    <Property Name="provider" Type="nvarchar" MaxLength="50" />
+    <Property Name="organizationID" Type="bigint" Nullable="false" />
+    <Property Name="MileageFromStart" Type="float" />
   </EntityType>
   <EntityType Name="Transport">
     <Key>
@@ -301,6 +330,33 @@
     <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="Waybills">
+    <Key>
+      <PropertyRef Name="waybillID" />
+    </Key>
+    <Property Name="waybillID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="waybillNumber" Type="int" />
+    <Property Name="creationDate" Type="date" />
+    <Property Name="carrierID" Type="bigint" />
+    <Property Name="carID" Type="bigint" />
+    <Property Name="trailerID" Type="int" />
+    <Property Name="driversTableNumber" Type="int" />
+    <Property Name="speedometerOnDeparture" Type="float" />
+    <Property Name="speedometerOnReturn" Type="float" />
+    <Property Name="departureDateShedule" Type="date" />
+    <Property Name="departureTimeShedule" Type="time" Precision="7" />
+    <Property Name="departureDateFact" Type="date" />
+    <Property Name="departureTimeFact" Type="time" Precision="7" />
+    <Property Name="returnDateShedule" Type="date" />
+    <Property Name="returnTimeShedule" Type="time" Precision="7" />
+    <Property Name="returnDateFact" Type="date" />
+    <Property Name="returnTimeFact" Type="time" Precision="7" />
+    <Property Name="zeroMileage" Type="float" />
+    <Property Name="engineTime" Type="float" />
+    <Property Name="soecialEquipmentTime" Type="float" />
+    <Property Name="FLMrestOnDeparture" Type="float" />
+    <Property Name="FLMrestOnReturn" Type="float" />
+  </EntityType>
   <Association Name="FK_ContractStreak_Contracts">
     <End Role="Contracts" Type="Self.Contracts" Multiplicity="1" />
     <End Role="ContractStreak" Type="Self.ContractStreak" Multiplicity="0..1" />
@@ -325,12 +381,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="trafficModelStoreContainer">
+  <EntityContainer Name="Хранилище TrafficModelContainer">
     <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Act" EntityType="Self.Act" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ActPersons" EntityType="Self.ActPersons" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ActTransportation" EntityType="Self.ActTransportation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Battery" EntityType="Self.Battery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ContactPerson" EntityType="Self.ContactPerson" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="contractMaterialLiability" EntityType="Self.contractMaterialLiability" Schema="dbo" store:Type="Tables" />
@@ -345,13 +402,14 @@
     <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ServicesActs" EntityType="Self.ServicesActs" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TechnicalInspection" EntityType="Self.TechnicalInspection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tire" EntityType="Self.Tire" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Transport" EntityType="Self.Transport" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="transportStateReport" EntityType="Self.transportStateReport" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Trips" EntityType="Self.Trips" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeCost" EntityType="Self.TypeCost" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Waybills" EntityType="Self.Waybills" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_ContractStreak_Contracts" Association="Self.FK_ContractStreak_Contracts">
       <End Role="Contracts" EntitySet="Contracts" />
       <End Role="ContractStreak" EntitySet="ContractStreak" />

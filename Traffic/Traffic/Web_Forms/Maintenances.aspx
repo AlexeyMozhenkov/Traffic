@@ -25,21 +25,6 @@
                 </asp:GridView>
                 
                 <hr />
-                <div id="filter">
-                    <asp:Label ID="lbl_Filter" runat="server" Text="Filter"></asp:Label>
-                    <br />
-                    <asp:RadioButton ID="rbtn_AllUsers" runat="server" AutoPostBack="True" Checked="True"
-                        GroupName="Filter" Text="All records" />
-                    <br />
-                    <asp:RadioButton ID="rbtn_Filtered" runat="server" AutoPostBack="True" GroupName="Filter"
-                        Text="Name contains" />
-                    <br />
-                    <asp:TextBox ID="txt_Filter" runat="server" Width="210px" Enabled="False"></asp:TextBox>
-                    <br />
-                    <asp:Button ID="btn_Show" runat="server" Text="Show" Width="120px" CssClass="btnAlign"
-                        Enabled="False" />
-                    <br />
-                </div>
                 <div id="modify">
                     <asp:Button ID="btn_Add" runat="server" Text="Add" Width="120px" CssClass="btnAlign"
                         OnClick="btn_Add_Click" />

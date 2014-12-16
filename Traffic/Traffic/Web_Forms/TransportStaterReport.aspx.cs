@@ -116,5 +116,32 @@ namespace Traffic
                 btn_Delete.Enabled = true;
             }
         }
+
+        protected void btn_Show_Click(object sender, EventArgs e)
+        {
+            List<transportStateReport> List = TransportStateReportLogic.ReadFiltered(txt_Filter.Text.ToString());
+            DataGrid.DataSource = List;
+            DataGrid.DataBind();
+
+            btn_Edit.Enabled = false;
+            btn_Delete.Enabled = false;
+            DataGrid.SelectedIndex = -1;
+        }
+
+
+        protected void rbtn_AllUsers_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_Filter.Text = string.Empty;
+            txt_Filter.Enabled = false;
+            btn_Show.Enabled = false;
+            GridDataBind();
+        }
+
+
+        protected void rbtn_Filtered_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_Filter.Enabled = true;
+            btn_Show.Enabled = true;
+        }
     }
 }

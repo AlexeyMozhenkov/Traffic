@@ -132,7 +132,7 @@ namespace Traffic
         
         protected void btn_Show_Click(object sender, EventArgs e)
         {
-            List<Employee> List = EmployeeLogic.GetFilteredUsersInfo(txt_Filter.Text.ToString());
+            List<Employee> List = EmployeeLogic.ReadFiltered(txt_Filter.Text.ToString());
             DataGrid.DataSource = List;
             DataGrid.DataBind();
 

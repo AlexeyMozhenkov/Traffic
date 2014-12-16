@@ -46,7 +46,7 @@
                         GroupName="Filter" Text="All records" OnCheckedChanged="rbtn_AllUsers_CheckedChanged"/>
                     <br />
                     <asp:RadioButton ID="rbtn_Filtered" runat="server" AutoPostBack="True" GroupName="Filter"
-                        Text="Name contains" OnCheckedChanged="rbtn_Filtered_CheckedChanged" />
+                        Text="Last Name contains" OnCheckedChanged="rbtn_Filtered_CheckedChanged" />
                     <br />
                     <asp:TextBox ID="txt_Filter" runat="server" Width="210px" Enabled="False"></asp:TextBox>
                     <br />

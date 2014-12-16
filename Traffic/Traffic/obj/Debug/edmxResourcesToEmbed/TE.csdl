@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="trafficModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="organizationID" />
+    </Key>
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="accountInfo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Act">
+    <Key>
+      <PropertyRef Name="contractID" />
+      <PropertyRef Name="actNumber" />
+    </Key>
+    <Property Name="contractID" Type="Int64" Nullable="false" />
+    <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="actType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="actDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ActPersons">
+    <Key>
+      <PropertyRef Name="contractID" />
+      <PropertyRef Name="organizationID" />
+      <PropertyRef Name="actNumber" />
+      <PropertyRef Name="role" />
+    </Key>
+    <Property Name="contactPersonID" Type="Int64" Nullable="false" />
+    <Property Name="contractID" Type="Int64" Nullable="false" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="role" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActTransportation">
+    <Key>
+      <PropertyRef Name="contractID" />
+      <PropertyRef Name="actNumber" />
+    </Key>
+    <Property Name="addressID" Type="Int64" Nullable="false" />
+    <Property Name="contractID" Type="Int64" Nullable="false" />
+    <Property Name="transportID" Type="Int64" Nullable="false" />
+    <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CMR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TrailerID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="addressID" />
+    </Key>
+    <Property Name="addressID" Type="Guid" Nullable="false" />
+    <Property Name="index" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="region" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="district" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="town" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="house" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="flat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ContactPerson">
+    <Key>
+      <PropertyRef Name="contactPersonID" />
+    </Key>
+    <Property Name="contactPersonID" Type="Int64" Nullable="false" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="FIO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="tableNumber" Type="Int64" />
+    <Property Name="position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Contacts">
+    <Key>
+      <PropertyRef Name="contactPersonID" />
+    </Key>
+    <Property Name="contactPersonID" Type="Int64" Nullable="false" />
+    <Property Name="contactType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contactData" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="contractMaterialLiability">
+    <Key>
+      <PropertyRef Name="contractID" />
+    </Key>
+    <Property Name="contractID" Type="Int64" Nullable="false" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="tableNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="contractPlace" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ContractPersons">
+    <Key>
+      <PropertyRef Name="contractID" />
+      <PropertyRef Name="organizationID" />
+      <PropertyRef Name="role" />
+    </Key>
+    <Property Name="contactPersonID" Type="Int64" Nullable="false" />
+    <Property Name="contractID" Type="Int64" Nullable="false" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="role" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contracts">
+    <Key>
+      <PropertyRef Name="contractID" />
+    </Key>
+    <Property Name="contractID" Type="Int64" Nullable="false" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="contractNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contractDate" Type="DateTime" Precision="3" />
+    <Property Name="contractType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ContractStreak" Relationship="Self.FK_ContractStreak_Contracts" FromRole="Contracts" ToRole="ContractStreak" />
+  </EntityType>
+  <EntityType Name="ContractStreak">
+    <Key>
+      <PropertyRef Name="contractID" />
+    </Key>
+    <Property Name="contractID" Type="Int64" Nullable="false" />
+    <Property Name="contractDateFrom" Type="DateTime" Precision="3" />
+    <Property Name="ContractDateUntil" Type="Int64" />
+    <Property Name="contractPrice" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Contracts" Relationship="Self.FK_ContractStreak_Contracts" FromRole="ContractStreak" ToRole="Contracts" />
+  </EntityType>
+  <EntityType Name="ContractTransportation">
+    <Key>
+      <PropertyRef Name="contractID" />
+    </Key>
+    <Property Name="contractID" Type="Int64" Nullable="false" />
+    <Property Name="contractDateUntil" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="DrivingLicence">
+    <Key>
+      <PropertyRef Name="licenceNumber" />
+      <PropertyRef Name="organizationID" />
+      <PropertyRef Name="tableNumber" />
+    </Key>
+    <Property Name="licenceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="A1" Type="Boolean" />
+    <Property Name="tableNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="A" Type="Boolean" />
+    <Property Name="B" Type="Boolean" />
+    <Property Name="C" Type="Boolean" />
+    <Property Name="D" Type="Boolean" />
+    <Property Name="BE" Type="Boolean" />
+    <Property Name="CE" Type="Boolean" />
+    <Property Name="DE" Type="Boolean" />
+    <Property Name="I" Type="Boolean" />
+    <Property Name="F" Type="Boolean" />
+    <Property Name="issueDate" Type="DateTime" Precision="3" />
+    <Property Name="expiryDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="organizationID" />
+      <PropertyRef Name="tableNumber" />
+    </Key>
+    <Property Name="addressID" Type="Int64" Nullable="false" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="tableNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ParentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDay" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IDnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PassportSerie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PassportNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DatePassportUntil" Type="DateTime" Precision="3" />
+    <Property Name="DatePassportFrom" Type="DateTime" Precision="3" />
+    <Property Name="position" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Organization" Relationship="Self.FK_Employee_Organization" FromRole="Employee" ToRole="Organization" />
+  </EntityType>
+  <EntityType Name="InternationalCard">
+    <Key>
+      <PropertyRef Name="registrationID" />
+    </Key>
+    <Property Name="registrationID" Type="Int64" Nullable="false" />
+    <Property Name="approvalCert" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dateFromApproval" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dateUntil" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="transportID" Type="Int64" Nullable="false" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Maintenance">
+    <Key>
+      <PropertyRef Name="maintenanceID" />
+    </Key>
+    <Property Name="maintenanceID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="transportID" Type="Int64" Nullable="false" />
+    <Property Name="dateFrom" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dateUntil" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="typeCostID" Type="Int64" Nullable="false" />
+    <Property Name="cost" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="organizationID" />
+    </Key>
+    <Property Name="addressID" Type="Int64" Nullable="false" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="FullTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShortTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegistrationNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="INN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KPP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UNP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Organization" FromRole="Organization" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="serviceID" />
+    </Key>
+    <Property Name="serviceID" Type="Int64" Nullable="false" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="ServicesActs">
+    <Key>
+      <PropertyRef Name="contractID" />
+      <PropertyRef Name="serviceID" />
+    </Key>
+    <Property Name="contractID" Type="Int64" Nullable="false" />
+    <Property Name="serviceID" Type="Int64" Nullable="false" />
+    <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TechnicalInspection">
+    <Key>
+      <PropertyRef Name="transportID" />
+      <PropertyRef Name="dateFrom" />
+    </Key>
+    <Property Name="transportID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateFrom" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dateUntil" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="tax" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Transport">
+    <Key>
+      <PropertyRef Name="transportID" />
+    </Key>
+    <Property Name="transportID" Type="Int64" Nullable="false" />
+    <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="registrationNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="transportType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="transportCategory" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="transportMakingYear" Type="Int64" />
+    <Property Name="ecologyClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="maxWeight" Type="Single" />
+    <Property Name="weight" Type="Single" />
+    <Property Name="engineType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="engineVolume" Type="Single" />
+  </EntityType>
+  <EntityType Name="transportStateReport">
+    <Key>
+      <PropertyRef Name="reportID" />
+    </Key>
+    <Property Name="reportID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="routeID" Type="Int64" />
+    <Property Name="transportID" Type="Int64" Nullable="false" />
+    <Property Name="tableNumber" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="notes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Trips">
+    <Key>
+      <PropertyRef Name="tripID" />
+    </Key>
+    <Property Name="tripID" Type="Int64" Nullable="false" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="tableNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tripNumber" Type="Int64" />
+    <Property Name="dateFrom" Type="DateTime" Precision="0" />
+    <Property Name="dateUntil" Type="DateTime" Precision="0" />
+    <Property Name="ATS" Type="Int64" />
+    <Property Name="beltoll" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="salaryRate" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="fuelPerOneKm" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="tonnageRate" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="fuelPricePerOneLitre" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="adblue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="tripExpences" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="TypeCost">
+    <Key>
+      <PropertyRef Name="typeCostID" />
+    </Key>
+    <Property Name="typeCostID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="typeCostName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="repair" Type="Boolean" />
+    <Property Name="service" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="userID" Type="Int64" Nullable="false" />
+    <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Waybills">
+    <Key>
+      <PropertyRef Name="waybillID" />
+    </Key>
+    <Property Name="waybillID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="waybillNumber" Type="Int32" />
+    <Property Name="creationDate" Type="DateTime" Precision="0" />
+    <Property Name="carrierID" Type="Int64" />
+    <Property Name="carID" Type="Int64" />
+    <Property Name="trailerID" Type="Int32" />
+    <Property Name="driversTableNumber" Type="Int32" />
+    <Property Name="speedometerOnDeparture" Type="Double" />
+    <Property Name="speedometerOnReturn" Type="Double" />
+    <Property Name="departureDateShedule" Type="DateTime" Precision="0" />
+    <Property Name="departureTimeShedule" Type="Time" Precision="7" />
+    <Property Name="departureDateFact" Type="DateTime" Precision="0" />
+    <Property Name="departureTimeFact" Type="Time" Precision="7" />
+    <Property Name="returnDateShedule" Type="DateTime" Precision="0" />
+    <Property Name="returnTimeShedule" Type="Time" Precision="7" />
+    <Property Name="returnDateFact" Type="DateTime" Precision="0" />
+    <Property Name="returnTimeFact" Type="Time" Precision="7" />
+    <Property Name="zeroMileage" Type="Double" />
+    <Property Name="engineTime" Type="Double" />
+    <Property Name="soecialEquipmentTime" Type="Double" />
+    <Property Name="FLMrestOnDeparture" Type="Double" />
+    <Property Name="FLMrestOnReturn" Type="Double" />
+  </EntityType>
+  <Association Name="FK_ContractStreak_Contracts">
+    <End Role="Contracts" Type="Self.Contracts" Multiplicity="1" />
+    <End Role="ContractStreak" Type="Self.ContractStreak" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Contracts">
+        <PropertyRef Name="contractID" />
+      </Principal>
+      <Dependent Role="ContractStreak">
+        <PropertyRef Name="contractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Organization">
+    <End Role="Organization" Type="Self.Organization" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="organizationID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="organizationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="trafficEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Accounts" />
+    <EntitySet Name="Act" EntityType="Self.Act" />
+    <EntitySet Name="ActPersons" EntityType="Self.ActPersons" />
+    <EntitySet Name="ActTransportation" EntityType="Self.ActTransportation" />
+    <EntitySet Name="Address" EntityType="Self.Address" />
+    <EntitySet Name="ContactPerson" EntityType="Self.ContactPerson" />
+    <EntitySet Name="Contacts" EntityType="Self.Contacts" />
+    <EntitySet Name="contractMaterialLiability" EntityType="Self.contractMaterialLiability" />
+    <EntitySet Name="ContractPersons" EntityType="Self.ContractPersons" />
+    <EntitySet Name="Contracts" EntityType="Self.Contracts" />
+    <EntitySet Name="ContractStreak" EntityType="Self.ContractStreak" />
+    <EntitySet Name="ContractTransportation" EntityType="Self.ContractTransportation" />
+    <EntitySet Name="DrivingLicence" EntityType="Self.DrivingLicence" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" />
+    <EntitySet Name="InternationalCard" EntityType="Self.InternationalCard" />
+    <EntitySet Name="Maintenance" EntityType="Self.Maintenance" />
+    <EntitySet Name="Organization" EntityType="Self.Organization" />
+    <EntitySet Name="Services" EntityType="Self.Services" />
+    <EntitySet Name="ServicesActs" EntityType="Self.ServicesActs" />
+    <EntitySet Name="TechnicalInspection" EntityType="Self.TechnicalInspection" />
+    <EntitySet Name="Transport" EntityType="Self.Transport" />
+    <EntitySet Name="transportStateReport" EntityType="Self.transportStateReport" />
+    <EntitySet Name="Trips" EntityType="Self.Trips" />
+    <EntitySet Name="TypeCost" EntityType="Self.TypeCost" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="Waybills" EntityType="Self.Waybills" />
+    <AssociationSet Name="FK_ContractStreak_Contracts" Association="Self.FK_ContractStreak_Contracts">
+      <End Role="Contracts" EntitySet="Contracts" />
+      <End Role="ContractStreak" EntitySet="ContractStreak" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Organization" Association="Self.FK_Employee_Organization">
+      <End Role="Organization" EntitySet="Organization" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

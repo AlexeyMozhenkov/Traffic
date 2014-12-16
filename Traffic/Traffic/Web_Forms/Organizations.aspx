@@ -30,15 +30,15 @@
                     <asp:Label ID="lbl_Filter" runat="server" Text="Filter"></asp:Label>
                     <br />
                     <asp:RadioButton ID="rbtn_AllUsers" runat="server" AutoPostBack="True" Checked="True"
-                        GroupName="Filter" Text="All records" />
+                        GroupName="Filter" Text="All records" OnCheckedChanged="rbtn_AllUsers_CheckedChanged" />
                     <br />
                     <asp:RadioButton ID="rbtn_Filtered" runat="server" AutoPostBack="True" GroupName="Filter"
-                        Text="Name contains" />
+                        Text="Title contains" OnCheckedChanged="rbtn_Filtered_CheckedChanged" />
                     <br />
                     <asp:TextBox ID="txt_Filter" runat="server" Width="210px" Enabled="False"></asp:TextBox>
                     <br />
                     <asp:Button ID="btn_Show" runat="server" Text="Show" Width="120px" CssClass="btnAlign"
-                        Enabled="False" />
+                        Enabled="False" OnClick="btn_Show_Click" />
                     <br />
                 </div>
                 <div id="modify">
@@ -49,6 +49,9 @@
                     <br />
                     <asp:Button ID="btn_Delete" runat="server" Text="Delete" Width="120px" CssClass="btnAlign"
                         Font-Names="Segoe UI" OnClick="btn_Delete_Click" />
+                    <br />
+                    <asp:Button ID="btn_GetFile" runat="server" Text="Print Card" Width="120px" CssClass="btnAlign"
+                        Font-Names="Segoe UI" OnClick="btn_GetFile_Click"  />
                     <br />
                 </div>
                 <br />

@@ -26,15 +26,15 @@ namespace Traffic
         public bool IsVisible { get; set; }
 
         public int Identity { get; set; }
-        public long par_1
+        public string par_1
         {
             get
             {
-                return long.Parse(txt_1.Text);
+                return txt_1.Text;
             }
             set
             {
-                txt_1.Text = value.ToString();
+                txt_1.Text = value;
             }
         }
         public long par_2
@@ -115,7 +115,72 @@ namespace Traffic
                 txt_8.Text = value;
             }
         }
-        
+        public string par_9
+        {
+            get
+            {
+                return txt_9.Text;
+            }
+            set
+            {
+                txt_9.Text = value;
+            }
+        }
+        public string par_10
+        {
+            get
+            {
+                return txt_10.Text;
+            }
+            set
+            {
+                txt_10.Text = value;
+            }
+        }
+        public string par_11
+        {
+            get
+            {
+                return txt_11.Text;
+            }
+            set
+            {
+                txt_11.Text = value;
+            }
+        }
+        public string par_12
+        {
+            get
+            {
+                return txt_12.Text;
+            }
+            set
+            {
+                txt_12.Text = value;
+            }
+        }
+        public string par_13
+        {
+            get
+            {
+                return txt_13.Text;
+            }
+            set
+            {
+                txt_13.Text = value;
+            }
+        }
+        public string par_14
+        {
+            get
+            {
+                return txt_14.Text;
+            }
+            set
+            {
+                txt_14.Text = value;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -127,8 +192,8 @@ namespace Traffic
                 //txt_1.DataBind();
             }
             if (ViewState["EditID"] != null)
-                txt_1.Text = ViewState["EditID"].ToString();
-            _txtFields = new List<TextBox>(8)
+                txt_2.Text = ViewState["EditID"].ToString();
+            _txtFields = new List<TextBox>(14)
             {
                 txt_1,
                 txt_2,
@@ -137,7 +202,13 @@ namespace Traffic
                 txt_5,
                 txt_6,
                 txt_7,
-                txt_8
+                txt_8,
+                txt_9,
+                txt_10,
+                txt_11,
+                txt_12,
+                txt_13,
+                txt_14
             };
 
 
@@ -188,7 +259,13 @@ namespace Traffic
                     par_5,
                     par_6,
                     par_7,
-                    par_8
+                    par_8,
+                    par_9,
+                    par_10,
+                    par_11,
+                    par_12,
+                    par_13,
+                    par_14
                     );
             }
             catch (ArgumentNullException)
@@ -199,15 +276,21 @@ namespace Traffic
                 try
                 {
                     OrganizationsLogic.EditOrganization(
-                        par_1,
-                        par_2,
-                        par_3,
-                        par_4,
-                        par_5,
-                        par_6,
-                        par_7,
-                        par_8
-                        );
+                    par_1,
+                    par_2,
+                    par_3,
+                    par_4,
+                    par_5,
+                    par_6,
+                    par_7,
+                    par_8,
+                    par_9,
+                    par_10,
+                    par_11,
+                    par_12,
+                    par_13,
+                    par_14
+                    );
                 }
                 catch (ArgumentNullException)
                 {
@@ -235,7 +318,7 @@ namespace Traffic
             IsEdit = true;
             ViewState["EditMode"] = IsEdit;
             ViewState["EditID"] = identity;
-            txt_1.ReadOnly = IsEdit;
+            //txt_2.ReadOnly = IsEdit;
             btn_AddEdit.Text = "Edit";
         //necessary if style is changed:    //txt_01.Visible = false;
                                             //txt_1.Visible = true;
@@ -244,9 +327,7 @@ namespace Traffic
         {
             IsEdit = false;
             ViewState["EditMode"] = IsEdit;
-            //txt_1.Visible = false;
-            txt_1.Visible = true;
-            txt_1.ReadOnly = false;
+            //txt_2.ReadOnly = IsEdit;
             btn_AddEdit.Text = "ADD";
             ClearControlFields();
         }  

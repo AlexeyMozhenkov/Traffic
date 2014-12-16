@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище trafficModelContainer" CdmEntityContainer="trafficEntities1">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="trafficModel.Accounts">
+        <MappingFragment StoreEntitySet="Accounts">
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="accountInfo" ColumnName="accountInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Act">
+      <EntityTypeMapping TypeName="trafficModel.Act">
+        <MappingFragment StoreEntitySet="Act">
+          <ScalarProperty Name="contractID" ColumnName="contractID" />
+          <ScalarProperty Name="actNumber" ColumnName="actNumber" />
+          <ScalarProperty Name="actType" ColumnName="actType" />
+          <ScalarProperty Name="actDate" ColumnName="actDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActPersons">
+      <EntityTypeMapping TypeName="trafficModel.ActPersons">
+        <MappingFragment StoreEntitySet="ActPersons">
+          <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
+          <ScalarProperty Name="contractID" ColumnName="contractID" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="actNumber" ColumnName="actNumber" />
+          <ScalarProperty Name="role" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActTransportation">
+      <EntityTypeMapping TypeName="trafficModel.ActTransportation">
+        <MappingFragment StoreEntitySet="ActTransportation">
+          <ScalarProperty Name="addressID" ColumnName="addressID" />
+          <ScalarProperty Name="contractID" ColumnName="contractID" />
+          <ScalarProperty Name="transportID" ColumnName="transportID" />
+          <ScalarProperty Name="actNumber" ColumnName="actNumber" />
+          <ScalarProperty Name="CMR" ColumnName="CMR" />
+          <ScalarProperty Name="TrailerID" ColumnName="TrailerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Address">
+      <EntityTypeMapping TypeName="trafficModel.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="addressID" ColumnName="addressID" />
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="town" ColumnName="town" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="house" ColumnName="house" />
+          <ScalarProperty Name="flat" ColumnName="flat" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactPerson">
+      <EntityTypeMapping TypeName="trafficModel.ContactPerson">
+        <MappingFragment StoreEntitySet="ContactPerson">
+          <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+          <ScalarProperty Name="position" ColumnName="position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="trafficModel.Contacts">
+        <MappingFragment StoreEntitySet="Contacts">
+          <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
+          <ScalarProperty Name="contactType" ColumnName="contactType" />
+          <ScalarProperty Name="contactData" ColumnName="contactData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contractMaterialLiability">
+      <EntityTypeMapping TypeName="trafficModel.contractMaterialLiability">
+        <MappingFragment StoreEntitySet="contractMaterialLiability">
+          <ScalarProperty Name="contractID" ColumnName="contractID" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+          <ScalarProperty Name="contractPlace" ColumnName="contractPlace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractPersons">
+      <EntityTypeMapping TypeName="trafficModel.ContractPersons">
+        <MappingFragment StoreEntitySet="ContractPersons">
+          <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
+          <ScalarProperty Name="contractID" ColumnName="contractID" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="role" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contracts">
+      <EntityTypeMapping TypeName="trafficModel.Contracts">
+        <MappingFragment StoreEntitySet="Contracts">
+          <ScalarProperty Name="contractID" ColumnName="contractID" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="contractNumber" ColumnName="contractNumber" />
+          <ScalarProperty Name="contractDate" ColumnName="contractDate" />
+          <ScalarProperty Name="contractType" ColumnName="contractType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractStreak">
+      <EntityTypeMapping TypeName="trafficModel.ContractStreak">
+        <MappingFragment StoreEntitySet="ContractStreak">
+          <ScalarProperty Name="contractID" ColumnName="contractID" />
+          <ScalarProperty Name="contractDateFrom" ColumnName="contractDateFrom" />
+          <ScalarProperty Name="ContractDateUntil" ColumnName="ContractDateUntil" />
+          <ScalarProperty Name="contractPrice" ColumnName="contractPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractTransportation">
+      <EntityTypeMapping TypeName="trafficModel.ContractTransportation">
+        <MappingFragment StoreEntitySet="ContractTransportation">
+          <ScalarProperty Name="contractID" ColumnName="contractID" />
+          <ScalarProperty Name="contractDateUntil" ColumnName="contractDateUntil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrivingLicence">
+      <EntityTypeMapping TypeName="trafficModel.DrivingLicence">
+        <MappingFragment StoreEntitySet="DrivingLicence">
+          <ScalarProperty Name="licenceNumber" ColumnName="licenceNumber" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="A1" ColumnName="A1" />
+          <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+          <ScalarProperty Name="A" ColumnName="A" />
+          <ScalarProperty Name="B" ColumnName="B" />
+          <ScalarProperty Name="C" ColumnName="C" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="BE" ColumnName="BE" />
+          <ScalarProperty Name="CE" ColumnName="CE" />
+          <ScalarProperty Name="DE" ColumnName="DE" />
+          <ScalarProperty Name="I" ColumnName="I" />
+          <ScalarProperty Name="F" ColumnName="F" />
+          <ScalarProperty Name="issueDate" ColumnName="issueDate" />
+          <ScalarProperty Name="expiryDate" ColumnName="expiryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="trafficModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="addressID" ColumnName="addressID" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="ParentName" ColumnName="ParentName" />
+          <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+          <ScalarProperty Name="IDnumber" ColumnName="IDnumber" />
+          <ScalarProperty Name="PassportSerie" ColumnName="PassportSerie" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+          <ScalarProperty Name="DatePassportUntil" ColumnName="DatePassportUntil" />
+          <ScalarProperty Name="DatePassportFrom" ColumnName="DatePassportFrom" />
+          <ScalarProperty Name="position" ColumnName="position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InternationalCard">
+      <EntityTypeMapping TypeName="trafficModel.InternationalCard">
+        <MappingFragment StoreEntitySet="InternationalCard">
+          <ScalarProperty Name="registrationID" ColumnName="registrationID" />
+          <ScalarProperty Name="approvalCert" ColumnName="approvalCert" />
+          <ScalarProperty Name="dateFromApproval" ColumnName="dateFromApproval" />
+          <ScalarProperty Name="dateUntil" ColumnName="dateUntil" />
+          <ScalarProperty Name="transportID" ColumnName="transportID" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maintenance">
+      <EntityTypeMapping TypeName="trafficModel.Maintenance">
+        <MappingFragment StoreEntitySet="Maintenance">
+          <ScalarProperty Name="maintenanceID" ColumnName="maintenanceID" />
+          <ScalarProperty Name="transportID" ColumnName="transportID" />
+          <ScalarProperty Name="dateFrom" ColumnName="dateFrom" />
+          <ScalarProperty Name="dateUntil" ColumnName="dateUntil" />
+          <ScalarProperty Name="typeCostID" ColumnName="typeCostID" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organization">
+      <EntityTypeMapping TypeName="trafficModel.Organization">
+        <MappingFragment StoreEntitySet="Organization">
+          <ScalarProperty Name="addressID" ColumnName="addressID" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="FullTitle" ColumnName="FullTitle" />
+          <ScalarProperty Name="ShortTitle" ColumnName="ShortTitle" />
+          <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+          <ScalarProperty Name="INN" ColumnName="INN" />
+          <ScalarProperty Name="KPP" ColumnName="KPP" />
+          <ScalarProperty Name="UNP" ColumnName="UNP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="trafficModel.Services">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicesActs">
+      <EntityTypeMapping TypeName="trafficModel.ServicesActs">
+        <MappingFragment StoreEntitySet="ServicesActs">
+          <ScalarProperty Name="contractID" ColumnName="contractID" />
+          <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+          <ScalarProperty Name="actNumber" ColumnName="actNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TechnicalInspection">
+      <EntityTypeMapping TypeName="trafficModel.TechnicalInspection">
+        <MappingFragment StoreEntitySet="TechnicalInspection">
+          <ScalarProperty Name="transportID" ColumnName="transportID" />
+          <ScalarProperty Name="dateFrom" ColumnName="dateFrom" />
+          <ScalarProperty Name="dateUntil" ColumnName="dateUntil" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transport">
+      <EntityTypeMapping TypeName="trafficModel.Transport">
+        <MappingFragment StoreEntitySet="Transport">
+          <ScalarProperty Name="transportID" ColumnName="transportID" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="registrationNumber" ColumnName="registrationNumber" />
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="transportType" ColumnName="transportType" />
+          <ScalarProperty Name="transportCategory" ColumnName="transportCategory" />
+          <ScalarProperty Name="transportMakingYear" ColumnName="transportMakingYear" />
+          <ScalarProperty Name="ecologyClass" ColumnName="ecologyClass" />
+          <ScalarProperty Name="maxWeight" ColumnName="maxWeight" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="engineType" ColumnName="engineType" />
+          <ScalarProperty Name="engineVolume" ColumnName="engineVolume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transportStateReport">
+      <EntityTypeMapping TypeName="trafficModel.transportStateReport">
+        <MappingFragment StoreEntitySet="transportStateReport">
+          <ScalarProperty Name="reportID" ColumnName="reportID" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="routeID" ColumnName="routeID" />
+          <ScalarProperty Name="transportID" ColumnName="transportID" />
+          <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="location" ColumnName="location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trips">
+      <EntityTypeMapping TypeName="trafficModel.Trips">
+        <MappingFragment StoreEntitySet="Trips">
+          <ScalarProperty Name="tripID" ColumnName="tripID" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+          <ScalarProperty Name="tripNumber" ColumnName="tripNumber" />
+          <ScalarProperty Name="dateFrom" ColumnName="dateFrom" />
+          <ScalarProperty Name="dateUntil" ColumnName="dateUntil" />
+          <ScalarProperty Name="ATS" ColumnName="ATS" />
+          <ScalarProperty Name="beltoll" ColumnName="beltoll" />
+          <ScalarProperty Name="salaryRate" ColumnName="salaryRate" />
+          <ScalarProperty Name="fuelPerOneKm" ColumnName="fuelPerOneKm" />
+          <ScalarProperty Name="tonnageRate" ColumnName="tonnageRate" />
+          <ScalarProperty Name="fuelPricePerOneLitre" ColumnName="fuelPricePerOneLitre" />
+          <ScalarProperty Name="adblue" ColumnName="adblue" />
+          <ScalarProperty Name="tripExpences" ColumnName="tripExpences" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeCost">
+      <EntityTypeMapping TypeName="trafficModel.TypeCost">
+        <MappingFragment StoreEntitySet="TypeCost">
+          <ScalarProperty Name="typeCostID" ColumnName="typeCostID" />
+          <ScalarProperty Name="typeCostName" ColumnName="typeCostName" />
+          <ScalarProperty Name="repair" ColumnName="repair" />
+          <ScalarProperty Name="service" ColumnName="service" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="trafficModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Waybills">
+      <EntityTypeMapping TypeName="trafficModel.Waybills">
+        <MappingFragment StoreEntitySet="Waybills">
+          <ScalarProperty Name="waybillID" ColumnName="waybillID" />
+          <ScalarProperty Name="waybillNumber" ColumnName="waybillNumber" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="carrierID" ColumnName="carrierID" />
+          <ScalarProperty Name="carID" ColumnName="carID" />
+          <ScalarProperty Name="trailerID" ColumnName="trailerID" />
+          <ScalarProperty Name="driversTableNumber" ColumnName="driversTableNumber" />
+          <ScalarProperty Name="speedometerOnDeparture" ColumnName="speedometerOnDeparture" />
+          <ScalarProperty Name="speedometerOnReturn" ColumnName="speedometerOnReturn" />
+          <ScalarProperty Name="departureDateShedule" ColumnName="departureDateShedule" />
+          <ScalarProperty Name="departureTimeShedule" ColumnName="departureTimeShedule" />
+          <ScalarProperty Name="departureDateFact" ColumnName="departureDateFact" />
+          <ScalarProperty Name="departureTimeFact" ColumnName="departureTimeFact" />
+          <ScalarProperty Name="returnDateShedule" ColumnName="returnDateShedule" />
+          <ScalarProperty Name="returnTimeShedule" ColumnName="returnTimeShedule" />
+          <ScalarProperty Name="returnDateFact" ColumnName="returnDateFact" />
+          <ScalarProperty Name="returnTimeFact" ColumnName="returnTimeFact" />
+          <ScalarProperty Name="zeroMileage" ColumnName="zeroMileage" />
+          <ScalarProperty Name="engineTime" ColumnName="engineTime" />
+          <ScalarProperty Name="soecialEquipmentTime" ColumnName="soecialEquipmentTime" />
+          <ScalarProperty Name="FLMrestOnDeparture" ColumnName="FLMrestOnDeparture" />
+          <ScalarProperty Name="FLMrestOnReturn" ColumnName="FLMrestOnReturn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

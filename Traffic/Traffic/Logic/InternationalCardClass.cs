@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 namespace Traffic
 {
     public class InternationalCardClass
@@ -111,6 +112,37 @@ namespace Traffic
                 }
             }
             return ResultList;
+        }
+
+        public static List<InternationalCardClass> ReadFiltered(string filterString)
+        {
+            long id;
+            try
+            {
+                id = Int64.Parse(filterString);
+            }
+            catch (Exception ex)
+            {
+                id = 0;
+                //throw ex;     
+            }
+                List<InternationalCardClass> ResultList = new List<InternationalCardClass>();
+                using (var db = new trafficEntities())
+                {
+                    var queryIC = from i in db.InternationalCard
+                                  where i.organizationID == id
+                                  select i;
+                    foreach (var i in queryIC)
+                    {
+                        InternationalCardClass Card = new InternationalCardClass(i.registrationID, i.transportID, i.approvalCert,
+                            i.dateFromApproval, i.dateUntil, i.organizationID);
+                        ResultList.Add(Card);
+                    }
+                }
+                return ResultList;
+            
+            
+        
         }
         public static InternationalCardClass SearchByTransportID(long transportID)
         {

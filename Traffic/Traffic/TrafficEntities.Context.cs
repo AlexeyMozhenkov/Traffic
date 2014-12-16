@@ -30,6 +30,7 @@ namespace Traffic
         public virtual DbSet<ActPersons> ActPersons { get; set; }
         public virtual DbSet<ActTransportation> ActTransportation { get; set; }
         public virtual DbSet<Address> Address { get; set; }
+        public virtual DbSet<Battery> Battery { get; set; }
         public virtual DbSet<ContactPerson> ContactPerson { get; set; }
         public virtual DbSet<Contacts> Contacts { get; set; }
         public virtual DbSet<contractMaterialLiability> contractMaterialLiability { get; set; }
@@ -44,12 +45,13 @@ namespace Traffic
         public virtual DbSet<Organization> Organization { get; set; }
         public virtual DbSet<Services> Services { get; set; }
         public virtual DbSet<ServicesActs> ServicesActs { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TechnicalInspection> TechnicalInspection { get; set; }
+        public virtual DbSet<Tire> Tire { get; set; }
         public virtual DbSet<Transport> Transport { get; set; }
         public virtual DbSet<transportStateReport> transportStateReport { get; set; }
         public virtual DbSet<Trips> Trips { get; set; }
         public virtual DbSet<TypeCost> TypeCost { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Waybills> Waybills { get; set; }
     }
 }

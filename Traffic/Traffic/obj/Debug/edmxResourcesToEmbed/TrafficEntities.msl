@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="trafficModelStoreContainer" CdmEntityContainer="trafficEntities">
+  <EntityContainerMapping StorageEntityContainer="Хранилище TrafficModelContainer" CdmEntityContainer="trafficEntities">
     <EntitySetMapping Name="Accounts">
-      <EntityTypeMapping TypeName="trafficModel.Accounts">
+      <EntityTypeMapping TypeName="TrafficModel.Accounts">
         <MappingFragment StoreEntitySet="Accounts">
           <ScalarProperty Name="organizationID" ColumnName="organizationID" />
           <ScalarProperty Name="accountInfo" ColumnName="accountInfo" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Act">
-      <EntityTypeMapping TypeName="trafficModel.Act">
+      <EntityTypeMapping TypeName="TrafficModel.Act">
         <MappingFragment StoreEntitySet="Act">
           <ScalarProperty Name="contractID" ColumnName="contractID" />
           <ScalarProperty Name="actNumber" ColumnName="actNumber" />
@@ -20,7 +20,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ActPersons">
-      <EntityTypeMapping TypeName="trafficModel.ActPersons">
+      <EntityTypeMapping TypeName="TrafficModel.ActPersons">
         <MappingFragment StoreEntitySet="ActPersons">
           <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
           <ScalarProperty Name="contractID" ColumnName="contractID" />
@@ -31,7 +31,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ActTransportation">
-      <EntityTypeMapping TypeName="trafficModel.ActTransportation">
+      <EntityTypeMapping TypeName="TrafficModel.ActTransportation">
         <MappingFragment StoreEntitySet="ActTransportation">
           <ScalarProperty Name="addressID" ColumnName="addressID" />
           <ScalarProperty Name="contractID" ColumnName="contractID" />
@@ -43,7 +43,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Address">
-      <EntityTypeMapping TypeName="trafficModel.Address">
+      <EntityTypeMapping TypeName="TrafficModel.Address">
         <MappingFragment StoreEntitySet="Address">
           <ScalarProperty Name="addressID" ColumnName="addressID" />
           <ScalarProperty Name="index" ColumnName="index" />
@@ -58,8 +58,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Battery">
+      <EntityTypeMapping TypeName="TrafficModel.Battery">
+        <MappingFragment StoreEntitySet="Battery">
+          <ScalarProperty Name="batteryID" ColumnName="batteryID" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="factory" ColumnName="factory" />
+          <ScalarProperty Name="createDate" ColumnName="createDate" />
+          <ScalarProperty Name="transportID" ColumnName="transportID" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="mileageMonth" ColumnName="mileageMonth" />
+          <ScalarProperty Name="mileageFromStart" ColumnName="mileageFromStart" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="endReason" ColumnName="endReason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ContactPerson">
-      <EntityTypeMapping TypeName="trafficModel.ContactPerson">
+      <EntityTypeMapping TypeName="TrafficModel.ContactPerson">
         <MappingFragment StoreEntitySet="ContactPerson">
           <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
           <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -70,7 +87,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Contacts">
-      <EntityTypeMapping TypeName="trafficModel.Contacts">
+      <EntityTypeMapping TypeName="TrafficModel.Contacts">
         <MappingFragment StoreEntitySet="Contacts">
           <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
           <ScalarProperty Name="contactType" ColumnName="contactType" />
@@ -79,7 +96,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="contractMaterialLiability">
-      <EntityTypeMapping TypeName="trafficModel.contractMaterialLiability">
+      <EntityTypeMapping TypeName="TrafficModel.contractMaterialLiability">
         <MappingFragment StoreEntitySet="contractMaterialLiability">
           <ScalarProperty Name="contractID" ColumnName="contractID" />
           <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -89,7 +106,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ContractPersons">
-      <EntityTypeMapping TypeName="trafficModel.ContractPersons">
+      <EntityTypeMapping TypeName="TrafficModel.ContractPersons">
         <MappingFragment StoreEntitySet="ContractPersons">
           <ScalarProperty Name="contactPersonID" ColumnName="contactPersonID" />
           <ScalarProperty Name="contractID" ColumnName="contractID" />
@@ -99,18 +116,20 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Contracts">
-      <EntityTypeMapping TypeName="trafficModel.Contracts">
+      <EntityTypeMapping TypeName="TrafficModel.Contracts">
         <MappingFragment StoreEntitySet="Contracts">
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="DateUntil" ColumnName="DateUntil" />
+          <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+          <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="PerformerID" ColumnName="PerformerID" />
           <ScalarProperty Name="contractID" ColumnName="contractID" />
-          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
-          <ScalarProperty Name="contractNumber" ColumnName="contractNumber" />
-          <ScalarProperty Name="contractDate" ColumnName="contractDate" />
-          <ScalarProperty Name="contractType" ColumnName="contractType" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ContractStreak">
-      <EntityTypeMapping TypeName="trafficModel.ContractStreak">
+      <EntityTypeMapping TypeName="TrafficModel.ContractStreak">
         <MappingFragment StoreEntitySet="ContractStreak">
           <ScalarProperty Name="contractID" ColumnName="contractID" />
           <ScalarProperty Name="contractDateFrom" ColumnName="contractDateFrom" />
@@ -120,7 +139,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ContractTransportation">
-      <EntityTypeMapping TypeName="trafficModel.ContractTransportation">
+      <EntityTypeMapping TypeName="TrafficModel.ContractTransportation">
         <MappingFragment StoreEntitySet="ContractTransportation">
           <ScalarProperty Name="contractID" ColumnName="contractID" />
           <ScalarProperty Name="contractDateUntil" ColumnName="contractDateUntil" />
@@ -128,7 +147,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DrivingLicence">
-      <EntityTypeMapping TypeName="trafficModel.DrivingLicence">
+      <EntityTypeMapping TypeName="TrafficModel.DrivingLicence">
         <MappingFragment StoreEntitySet="DrivingLicence">
           <ScalarProperty Name="licenceNumber" ColumnName="licenceNumber" />
           <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -149,7 +168,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Employee">
-      <EntityTypeMapping TypeName="trafficModel.Employee">
+      <EntityTypeMapping TypeName="TrafficModel.Employee">
         <MappingFragment StoreEntitySet="Employee">
           <ScalarProperty Name="addressID" ColumnName="addressID" />
           <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -168,7 +187,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="InternationalCard">
-      <EntityTypeMapping TypeName="trafficModel.InternationalCard">
+      <EntityTypeMapping TypeName="TrafficModel.InternationalCard">
         <MappingFragment StoreEntitySet="InternationalCard">
           <ScalarProperty Name="registrationID" ColumnName="registrationID" />
           <ScalarProperty Name="approvalCert" ColumnName="approvalCert" />
@@ -180,7 +199,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Maintenance">
-      <EntityTypeMapping TypeName="trafficModel.Maintenance">
+      <EntityTypeMapping TypeName="TrafficModel.Maintenance">
         <MappingFragment StoreEntitySet="Maintenance">
           <ScalarProperty Name="maintenanceID" ColumnName="maintenanceID" />
           <ScalarProperty Name="transportID" ColumnName="transportID" />
@@ -192,7 +211,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Organization">
-      <EntityTypeMapping TypeName="trafficModel.Organization">
+      <EntityTypeMapping TypeName="TrafficModel.Organization">
         <MappingFragment StoreEntitySet="Organization">
           <ScalarProperty Name="addressID" ColumnName="addressID" />
           <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -202,11 +221,17 @@
           <ScalarProperty Name="INN" ColumnName="INN" />
           <ScalarProperty Name="KPP" ColumnName="KPP" />
           <ScalarProperty Name="UNP" ColumnName="UNP" />
+          <ScalarProperty Name="OKPO" ColumnName="OKPO" />
+          <ScalarProperty Name="directorID" ColumnName="directorID" />
+          <ScalarProperty Name="rs" ColumnName="rs" />
+          <ScalarProperty Name="bankInfo" ColumnName="bankInfo" />
+          <ScalarProperty Name="ks" ColumnName="ks" />
+          <ScalarProperty Name="BIK" ColumnName="BIK" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Services">
-      <EntityTypeMapping TypeName="trafficModel.Services">
+      <EntityTypeMapping TypeName="TrafficModel.Services">
         <MappingFragment StoreEntitySet="Services">
           <ScalarProperty Name="serviceID" ColumnName="serviceID" />
           <ScalarProperty Name="price" ColumnName="price" />
@@ -214,7 +239,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ServicesActs">
-      <EntityTypeMapping TypeName="trafficModel.ServicesActs">
+      <EntityTypeMapping TypeName="TrafficModel.ServicesActs">
         <MappingFragment StoreEntitySet="ServicesActs">
           <ScalarProperty Name="contractID" ColumnName="contractID" />
           <ScalarProperty Name="serviceID" ColumnName="serviceID" />
@@ -222,19 +247,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="trafficModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TechnicalInspection">
-      <EntityTypeMapping TypeName="trafficModel.TechnicalInspection">
+      <EntityTypeMapping TypeName="TrafficModel.TechnicalInspection">
         <MappingFragment StoreEntitySet="TechnicalInspection">
           <ScalarProperty Name="transportID" ColumnName="transportID" />
           <ScalarProperty Name="dateFrom" ColumnName="dateFrom" />
@@ -244,8 +258,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Tire">
+      <EntityTypeMapping TypeName="TrafficModel.Tire">
+        <MappingFragment StoreEntitySet="Tire">
+          <ScalarProperty Name="TireID" ColumnName="TireID" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="factoryNumber" ColumnName="factoryNumber" />
+          <ScalarProperty Name="mileageNorm" ColumnName="mileageNorm" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="provider" ColumnName="provider" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="MileageFromStart" ColumnName="MileageFromStart" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Transport">
-      <EntityTypeMapping TypeName="trafficModel.Transport">
+      <EntityTypeMapping TypeName="TrafficModel.Transport">
         <MappingFragment StoreEntitySet="Transport">
           <ScalarProperty Name="transportID" ColumnName="transportID" />
           <ScalarProperty Name="model" ColumnName="model" />
@@ -263,7 +293,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="transportStateReport">
-      <EntityTypeMapping TypeName="trafficModel.transportStateReport">
+      <EntityTypeMapping TypeName="TrafficModel.transportStateReport">
         <MappingFragment StoreEntitySet="transportStateReport">
           <ScalarProperty Name="reportID" ColumnName="reportID" />
           <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -277,7 +307,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Trips">
-      <EntityTypeMapping TypeName="trafficModel.Trips">
+      <EntityTypeMapping TypeName="TrafficModel.Trips">
         <MappingFragment StoreEntitySet="Trips">
           <ScalarProperty Name="tripID" ColumnName="tripID" />
           <ScalarProperty Name="organizationID" ColumnName="organizationID" />
@@ -297,7 +327,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TypeCost">
-      <EntityTypeMapping TypeName="trafficModel.TypeCost">
+      <EntityTypeMapping TypeName="TrafficModel.TypeCost">
         <MappingFragment StoreEntitySet="TypeCost">
           <ScalarProperty Name="typeCostID" ColumnName="typeCostID" />
           <ScalarProperty Name="typeCostName" ColumnName="typeCostName" />
@@ -307,12 +337,40 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="trafficModel.Users">
+      <EntityTypeMapping TypeName="TrafficModel.Users">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="organizationID" ColumnName="organizationID" />
           <ScalarProperty Name="userID" ColumnName="userID" />
           <ScalarProperty Name="login" ColumnName="login" />
           <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Waybills">
+      <EntityTypeMapping TypeName="TrafficModel.Waybills">
+        <MappingFragment StoreEntitySet="Waybills">
+          <ScalarProperty Name="waybillID" ColumnName="waybillID" />
+          <ScalarProperty Name="waybillNumber" ColumnName="waybillNumber" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="carrierID" ColumnName="carrierID" />
+          <ScalarProperty Name="carID" ColumnName="carID" />
+          <ScalarProperty Name="trailerID" ColumnName="trailerID" />
+          <ScalarProperty Name="driversTableNumber" ColumnName="driversTableNumber" />
+          <ScalarProperty Name="speedometerOnDeparture" ColumnName="speedometerOnDeparture" />
+          <ScalarProperty Name="speedometerOnReturn" ColumnName="speedometerOnReturn" />
+          <ScalarProperty Name="departureDateShedule" ColumnName="departureDateShedule" />
+          <ScalarProperty Name="departureTimeShedule" ColumnName="departureTimeShedule" />
+          <ScalarProperty Name="departureDateFact" ColumnName="departureDateFact" />
+          <ScalarProperty Name="departureTimeFact" ColumnName="departureTimeFact" />
+          <ScalarProperty Name="returnDateShedule" ColumnName="returnDateShedule" />
+          <ScalarProperty Name="returnTimeShedule" ColumnName="returnTimeShedule" />
+          <ScalarProperty Name="returnDateFact" ColumnName="returnDateFact" />
+          <ScalarProperty Name="returnTimeFact" ColumnName="returnTimeFact" />
+          <ScalarProperty Name="zeroMileage" ColumnName="zeroMileage" />
+          <ScalarProperty Name="engineTime" ColumnName="engineTime" />
+          <ScalarProperty Name="soecialEquipmentTime" ColumnName="soecialEquipmentTime" />
+          <ScalarProperty Name="FLMrestOnDeparture" ColumnName="FLMrestOnDeparture" />
+          <ScalarProperty Name="FLMrestOnReturn" ColumnName="FLMrestOnReturn" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

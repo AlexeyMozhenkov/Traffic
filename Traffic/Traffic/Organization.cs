@@ -19,7 +19,7 @@ namespace Traffic
             this.Employee = new HashSet<Employee>();
         }
     
-        public long addressID { get; set; }
+        public string addressID { get; set; }
         public long organizationID { get; set; }
         public string FullTitle { get; set; }
         public string ShortTitle { get; set; }
@@ -27,6 +27,12 @@ namespace Traffic
         public string INN { get; set; }
         public string KPP { get; set; }
         public string UNP { get; set; }
+        public string OKPO { get; set; }
+        public string directorID { get; set; }
+        public string rs { get; set; }
+        public string bankInfo { get; set; }
+        public string ks { get; set; }
+        public string BIK { get; set; }
     
         public virtual ICollection<Employee> Employee { get; set; }
     }

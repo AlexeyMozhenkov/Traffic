@@ -39,6 +39,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -160,6 +163,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Traffic.mdf" />
+    <Content Include="App_Data\Traffic_log.ldf">
+      <DependentUpon>Traffic.mdf</DependentUpon>
+    </Content>
     <Content Include="Web_Controls\ContractsControl.ascx" />
     <Content Include="Web_Controls\OrganizationsControl.ascx" />
     <Content Include="Web_Forms\About.aspx" />
@@ -193,6 +200,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="Web_Forms\WaybillsPrintPage.aspx" />
+    <Content Include="App_Data\Dept.dotx" />
+    <Content Include="App_Data\ElStatement.dotx" />
+    <Content Include="App_Data\Invoice.dotx" />
+    <Content Include="App_Data\OrganizationCard.dotx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Web_Forms\EmployeePage.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -238,22 +249,22 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
-    <EntityDeploy Include="TrafficEntities.edmx">
+    <EntityDeploy Include="trafficEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TrafficEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>trafficEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="TrafficEntities.Context.tt">
+    <Content Include="trafficEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TrafficEntities.edmx</DependentUpon>
-      <LastGenOutput>TrafficEntities.Context.cs</LastGenOutput>
+      <DependentUpon>trafficEntities.edmx</DependentUpon>
+      <LastGenOutput>trafficEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="TrafficEntities.edmx.diagram">
-      <DependentUpon>TrafficEntities.edmx</DependentUpon>
+    <Content Include="trafficEntities.edmx.diagram">
+      <DependentUpon>trafficEntities.edmx</DependentUpon>
     </Content>
-    <Content Include="TrafficEntities.tt">
+    <Content Include="trafficEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TrafficEntities.edmx</DependentUpon>
-      <LastGenOutput>TrafficEntities.cs</LastGenOutput>
+      <DependentUpon>trafficEntities.edmx</DependentUpon>
+      <LastGenOutput>trafficEntities.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -264,7 +275,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accounts.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -302,47 +313,50 @@
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Act.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ActPersons.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ActTransportation.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Address.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Battery.cs">
+      <DependentUpon>trafficEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="ContactPerson.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Contacts.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="contractMaterialLiability.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ContractPersons.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Contracts.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ContractStreak.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ContractTransportation.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DrivingLicence.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="InternationalCard.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Logic\EmployeeLogic.cs" />
     <Compile Include="Logic\InternationalCardClass.cs" />
@@ -356,52 +370,55 @@
     <Compile Include="Logic\WaybillsLogic.cs" />
     <Compile Include="Logic\TypeCostLogic.cs" />
     <Compile Include="Maintenance.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Organization.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Services.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ServicesActs.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="TechnicalInspection.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="TrafficEntities.Context.cs">
+    <Compile Include="Tire.cs">
+      <DependentUpon>trafficEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="trafficEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TrafficEntities.Context.tt</DependentUpon>
+      <DependentUpon>trafficEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="TrafficEntities.cs">
+    <Compile Include="trafficEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="TrafficEntities.Designer.cs">
+    <Compile Include="trafficEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TrafficEntities.edmx</DependentUpon>
+      <DependentUpon>trafficEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Transport.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="transportStateReport.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Trips.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="TypeCost.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
-      <DependentUpon>TrafficEntities.tt</DependentUpon>
+      <DependentUpon>trafficEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Waybills.cs">
+      <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Web_Controls\ContractsControl.ascx.cs">
       <DependentUpon>ContractsControl.ascx</DependentUpon>
@@ -593,13 +610,27 @@
     <Compile Include="Web_Forms\WaybillsPrintPage.aspx.designer.cs">
       <DependentUpon>WaybillsPrintPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WordTemplates\BaseWordTemplate.cs" />
+    <Compile Include="WordTemplates\СontractTamplate.cs" />
+    <Compile Include="WordTemplates\OrganizationCardTamplate.cs" />
+    <Compile Include="WordTemplates\IWordTemplate.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Controls\" />
-    <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
