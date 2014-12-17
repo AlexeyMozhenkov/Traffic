@@ -32,15 +32,12 @@
   </EntityType>
   <EntityType Name="ActTransportation">
     <Key>
-      <PropertyRef Name="contractID" />
-      <PropertyRef Name="actNumber" />
+      <PropertyRef Name="ActNumber" />
     </Key>
-    <Property Name="addressID" Type="bigint" Nullable="false" />
-    <Property Name="contractID" Type="bigint" Nullable="false" />
-    <Property Name="transportID" Type="bigint" Nullable="false" />
-    <Property Name="actNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="CMR" Type="nvarchar" MaxLength="100" />
-    <Property Name="TrailerID" Type="bigint" />
+    <Property Name="ActNumber" Type="bigint" Nullable="false" />
+    <Property Name="RequestNumber" Type="bigint" Nullable="false" />
+    <Property Name="CMR" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ActDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Address">
     <Key>

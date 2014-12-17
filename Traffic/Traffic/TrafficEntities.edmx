@@ -37,15 +37,12 @@
         </EntityType>
         <EntityType Name="ActTransportation">
           <Key>
-            <PropertyRef Name="contractID" />
-            <PropertyRef Name="actNumber" />
+            <PropertyRef Name="ActNumber" />
           </Key>
-          <Property Name="addressID" Type="bigint" Nullable="false" />
-          <Property Name="contractID" Type="bigint" Nullable="false" />
-          <Property Name="transportID" Type="bigint" Nullable="false" />
-          <Property Name="actNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="CMR" Type="nvarchar" MaxLength="100" />
-          <Property Name="TrailerID" Type="bigint" />
+          <Property Name="ActNumber" Type="bigint" Nullable="false" />
+          <Property Name="RequestNumber" Type="bigint" Nullable="false" />
+          <Property Name="CMR" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ActDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Address">
           <Key>
@@ -476,18 +473,6 @@
           <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="role" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="ActTransportation">
-          <Key>
-            <PropertyRef Name="contractID" />
-            <PropertyRef Name="actNumber" />
-          </Key>
-          <Property Name="addressID" Type="Int64" Nullable="false" />
-          <Property Name="contractID" Type="Int64" Nullable="false" />
-          <Property Name="transportID" Type="Int64" Nullable="false" />
-          <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CMR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="TrailerID" Type="Int64" />
-        </EntityType>
         <EntityType Name="Address">
           <Key>
             <PropertyRef Name="addressID" />
@@ -835,7 +820,6 @@
           <EntitySet Name="Accounts" EntityType="Self.Accounts" />
           <EntitySet Name="Act" EntityType="Self.Act" />
           <EntitySet Name="ActPersons" EntityType="Self.ActPersons" />
-          <EntitySet Name="ActTransportation" EntityType="Self.ActTransportation" />
           <EntitySet Name="Address" EntityType="Self.Address" />
           <EntitySet Name="Battery" EntityType="Self.Battery" />
           <EntitySet Name="ContactPerson" EntityType="Self.ContactPerson" />
@@ -869,6 +853,7 @@
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
           <EntitySet Name="Request" EntityType="TrafficModel.Request" />
+          <EntitySet Name="ActTransportation" EntityType="TrafficModel.ActTransportation" />
         </EntityContainer>
         <EntityType Name="Request">
           <Key>
@@ -886,6 +871,15 @@
           <Property Name="Packing" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="SpecialNotes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ActTransportation">
+          <Key>
+            <PropertyRef Name="ActNumber" />
+          </Key>
+          <Property Name="ActNumber" Type="Int64" Nullable="false" />
+          <Property Name="RequestNumber" Type="Int64" Nullable="false" />
+          <Property Name="CMR" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ActDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -919,18 +913,6 @@
                 <ScalarProperty Name="organizationID" ColumnName="organizationID" />
                 <ScalarProperty Name="actNumber" ColumnName="actNumber" />
                 <ScalarProperty Name="role" ColumnName="role" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ActTransportation">
-            <EntityTypeMapping TypeName="TrafficModel.ActTransportation">
-              <MappingFragment StoreEntitySet="ActTransportation">
-                <ScalarProperty Name="addressID" ColumnName="addressID" />
-                <ScalarProperty Name="contractID" ColumnName="contractID" />
-                <ScalarProperty Name="transportID" ColumnName="transportID" />
-                <ScalarProperty Name="actNumber" ColumnName="actNumber" />
-                <ScalarProperty Name="CMR" ColumnName="CMR" />
-                <ScalarProperty Name="TrailerID" ColumnName="TrailerID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1281,6 +1263,16 @@
                 <ScalarProperty Name="transportID" ColumnName="transportID" />
                 <ScalarProperty Name="contractID" ColumnName="contractID" />
                 <ScalarProperty Name="RequestNumber" ColumnName="RequestNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActTransportation">
+            <EntityTypeMapping TypeName="TrafficModel.ActTransportation">
+              <MappingFragment StoreEntitySet="ActTransportation">
+                <ScalarProperty Name="ActDate" ColumnName="ActDate" />
+                <ScalarProperty Name="CMR" ColumnName="CMR" />
+                <ScalarProperty Name="RequestNumber" ColumnName="RequestNumber" />
+                <ScalarProperty Name="ActNumber" ColumnName="ActNumber" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

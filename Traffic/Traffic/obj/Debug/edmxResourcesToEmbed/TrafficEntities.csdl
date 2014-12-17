@@ -30,18 +30,6 @@
     <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="role" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
-  <EntityType Name="ActTransportation">
-    <Key>
-      <PropertyRef Name="contractID" />
-      <PropertyRef Name="actNumber" />
-    </Key>
-    <Property Name="addressID" Type="Int64" Nullable="false" />
-    <Property Name="contractID" Type="Int64" Nullable="false" />
-    <Property Name="transportID" Type="Int64" Nullable="false" />
-    <Property Name="actNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="CMR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="TrailerID" Type="Int64" />
-  </EntityType>
   <EntityType Name="Address">
     <Key>
       <PropertyRef Name="addressID" />
@@ -389,7 +377,6 @@
     <EntitySet Name="Accounts" EntityType="Self.Accounts" />
     <EntitySet Name="Act" EntityType="Self.Act" />
     <EntitySet Name="ActPersons" EntityType="Self.ActPersons" />
-    <EntitySet Name="ActTransportation" EntityType="Self.ActTransportation" />
     <EntitySet Name="Address" EntityType="Self.Address" />
     <EntitySet Name="Battery" EntityType="Self.Battery" />
     <EntitySet Name="ContactPerson" EntityType="Self.ContactPerson" />
@@ -423,6 +410,7 @@
       <End Role="Employee" EntitySet="Employee" />
     </AssociationSet>
     <EntitySet Name="Request" EntityType="TrafficModel.Request" />
+    <EntitySet Name="ActTransportation" EntityType="TrafficModel.ActTransportation" />
   </EntityContainer>
   <EntityType Name="Request">
     <Key>
@@ -440,5 +428,14 @@
     <Property Name="Packing" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
     <Property Name="SpecialNotes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ActTransportation">
+    <Key>
+      <PropertyRef Name="ActNumber" />
+    </Key>
+    <Property Name="ActNumber" Type="Int64" Nullable="false" />
+    <Property Name="RequestNumber" Type="Int64" Nullable="false" />
+    <Property Name="CMR" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ActDate" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
 </Schema>

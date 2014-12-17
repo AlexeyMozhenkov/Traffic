@@ -12,7 +12,7 @@
         <br />
         <asp:Button ID="btn_3" runat="server"  class="btn btn-primary btn-large" Width="500px" Text="Диспетчеризация клиентских отправлений " ></asp:Button>
         <br />
-        <asp:Button ID="btn_4" runat="server"  class="btn btn-primary btn-large" Width="500px" Text="Регистрация грузов (накладных) в общей системе " ></asp:Button>
+        <asp:Button ID="btn_4" runat="server"  class="btn btn-primary btn-large" Width="500px" Text="Регистрация грузов (накладных) в общей системе " PostBackUrl="~/Web_Forms/Acts.aspx" ></asp:Button>
         <br />
         <asp:Button ID="btn_5" runat="server"  class="btn btn-primary btn-large" Width="500px" Text="Заявки" PostBackUrl="~/Web_Forms/Requests.aspx" ></asp:Button>
         <br />

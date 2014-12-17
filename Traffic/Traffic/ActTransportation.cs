@@ -14,11 +14,9 @@ namespace Traffic
     
     public partial class ActTransportation
     {
-        public long addressID { get; set; }
-        public long contractID { get; set; }
-        public long transportID { get; set; }
-        public string actNumber { get; set; }
+        public long ActNumber { get; set; }
+        public long RequestNumber { get; set; }
         public string CMR { get; set; }
-        public Nullable<long> TrailerID { get; set; }
+        public System.DateTime ActDate { get; set; }
     }
 }

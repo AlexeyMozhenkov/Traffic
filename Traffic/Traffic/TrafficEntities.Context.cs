@@ -28,7 +28,6 @@ namespace Traffic
         public virtual DbSet<Accounts> Accounts { get; set; }
         public virtual DbSet<Act> Act { get; set; }
         public virtual DbSet<ActPersons> ActPersons { get; set; }
-        public virtual DbSet<ActTransportation> ActTransportation { get; set; }
         public virtual DbSet<Address> Address { get; set; }
         public virtual DbSet<Battery> Battery { get; set; }
         public virtual DbSet<ContactPerson> ContactPerson { get; set; }
@@ -54,5 +53,6 @@ namespace Traffic
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Waybills> Waybills { get; set; }
         public virtual DbSet<Request> Request { get; set; }
+        public virtual DbSet<ActTransportation> ActTransportation { get; set; }
     }
 }

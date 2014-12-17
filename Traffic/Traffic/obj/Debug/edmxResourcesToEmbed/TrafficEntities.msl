@@ -30,18 +30,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ActTransportation">
-      <EntityTypeMapping TypeName="TrafficModel.ActTransportation">
-        <MappingFragment StoreEntitySet="ActTransportation">
-          <ScalarProperty Name="addressID" ColumnName="addressID" />
-          <ScalarProperty Name="contractID" ColumnName="contractID" />
-          <ScalarProperty Name="transportID" ColumnName="transportID" />
-          <ScalarProperty Name="actNumber" ColumnName="actNumber" />
-          <ScalarProperty Name="CMR" ColumnName="CMR" />
-          <ScalarProperty Name="TrailerID" ColumnName="TrailerID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Address">
       <EntityTypeMapping TypeName="TrafficModel.Address">
         <MappingFragment StoreEntitySet="Address">
@@ -389,6 +377,16 @@
           <ScalarProperty Name="transportID" ColumnName="transportID" />
           <ScalarProperty Name="contractID" ColumnName="contractID" />
           <ScalarProperty Name="RequestNumber" ColumnName="RequestNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActTransportation">
+      <EntityTypeMapping TypeName="TrafficModel.ActTransportation">
+        <MappingFragment StoreEntitySet="ActTransportation">
+          <ScalarProperty Name="ActDate" ColumnName="ActDate" />
+          <ScalarProperty Name="CMR" ColumnName="CMR" />
+          <ScalarProperty Name="RequestNumber" ColumnName="RequestNumber" />
+          <ScalarProperty Name="ActNumber" ColumnName="ActNumber" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

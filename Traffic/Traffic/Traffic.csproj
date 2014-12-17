@@ -167,6 +167,7 @@
     <Content Include="App_Data\Traffic_log.ldf">
       <DependentUpon>Traffic.mdf</DependentUpon>
     </Content>
+    <Content Include="Web_Controls\ActsControl.ascx" />
     <Content Include="Web_Controls\RequestsControl.ascx" />
     <Content Include="Web_Controls\ContractsControl.ascx" />
     <Content Include="Web_Controls\OrganizationsControl.ascx" />
@@ -176,6 +177,7 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Web_Forms\Acts.aspx" />
     <Content Include="Web_Forms\Requests.aspx" />
     <Content Include="Web_Forms\DriverPage.aspx" />
     <Content Include="Web_Controls\TransportStaterReportControl.ascx" />
@@ -360,6 +362,7 @@
     <Compile Include="InternationalCard.cs">
       <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Logic\ActTransportationLogic.cs" />
     <Compile Include="Logic\RequestsLogic.cs" />
     <Compile Include="Logic\EmployeeLogic.cs" />
     <Compile Include="Logic\InternationalCardClass.cs" />
@@ -426,6 +429,13 @@
     <Compile Include="Waybills.cs">
       <DependentUpon>trafficEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Web_Controls\ActsControl.ascx.cs">
+      <DependentUpon>ActsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_Controls\ActsControl.ascx.designer.cs">
+      <DependentUpon>ActsControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Web_Controls\RequestsControl.ascx.cs">
       <DependentUpon>RequestsControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -456,6 +466,13 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Web_Forms\Acts.aspx.cs">
+      <DependentUpon>Acts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_Forms\Acts.aspx.designer.cs">
+      <DependentUpon>Acts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Web_Forms\Requests.aspx.cs">
       <DependentUpon>Requests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -631,6 +648,7 @@
       <DependentUpon>WaybillsPrintPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="WordTemplates\BaseWordTemplate.cs" />
+    <Compile Include="WordTemplates\ActTamplate.cs" />
     <Compile Include="WordTemplates\RequestTamplate.cs" />
     <Compile Include="WordTemplates\СontractTamplate.cs" />
     <Compile Include="WordTemplates\OrganizationCardTamplate.cs" />
