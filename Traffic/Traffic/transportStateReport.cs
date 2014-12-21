@@ -16,11 +16,18 @@ namespace Traffic
     {
         public long reportID { get; set; }
         public long organizationID { get; set; }
-        public Nullable<long> routeID { get; set; }
+        public long routeID { get; set; }
         public long transportID { get; set; }
-        public long tableNumber { get; set; }
+        public string tableNumber { get; set; }
         public string status { get; set; }
         public string notes { get; set; }
         public string location { get; set; }
+        public System.DateTime DepartureDate { get; set; }
+        public System.DateTime DeliveryPeriod { get; set; }
+        public string Shipper { get; set; }
+        public string PointOfShipment { get; set; }
+        public string PointOfDelivery { get; set; }
+        public string Customer { get; set; }
+        public string Shipment { get; set; }
     }
 }

@@ -1,30 +1,17 @@
-﻿<%@ Page Title="Состояние транспорта" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TransportStaterReport.aspx.cs" Inherits="Traffic.TransportStaterReport" %>
+﻿<%@ Page Title="Путевые Листы" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="Waybill.aspx.cs" Inherits="Traffic.Waybill" %>
 
-<%@ Register Src="~/Web_Controls/TransportStaterReportControl.ascx" TagPrefix="uc1" TagName="DetailedInfo" %>
+<%@ Register Src="~/Web_Controls/WaybillControl.ascx" TagPrefix="uc1" TagName="DetailedInfo" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
     <div id="container">
         <asp:MultiView ID="mv_Main" runat="server" ActiveViewIndex="0">
             <asp:View ID="view_DataGrid" runat="server">
-                <asp:GridView ID="DataGrid" runat="server" AllowPaging="True"
-                    CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="20" Width="100%" OnSelectedIndexChanged="DataGrid_SelectedIndexChanged" >
+                <asp:GridView ID="DataGrid" runat="server" AllowPaging="True"  
+                    CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="20" Width="100%" OnSelectedIndexChanged="TransportDataGrid_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
-                        <%--<asp:BoundField DataField="addressID" HeaderText="Address ID " />
-                        <asp:BoundField DataField="organizationID" HeaderText="Organization ID" />
-                        <asp:BoundField DataField="tableNumber" HeaderText="Table Number " />
-                        <asp:BoundField DataField="FirstName" HeaderText="First Name " />
-                        <asp:BoundField DataField="LastName" HeaderText="Last Name " />
-                        <asp:BoundField DataField="ParentName" HeaderText="Parent Name " />
-                        <asp:BoundField DataField="BirthDay" HeaderText="Birth Day" />
-                        <asp:BoundField DataField="IDnumber" HeaderText="ID Number" />
-                        <asp:BoundField DataField="PassportSerie" HeaderText="Passport Serie" />
-                        <asp:BoundField DataField="PassportNumber" HeaderText="Passport Number" />
-                        <asp:BoundField DataField="DatePassportUntil" 
-                            HeaderText="Date Passport Until" />
-                        <asp:BoundField DataField="DatePassportFrom" HeaderText="Date Passport From" />
-                        <asp:BoundField DataField="position" HeaderText="Position" />--%>
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -37,7 +24,7 @@
                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+                
                 <hr />
                 <div id="filter">
                     <asp:Label ID="lbl_Filter" runat="server" Text="Filter"></asp:Label>
@@ -46,7 +33,7 @@
                         GroupName="Filter" Text="All records" OnCheckedChanged="rbtn_AllUsers_CheckedChanged" />
                     <br />
                     <asp:RadioButton ID="rbtn_Filtered" runat="server" AutoPostBack="True" GroupName="Filter"
-                        Text="Organization ID" OnCheckedChanged="rbtn_Filtered_CheckedChanged" />
+                        Text="Request" OnCheckedChanged="rbtn_Filtered_CheckedChanged" />
                     <br />
                     <asp:TextBox ID="txt_Filter" runat="server" Width="210px" Enabled="False"></asp:TextBox>
                     <br />
@@ -56,15 +43,15 @@
                 </div>
                 <div id="modify">
                     <asp:Button ID="btn_Add" runat="server" Text="Add" Width="120px" CssClass="btnAlign"
-                        OnClick="btn_Add_Click" Height="21px" />
+                        OnClick="btn_Add_Click" />
                     <br />
                     <asp:Button ID="btn_Edit" runat="server" Text="Edit" Width="120px" CssClass="btnAlign" OnClick="btn_Edit_Click" />
                     <br />
-                    <asp:Button ID="btn_Delete" runat="server" Text="Delete" Width="120px" CssClass="btnAlign" OnClick="btn_Delete_Click"
-                        Font-Names="Segoe UI" />
+                    <asp:Button ID="btn_Delete" runat="server" Text="Delete" Width="120px" CssClass="btnAlign"
+                        Font-Names="Segoe UI" OnClick="btn_Delete_Click" />
                     <br />
-                    <asp:Button ID="Button1" runat="server" Text="Print" Width="120px" CssClass="btnAlign" 
-                        Font-Names="Segoe UI" OnClick="Button1_Click" />
+                    <asp:Button ID="btn_GetFile" runat="server" Text="Print" Width="120px" CssClass="btnAlign"
+                        Font-Names="Segoe UI" OnClick="btn_GetFile_Click"  />
                     <br />
                 </div>
                 <br />
@@ -107,3 +94,4 @@
         </asp:MultiView>
     </div>
 </asp:Content>
+

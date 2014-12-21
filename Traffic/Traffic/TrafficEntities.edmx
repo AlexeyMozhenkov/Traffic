@@ -305,12 +305,19 @@
           </Key>
           <Property Name="reportID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="organizationID" Type="bigint" Nullable="false" />
-          <Property Name="routeID" Type="bigint" />
+          <Property Name="routeID" Type="bigint" Nullable="false" />
           <Property Name="transportID" Type="bigint" Nullable="false" />
-          <Property Name="tableNumber" Type="bigint" Nullable="false" />
-          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="notes" Type="nvarchar" MaxLength="250" />
-          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="tableNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="notes" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DepartureDate" Type="date" Nullable="false" />
+          <Property Name="DeliveryPeriod" Type="date" Nullable="false" />
+          <Property Name="Shipper" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="PointOfShipment" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="PointOfDelivery" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Customer" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Shipment" Type="nvarchar" MaxLength="150" Nullable="false" />
         </EntityType>
         <EntityType Name="Trips">
           <Key>
@@ -359,7 +366,7 @@
           <Property Name="carrierID" Type="bigint" />
           <Property Name="carID" Type="bigint" />
           <Property Name="trailerID" Type="int" />
-          <Property Name="driversTableNumber" Type="int" />
+          <Property Name="driversTableNumber" Type="nvarchar" MaxLength="50" />
           <Property Name="speedometerOnDeparture" Type="float" />
           <Property Name="speedometerOnReturn" Type="float" />
           <Property Name="departureDateShedule" Type="date" />
@@ -715,19 +722,6 @@
           <Property Name="engineType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="engineVolume" Type="Single" />
         </EntityType>
-        <EntityType Name="transportStateReport">
-          <Key>
-            <PropertyRef Name="reportID" />
-          </Key>
-          <Property Name="reportID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="organizationID" Type="Int64" Nullable="false" />
-          <Property Name="routeID" Type="Int64" />
-          <Property Name="transportID" Type="Int64" Nullable="false" />
-          <Property Name="tableNumber" Type="Int64" Nullable="false" />
-          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="notes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Trips">
           <Key>
             <PropertyRef Name="tripID" />
@@ -764,33 +758,6 @@
           <Property Name="userID" Type="Int64" Nullable="false" />
           <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Waybills">
-          <Key>
-            <PropertyRef Name="waybillID" />
-          </Key>
-          <Property Name="waybillID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="waybillNumber" Type="Int32" />
-          <Property Name="creationDate" Type="DateTime" Precision="0" />
-          <Property Name="carrierID" Type="Int64" />
-          <Property Name="carID" Type="Int64" />
-          <Property Name="trailerID" Type="Int32" />
-          <Property Name="driversTableNumber" Type="Int32" />
-          <Property Name="speedometerOnDeparture" Type="Double" />
-          <Property Name="speedometerOnReturn" Type="Double" />
-          <Property Name="departureDateShedule" Type="DateTime" Precision="0" />
-          <Property Name="departureTimeShedule" Type="Time" Precision="7" />
-          <Property Name="departureDateFact" Type="DateTime" Precision="0" />
-          <Property Name="departureTimeFact" Type="Time" Precision="7" />
-          <Property Name="returnDateShedule" Type="DateTime" Precision="0" />
-          <Property Name="returnTimeShedule" Type="Time" Precision="7" />
-          <Property Name="returnDateFact" Type="DateTime" Precision="0" />
-          <Property Name="returnTimeFact" Type="Time" Precision="7" />
-          <Property Name="zeroMileage" Type="Double" />
-          <Property Name="engineTime" Type="Double" />
-          <Property Name="soecialEquipmentTime" Type="Double" />
-          <Property Name="FLMrestOnDeparture" Type="Double" />
-          <Property Name="FLMrestOnReturn" Type="Double" />
         </EntityType>
         <Association Name="FK_ContractStreak_Contracts">
           <End Role="Contracts" Type="Self.Contracts" Multiplicity="1" />
@@ -839,11 +806,9 @@
           <EntitySet Name="TechnicalInspection" EntityType="Self.TechnicalInspection" />
           <EntitySet Name="Tire" EntityType="Self.Tire" />
           <EntitySet Name="Transport" EntityType="Self.Transport" />
-          <EntitySet Name="transportStateReport" EntityType="Self.transportStateReport" />
           <EntitySet Name="Trips" EntityType="Self.Trips" />
           <EntitySet Name="TypeCost" EntityType="Self.TypeCost" />
           <EntitySet Name="Users" EntityType="Self.Users" />
-          <EntitySet Name="Waybills" EntityType="Self.Waybills" />
           <AssociationSet Name="FK_ContractStreak_Contracts" Association="Self.FK_ContractStreak_Contracts">
             <End Role="Contracts" EntitySet="Contracts" />
             <End Role="ContractStreak" EntitySet="ContractStreak" />
@@ -854,6 +819,8 @@
           </AssociationSet>
           <EntitySet Name="Request" EntityType="TrafficModel.Request" />
           <EntitySet Name="ActTransportation" EntityType="TrafficModel.ActTransportation" />
+          <EntitySet Name="Waybills" EntityType="TrafficModel.Waybills" />
+          <EntitySet Name="transportStateReport" EntityType="TrafficModel.transportStateReport" />
         </EntityContainer>
         <EntityType Name="Request">
           <Key>
@@ -880,6 +847,53 @@
           <Property Name="RequestNumber" Type="Int64" Nullable="false" />
           <Property Name="CMR" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ActDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Waybills">
+          <Key>
+            <PropertyRef Name="waybillID" />
+          </Key>
+          <Property Name="waybillID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="waybillNumber" Type="Int32" />
+          <Property Name="creationDate" Type="DateTime" Precision="0" />
+          <Property Name="carrierID" Type="Int64" />
+          <Property Name="carID" Type="Int64" />
+          <Property Name="trailerID" Type="Int32" />
+          <Property Name="driversTableNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="speedometerOnDeparture" Type="Double" />
+          <Property Name="speedometerOnReturn" Type="Double" />
+          <Property Name="departureDateShedule" Type="DateTime" Precision="0" />
+          <Property Name="departureTimeShedule" Type="Time" Precision="7" />
+          <Property Name="departureDateFact" Type="DateTime" Precision="0" />
+          <Property Name="departureTimeFact" Type="Time" Precision="7" />
+          <Property Name="returnDateShedule" Type="DateTime" Precision="0" />
+          <Property Name="returnTimeShedule" Type="Time" Precision="7" />
+          <Property Name="returnDateFact" Type="DateTime" Precision="0" />
+          <Property Name="returnTimeFact" Type="Time" Precision="7" />
+          <Property Name="zeroMileage" Type="Double" />
+          <Property Name="engineTime" Type="Double" />
+          <Property Name="soecialEquipmentTime" Type="Double" />
+          <Property Name="FLMrestOnDeparture" Type="Double" />
+          <Property Name="FLMrestOnReturn" Type="Double" />
+        </EntityType>
+        <EntityType Name="transportStateReport">
+          <Key>
+            <PropertyRef Name="reportID" />
+          </Key>
+          <Property Name="reportID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="organizationID" Type="Int64" Nullable="false" />
+          <Property Name="routeID" Type="Int64" Nullable="false" />
+          <Property Name="transportID" Type="Int64" Nullable="false" />
+          <Property Name="tableNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="notes" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DepartureDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DeliveryPeriod" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Shipper" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PointOfShipment" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PointOfDelivery" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Customer" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Shipment" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1166,20 +1180,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="transportStateReport">
-            <EntityTypeMapping TypeName="TrafficModel.transportStateReport">
-              <MappingFragment StoreEntitySet="transportStateReport">
-                <ScalarProperty Name="reportID" ColumnName="reportID" />
-                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
-                <ScalarProperty Name="routeID" ColumnName="routeID" />
-                <ScalarProperty Name="transportID" ColumnName="transportID" />
-                <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="notes" ColumnName="notes" />
-                <ScalarProperty Name="location" ColumnName="location" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Trips">
             <EntityTypeMapping TypeName="TrafficModel.Trips">
               <MappingFragment StoreEntitySet="Trips">
@@ -1220,34 +1220,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Waybills">
-            <EntityTypeMapping TypeName="TrafficModel.Waybills">
-              <MappingFragment StoreEntitySet="Waybills">
-                <ScalarProperty Name="waybillID" ColumnName="waybillID" />
-                <ScalarProperty Name="waybillNumber" ColumnName="waybillNumber" />
-                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
-                <ScalarProperty Name="carrierID" ColumnName="carrierID" />
-                <ScalarProperty Name="carID" ColumnName="carID" />
-                <ScalarProperty Name="trailerID" ColumnName="trailerID" />
-                <ScalarProperty Name="driversTableNumber" ColumnName="driversTableNumber" />
-                <ScalarProperty Name="speedometerOnDeparture" ColumnName="speedometerOnDeparture" />
-                <ScalarProperty Name="speedometerOnReturn" ColumnName="speedometerOnReturn" />
-                <ScalarProperty Name="departureDateShedule" ColumnName="departureDateShedule" />
-                <ScalarProperty Name="departureTimeShedule" ColumnName="departureTimeShedule" />
-                <ScalarProperty Name="departureDateFact" ColumnName="departureDateFact" />
-                <ScalarProperty Name="departureTimeFact" ColumnName="departureTimeFact" />
-                <ScalarProperty Name="returnDateShedule" ColumnName="returnDateShedule" />
-                <ScalarProperty Name="returnTimeShedule" ColumnName="returnTimeShedule" />
-                <ScalarProperty Name="returnDateFact" ColumnName="returnDateFact" />
-                <ScalarProperty Name="returnTimeFact" ColumnName="returnTimeFact" />
-                <ScalarProperty Name="zeroMileage" ColumnName="zeroMileage" />
-                <ScalarProperty Name="engineTime" ColumnName="engineTime" />
-                <ScalarProperty Name="soecialEquipmentTime" ColumnName="soecialEquipmentTime" />
-                <ScalarProperty Name="FLMrestOnDeparture" ColumnName="FLMrestOnDeparture" />
-                <ScalarProperty Name="FLMrestOnReturn" ColumnName="FLMrestOnReturn" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Request">
             <EntityTypeMapping TypeName="TrafficModel.Request">
               <MappingFragment StoreEntitySet="Request">
@@ -1273,6 +1245,55 @@
                 <ScalarProperty Name="CMR" ColumnName="CMR" />
                 <ScalarProperty Name="RequestNumber" ColumnName="RequestNumber" />
                 <ScalarProperty Name="ActNumber" ColumnName="ActNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Waybills">
+            <EntityTypeMapping TypeName="TrafficModel.Waybills">
+              <MappingFragment StoreEntitySet="Waybills">
+                <ScalarProperty Name="FLMrestOnReturn" ColumnName="FLMrestOnReturn" />
+                <ScalarProperty Name="FLMrestOnDeparture" ColumnName="FLMrestOnDeparture" />
+                <ScalarProperty Name="soecialEquipmentTime" ColumnName="soecialEquipmentTime" />
+                <ScalarProperty Name="engineTime" ColumnName="engineTime" />
+                <ScalarProperty Name="zeroMileage" ColumnName="zeroMileage" />
+                <ScalarProperty Name="returnTimeFact" ColumnName="returnTimeFact" />
+                <ScalarProperty Name="returnDateFact" ColumnName="returnDateFact" />
+                <ScalarProperty Name="returnTimeShedule" ColumnName="returnTimeShedule" />
+                <ScalarProperty Name="returnDateShedule" ColumnName="returnDateShedule" />
+                <ScalarProperty Name="departureTimeFact" ColumnName="departureTimeFact" />
+                <ScalarProperty Name="departureDateFact" ColumnName="departureDateFact" />
+                <ScalarProperty Name="departureTimeShedule" ColumnName="departureTimeShedule" />
+                <ScalarProperty Name="departureDateShedule" ColumnName="departureDateShedule" />
+                <ScalarProperty Name="speedometerOnReturn" ColumnName="speedometerOnReturn" />
+                <ScalarProperty Name="speedometerOnDeparture" ColumnName="speedometerOnDeparture" />
+                <ScalarProperty Name="driversTableNumber" ColumnName="driversTableNumber" />
+                <ScalarProperty Name="trailerID" ColumnName="trailerID" />
+                <ScalarProperty Name="carID" ColumnName="carID" />
+                <ScalarProperty Name="carrierID" ColumnName="carrierID" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+                <ScalarProperty Name="waybillNumber" ColumnName="waybillNumber" />
+                <ScalarProperty Name="waybillID" ColumnName="waybillID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transportStateReport">
+            <EntityTypeMapping TypeName="TrafficModel.transportStateReport">
+              <MappingFragment StoreEntitySet="transportStateReport">
+                <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="PointOfDelivery" ColumnName="PointOfDelivery" />
+                <ScalarProperty Name="PointOfShipment" ColumnName="PointOfShipment" />
+                <ScalarProperty Name="Shipper" ColumnName="Shipper" />
+                <ScalarProperty Name="DeliveryPeriod" ColumnName="DeliveryPeriod" />
+                <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+                <ScalarProperty Name="transportID" ColumnName="transportID" />
+                <ScalarProperty Name="routeID" ColumnName="routeID" />
+                <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+                <ScalarProperty Name="reportID" ColumnName="reportID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

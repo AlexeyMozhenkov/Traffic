@@ -168,6 +168,7 @@
       <DependentUpon>Traffic.mdf</DependentUpon>
     </Content>
     <Content Include="Web_Controls\ActsControl.ascx" />
+    <Content Include="Web_Controls\WaybillControl.ascx" />
     <Content Include="Web_Controls\RequestsControl.ascx" />
     <Content Include="Web_Controls\ContractsControl.ascx" />
     <Content Include="Web_Controls\OrganizationsControl.ascx" />
@@ -178,6 +179,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Web_Forms\Acts.aspx" />
+    <Content Include="Web_Forms\Waybill.aspx" />
     <Content Include="Web_Forms\Requests.aspx" />
     <Content Include="Web_Forms\DriverPage.aspx" />
     <Content Include="Web_Controls\TransportStaterReportControl.ascx" />
@@ -436,6 +438,13 @@
     <Compile Include="Web_Controls\ActsControl.ascx.designer.cs">
       <DependentUpon>ActsControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Web_Controls\WaybillControl.ascx.cs">
+      <DependentUpon>WaybillControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_Controls\WaybillControl.ascx.designer.cs">
+      <DependentUpon>WaybillControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Web_Controls\RequestsControl.ascx.cs">
       <DependentUpon>RequestsControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -472,6 +481,13 @@
     </Compile>
     <Compile Include="Web_Forms\Acts.aspx.designer.cs">
       <DependentUpon>Acts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web_Forms\Waybill.aspx.cs">
+      <DependentUpon>Waybill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_Forms\Waybill.aspx.designer.cs">
+      <DependentUpon>Waybill.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web_Forms\Requests.aspx.cs">
       <DependentUpon>Requests.aspx</DependentUpon>
@@ -649,6 +665,9 @@
     </Compile>
     <Compile Include="WordTemplates\BaseWordTemplate.cs" />
     <Compile Include="WordTemplates\ActTamplate.cs" />
+    <Compile Include="WordTemplates\DeptTemplate.cs" />
+    <Compile Include="WordTemplates\TransportStateTamplate.cs" />
+    <Compile Include="WordTemplates\WaybillsTamplate.cs" />
     <Compile Include="WordTemplates\RequestTamplate.cs" />
     <Compile Include="WordTemplates\СontractTamplate.cs" />
     <Compile Include="WordTemplates\OrganizationCardTamplate.cs" />

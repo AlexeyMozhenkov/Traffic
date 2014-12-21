@@ -10,18 +10,21 @@ using Microsoft.AspNet.FriendlyUrls.Resolvers;
 namespace Traffic
 {
 
-    public partial class TransportStaterReportControl : System.Web.UI.UserControl
+    public partial class WaybillControl : System.Web.UI.UserControl
     {
         public event CancelClickedDelegate CancelClickedEvent;
         public event SavedDataDelegate SavedDataEvent;
-        private List<TextBox> _txtFields;
-        public bool IsEdit { get; set; }
         protected string CurrentView { get; private set; }
 
         protected string AlternateView { get; private set; }
 
         protected string SwitchUrl { get; private set; }
 
+        private List<TextBox> _txtFields;
+        public bool IsEdit { get; set; }
+        public bool IsVisible { get; set; }
+
+        public int Identity { get; set; }
         public long par_0
         {
             get
@@ -33,30 +36,29 @@ namespace Traffic
                 txt_0.Text = value.ToString();
             }
         }
-        public long par_1
+        public int par_1
         {
             get
             {
-                return long.Parse(txt_1.Text);
+                return int.Parse(txt_1.Text);
             }
             set
             {
                 txt_1.Text = value.ToString();
             }
         }
-
-        public long par_2
+        public DateTime par_2
         {
             get
             {
-                return long.Parse(txt_2.Text);
+                return DateTime.Parse(txt_2.Text);
             }
             set
             {
-                txt_2.Text = value.ToString();
+
+                txt_2.Text = value.ToString("yyyy-MM-dd");
             }
         }
-
         public long par_3
         {
             get
@@ -69,15 +71,17 @@ namespace Traffic
             }
         }
 
-        public string par_4
+
+
+        public int par_4
         {
             get
             {
-                return (txt_4.Text);
+                return int.Parse(txt_4.Text);
             }
             set
             {
-                txt_4.Text = value;
+                txt_4.Text = value.ToString();
             }
         }
 
@@ -85,36 +89,35 @@ namespace Traffic
         {
             get
             {
-                return txt_5.Text;
+                return (txt_5.Text);
             }
             set
             {
                 txt_5.Text = value;
             }
         }
-        public string par_6
+        public float par_6
         {
             get
             {
-                return txt_6.Text;
+                return float.Parse(txt_6.Text);
             }
             set
             {
-                txt_6.Text = value;
+                txt_6.Text = value.ToString();
             }
         }
-        public string par_7
+        public float par_7
         {
             get
             {
-                return txt_7.Text;
+                return float.Parse(txt_7.Text);
             }
             set
             {
-                txt_7.Text = value;
+                txt_7.Text = value.ToString();
             }
         }
-
         public DateTime par_8
         {
             get
@@ -127,81 +130,161 @@ namespace Traffic
                 txt_8.Text = value.ToString("yyyy-MM-dd");
             }
         }
-        public DateTime par_9
+        public TimeSpan par_9
         {
             get
             {
-                return DateTime.Parse(txt_9.Text);
+                return TimeSpan.Parse(txt_9.Text);
             }
             set
             {
 
-                txt_9.Text = value.ToString("yyyy-MM-dd");
+                txt_9.Text = value.ToString("t");
             }
         }
-        public string par_10
+        public DateTime par_10
         {
             get
             {
-                return txt_10.Text;
+                return DateTime.Parse(txt_10.Text);
             }
             set
             {
-                txt_10.Text = value;
+
+                txt_10.Text = value.ToString("yyyy-MM-dd");
             }
         }
-        public string par_11
+        public TimeSpan par_11
         {
             get
             {
-                return txt_11.Text;
+                return TimeSpan.Parse(txt_11.Text);
             }
             set
             {
-                txt_11.Text = value;
+
+                txt_11.Text = value.ToString("T");
             }
         }
-        public string par_12
+        public DateTime par_12
         {
             get
             {
-                return txt_12.Text;
+                return DateTime.Parse(txt_12.Text);
             }
             set
             {
-                txt_12.Text = value;
+
+                txt_12.Text = value.ToString("yyyy-MM-dd");
             }
         }
-        public string par_13
+        public TimeSpan par_13
         {
             get
             {
-                return txt_13.Text;
+                return TimeSpan.Parse(txt_13.Text);
             }
             set
             {
-                txt_13.Text = value;
+
+                txt_13.Text = value.ToString("t");
             }
         }
-        public string par_14
+
+        public DateTime par_14
         {
             get
             {
-                return txt_14.Text;
+                return DateTime.Parse(txt_14.Text);
             }
             set
             {
-                txt_14.Text = value;
+
+                txt_14.Text = value.ToString("yyyy-MM-dd");
+            }
+        }
+        public TimeSpan par_15
+        {
+            get
+            {
+                return TimeSpan.Parse(txt_15.Text);
+            }
+            set
+            {
+
+                txt_15.Text = value.ToString("t");
+            }
+        }
+
+        public float par_16
+        {
+            get
+            {
+                return float.Parse(txt_16.Text);
+            }
+            set
+            {
+                txt_16.Text = value.ToString();
+            }
+        }
+        public float par_17
+        {
+            get
+            {
+                return float.Parse(txt_17.Text);
+            }
+            set
+            {
+                txt_17.Text = value.ToString();
+            }
+        }
+        public float par_18
+        {
+            get
+            {
+                return float.Parse(txt_18.Text);
+            }
+            set
+            {
+                txt_18.Text = value.ToString();
+            }
+        }
+        public float par_19
+        {
+            get
+            {
+                return float.Parse(txt_19.Text);
+            }
+            set
+            {
+                txt_19.Text = value.ToString();
+            }
+        }
+
+        public float par_20
+        {
+            get
+            {
+                return float.Parse(txt_20.Text);
+            }
+            set
+            {
+                txt_20.Text = value.ToString();
             }
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
                 IsEdit = false;
                 ViewState["EditMode"] = IsEdit;
+                //txt_1.DataSource = TransportLogic.ListOfIDs();
+                //txt_1.DataBind();
             }
-            _txtFields = new List<TextBox>(15)
+            if (ViewState["EditID"] != null)
+                txt_0.Text = ViewState["EditID"].ToString();
+            _txtFields = new List<TextBox>(21)
             {
                 txt_0,
                 txt_1,
@@ -217,8 +300,16 @@ namespace Traffic
                 txt_11,
                 txt_12,
                 txt_13,
-                txt_14
+                txt_14,
+                txt_15,
+                txt_16,
+                txt_17,
+                txt_18,
+                txt_19,
+                txt_20
+
             };
+
 
             IsEdit = (bool)ViewState["EditMode"];
 
@@ -249,7 +340,6 @@ namespace Traffic
             {
                 this.CancelClickedEvent();
             }
-            ClearControlFields();
         }
 
         protected void btn_AddEdit_Click(object sender, EventArgs e)
@@ -260,31 +350,7 @@ namespace Traffic
                 try
                 {
                     txt_1.ToString();
-                    TransportStateReportLogic.AddReport(
-                        par_1,
-                        par_2,
-                        par_3,
-                        par_4,
-                        par_5,
-                        par_6,
-                        par_7,
-                        par_8,
-                        par_9,
-                        par_10,
-                        par_11,
-                        par_12,
-                        par_13,
-                        par_14
-                        );
-                }
-                catch (ArgumentNullException)
-                {
-                    Response.Write("Couldn't insert empty row into database");
-                }
-            else
-                try
-                {
-                    TransportStateReportLogic.EditByID(
+                    WaybillsLogic.Add(
                         par_0,
                         par_1,
                         par_2,
@@ -299,7 +365,44 @@ namespace Traffic
                         par_11,
                         par_12,
                         par_13,
-                        par_14
+                        par_14,
+                        par_15,
+                        par_16,
+                        par_17,
+                        par_18,
+                        par_19,
+                        par_20
+                        );
+                }
+                catch (ArgumentNullException)
+                {
+                    Response.Write("Couldn't insert empty row into database");
+                }
+            else
+                try
+                {
+                    WaybillsLogic.Edit(
+                        par_0,
+                        par_1,
+                        par_2,
+                        par_3,
+                        par_4,
+                        par_5,
+                        par_6,
+                        par_7,
+                        par_8,
+                        par_9,
+                        par_10,
+                        par_11,
+                        par_12,
+                        par_13,
+                        par_14,
+                        par_15,
+                        par_16,
+                        par_17,
+                        par_18,
+                        par_19,
+                        par_20
                         );
                 }
                 catch (ArgumentNullException)
@@ -314,6 +417,7 @@ namespace Traffic
             ClearControlFields();
 
         }
+
         private void ClearControlFields()
         {
             foreach (TextBox txtField in _txtFields)
@@ -343,4 +447,5 @@ namespace Traffic
             ClearControlFields();
         }
     }
+
 }

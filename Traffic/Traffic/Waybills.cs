@@ -20,7 +20,7 @@ namespace Traffic
         public Nullable<long> carrierID { get; set; }
         public Nullable<long> carID { get; set; }
         public Nullable<int> trailerID { get; set; }
-        public Nullable<int> driversTableNumber { get; set; }
+        public string driversTableNumber { get; set; }
         public Nullable<double> speedometerOnDeparture { get; set; }
         public Nullable<double> speedometerOnReturn { get; set; }
         public Nullable<System.DateTime> departureDateShedule { get; set; }

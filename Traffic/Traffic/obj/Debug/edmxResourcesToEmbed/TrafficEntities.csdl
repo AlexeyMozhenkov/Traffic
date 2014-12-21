@@ -272,19 +272,6 @@
     <Property Name="engineType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="engineVolume" Type="Single" />
   </EntityType>
-  <EntityType Name="transportStateReport">
-    <Key>
-      <PropertyRef Name="reportID" />
-    </Key>
-    <Property Name="reportID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="organizationID" Type="Int64" Nullable="false" />
-    <Property Name="routeID" Type="Int64" />
-    <Property Name="transportID" Type="Int64" Nullable="false" />
-    <Property Name="tableNumber" Type="Int64" Nullable="false" />
-    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="notes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="Trips">
     <Key>
       <PropertyRef Name="tripID" />
@@ -321,33 +308,6 @@
     <Property Name="userID" Type="Int64" Nullable="false" />
     <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Waybills">
-    <Key>
-      <PropertyRef Name="waybillID" />
-    </Key>
-    <Property Name="waybillID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="waybillNumber" Type="Int32" />
-    <Property Name="creationDate" Type="DateTime" Precision="0" />
-    <Property Name="carrierID" Type="Int64" />
-    <Property Name="carID" Type="Int64" />
-    <Property Name="trailerID" Type="Int32" />
-    <Property Name="driversTableNumber" Type="Int32" />
-    <Property Name="speedometerOnDeparture" Type="Double" />
-    <Property Name="speedometerOnReturn" Type="Double" />
-    <Property Name="departureDateShedule" Type="DateTime" Precision="0" />
-    <Property Name="departureTimeShedule" Type="Time" Precision="7" />
-    <Property Name="departureDateFact" Type="DateTime" Precision="0" />
-    <Property Name="departureTimeFact" Type="Time" Precision="7" />
-    <Property Name="returnDateShedule" Type="DateTime" Precision="0" />
-    <Property Name="returnTimeShedule" Type="Time" Precision="7" />
-    <Property Name="returnDateFact" Type="DateTime" Precision="0" />
-    <Property Name="returnTimeFact" Type="Time" Precision="7" />
-    <Property Name="zeroMileage" Type="Double" />
-    <Property Name="engineTime" Type="Double" />
-    <Property Name="soecialEquipmentTime" Type="Double" />
-    <Property Name="FLMrestOnDeparture" Type="Double" />
-    <Property Name="FLMrestOnReturn" Type="Double" />
   </EntityType>
   <Association Name="FK_ContractStreak_Contracts">
     <End Role="Contracts" Type="Self.Contracts" Multiplicity="1" />
@@ -396,11 +356,9 @@
     <EntitySet Name="TechnicalInspection" EntityType="Self.TechnicalInspection" />
     <EntitySet Name="Tire" EntityType="Self.Tire" />
     <EntitySet Name="Transport" EntityType="Self.Transport" />
-    <EntitySet Name="transportStateReport" EntityType="Self.transportStateReport" />
     <EntitySet Name="Trips" EntityType="Self.Trips" />
     <EntitySet Name="TypeCost" EntityType="Self.TypeCost" />
     <EntitySet Name="Users" EntityType="Self.Users" />
-    <EntitySet Name="Waybills" EntityType="Self.Waybills" />
     <AssociationSet Name="FK_ContractStreak_Contracts" Association="Self.FK_ContractStreak_Contracts">
       <End Role="Contracts" EntitySet="Contracts" />
       <End Role="ContractStreak" EntitySet="ContractStreak" />
@@ -411,6 +369,8 @@
     </AssociationSet>
     <EntitySet Name="Request" EntityType="TrafficModel.Request" />
     <EntitySet Name="ActTransportation" EntityType="TrafficModel.ActTransportation" />
+    <EntitySet Name="Waybills" EntityType="TrafficModel.Waybills" />
+    <EntitySet Name="transportStateReport" EntityType="TrafficModel.transportStateReport" />
   </EntityContainer>
   <EntityType Name="Request">
     <Key>
@@ -437,5 +397,52 @@
     <Property Name="RequestNumber" Type="Int64" Nullable="false" />
     <Property Name="CMR" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="ActDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Waybills">
+    <Key>
+      <PropertyRef Name="waybillID" />
+    </Key>
+    <Property Name="waybillID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="waybillNumber" Type="Int32" />
+    <Property Name="creationDate" Type="DateTime" Precision="0" />
+    <Property Name="carrierID" Type="Int64" />
+    <Property Name="carID" Type="Int64" />
+    <Property Name="trailerID" Type="Int32" />
+    <Property Name="driversTableNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="speedometerOnDeparture" Type="Double" />
+    <Property Name="speedometerOnReturn" Type="Double" />
+    <Property Name="departureDateShedule" Type="DateTime" Precision="0" />
+    <Property Name="departureTimeShedule" Type="Time" Precision="7" />
+    <Property Name="departureDateFact" Type="DateTime" Precision="0" />
+    <Property Name="departureTimeFact" Type="Time" Precision="7" />
+    <Property Name="returnDateShedule" Type="DateTime" Precision="0" />
+    <Property Name="returnTimeShedule" Type="Time" Precision="7" />
+    <Property Name="returnDateFact" Type="DateTime" Precision="0" />
+    <Property Name="returnTimeFact" Type="Time" Precision="7" />
+    <Property Name="zeroMileage" Type="Double" />
+    <Property Name="engineTime" Type="Double" />
+    <Property Name="soecialEquipmentTime" Type="Double" />
+    <Property Name="FLMrestOnDeparture" Type="Double" />
+    <Property Name="FLMrestOnReturn" Type="Double" />
+  </EntityType>
+  <EntityType Name="transportStateReport">
+    <Key>
+      <PropertyRef Name="reportID" />
+    </Key>
+    <Property Name="reportID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="organizationID" Type="Int64" Nullable="false" />
+    <Property Name="routeID" Type="Int64" Nullable="false" />
+    <Property Name="transportID" Type="Int64" Nullable="false" />
+    <Property Name="tableNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="notes" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="location" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DepartureDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DeliveryPeriod" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Shipper" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PointOfShipment" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PointOfDelivery" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Customer" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Shipment" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

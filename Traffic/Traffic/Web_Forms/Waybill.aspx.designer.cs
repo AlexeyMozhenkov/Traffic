@@ -10,7 +10,7 @@
 namespace Traffic {
     
     
-    public partial class TransportStaterReport {
+    public partial class Waybill {
         
         /// <summary>
         /// mv_Main элемент управления.
@@ -38,15 +38,6 @@ namespace Traffic {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView DataGrid;
-        
-        /// <summary>
-        /// SqlDataSource1 элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
         /// lbl_Filter элемент управления.
@@ -121,13 +112,13 @@ namespace Traffic {
         protected global::System.Web.UI.WebControls.Button btn_Delete;
         
         /// <summary>
-        /// Button1 элемент управления.
+        /// btn_GetFile элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btn_GetFile;
         
         /// <summary>
         /// view_Detailed элемент управления.
@@ -145,6 +136,6 @@ namespace Traffic {
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::Traffic.TransportStaterReportControl DetailedInfoForm;
+        protected global::Traffic.WaybillControl DetailedInfoForm;
     }
 }

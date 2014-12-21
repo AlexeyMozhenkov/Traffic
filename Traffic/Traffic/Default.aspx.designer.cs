@@ -13,6 +13,15 @@ namespace Traffic {
     public partial class _Default {
         
         /// <summary>
+        /// Enter элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Enter;
+        
+        /// <summary>
         /// DropDownList1 элемент управления.
         /// </summary>
         /// <remarks>
@@ -29,5 +38,14 @@ namespace Traffic {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Enter;
+        
+        /// <summary>
+        /// Row элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Row;
     }
 }

@@ -11,18 +11,21 @@
             организациях, которые имеют автопарки, а также и для частных лиц, имеющих личные 
             авто и желающих вести полный контроль расходов и ремонтов по ним.</span>
         </p>
+        <div runat="server" ID="Enter" Visible="false">
         <h4>Войти в систему как</h4>
         <p>
-            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style1">
+            <asp:DropDownList ID="DropDownList1" runat="server"  CssClass="auto-style1" >
                 <asp:ListItem>Директор</asp:ListItem>
                 <asp:ListItem>Механик</asp:ListItem>
                 <asp:ListItem>Логист</asp:ListItem>
                 <asp:ListItem>Водитель</asp:ListItem>
             </asp:DropDownList>
         </p>
-        <asp:Button ID="btn_Enter" runat="server" Text="Войти"  class="btn btn-primary btn-large" OnClick="btn_Enter_Click"></asp:Button></div>
+        <asp:Button ID="btn_Enter" runat="server" Text="Войти"  class="btn btn-primary btn-large" OnClick="btn_Enter_Click"></asp:Button>&nbsp;
+        </div>
+    </div>
 
-    <div class="row">
+    <div class="row" runat="server" ID="Row" Visible="false">
         <div class="col-md-4">
             <h2>Данные по автомобилям</h2>
             <p>

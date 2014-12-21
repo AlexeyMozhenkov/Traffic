@@ -280,20 +280,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="transportStateReport">
-      <EntityTypeMapping TypeName="TrafficModel.transportStateReport">
-        <MappingFragment StoreEntitySet="transportStateReport">
-          <ScalarProperty Name="reportID" ColumnName="reportID" />
-          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
-          <ScalarProperty Name="routeID" ColumnName="routeID" />
-          <ScalarProperty Name="transportID" ColumnName="transportID" />
-          <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="notes" ColumnName="notes" />
-          <ScalarProperty Name="location" ColumnName="location" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Trips">
       <EntityTypeMapping TypeName="TrafficModel.Trips">
         <MappingFragment StoreEntitySet="Trips">
@@ -334,34 +320,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Waybills">
-      <EntityTypeMapping TypeName="TrafficModel.Waybills">
-        <MappingFragment StoreEntitySet="Waybills">
-          <ScalarProperty Name="waybillID" ColumnName="waybillID" />
-          <ScalarProperty Name="waybillNumber" ColumnName="waybillNumber" />
-          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
-          <ScalarProperty Name="carrierID" ColumnName="carrierID" />
-          <ScalarProperty Name="carID" ColumnName="carID" />
-          <ScalarProperty Name="trailerID" ColumnName="trailerID" />
-          <ScalarProperty Name="driversTableNumber" ColumnName="driversTableNumber" />
-          <ScalarProperty Name="speedometerOnDeparture" ColumnName="speedometerOnDeparture" />
-          <ScalarProperty Name="speedometerOnReturn" ColumnName="speedometerOnReturn" />
-          <ScalarProperty Name="departureDateShedule" ColumnName="departureDateShedule" />
-          <ScalarProperty Name="departureTimeShedule" ColumnName="departureTimeShedule" />
-          <ScalarProperty Name="departureDateFact" ColumnName="departureDateFact" />
-          <ScalarProperty Name="departureTimeFact" ColumnName="departureTimeFact" />
-          <ScalarProperty Name="returnDateShedule" ColumnName="returnDateShedule" />
-          <ScalarProperty Name="returnTimeShedule" ColumnName="returnTimeShedule" />
-          <ScalarProperty Name="returnDateFact" ColumnName="returnDateFact" />
-          <ScalarProperty Name="returnTimeFact" ColumnName="returnTimeFact" />
-          <ScalarProperty Name="zeroMileage" ColumnName="zeroMileage" />
-          <ScalarProperty Name="engineTime" ColumnName="engineTime" />
-          <ScalarProperty Name="soecialEquipmentTime" ColumnName="soecialEquipmentTime" />
-          <ScalarProperty Name="FLMrestOnDeparture" ColumnName="FLMrestOnDeparture" />
-          <ScalarProperty Name="FLMrestOnReturn" ColumnName="FLMrestOnReturn" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Request">
       <EntityTypeMapping TypeName="TrafficModel.Request">
         <MappingFragment StoreEntitySet="Request">
@@ -387,6 +345,55 @@
           <ScalarProperty Name="CMR" ColumnName="CMR" />
           <ScalarProperty Name="RequestNumber" ColumnName="RequestNumber" />
           <ScalarProperty Name="ActNumber" ColumnName="ActNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Waybills">
+      <EntityTypeMapping TypeName="TrafficModel.Waybills">
+        <MappingFragment StoreEntitySet="Waybills">
+          <ScalarProperty Name="FLMrestOnReturn" ColumnName="FLMrestOnReturn" />
+          <ScalarProperty Name="FLMrestOnDeparture" ColumnName="FLMrestOnDeparture" />
+          <ScalarProperty Name="soecialEquipmentTime" ColumnName="soecialEquipmentTime" />
+          <ScalarProperty Name="engineTime" ColumnName="engineTime" />
+          <ScalarProperty Name="zeroMileage" ColumnName="zeroMileage" />
+          <ScalarProperty Name="returnTimeFact" ColumnName="returnTimeFact" />
+          <ScalarProperty Name="returnDateFact" ColumnName="returnDateFact" />
+          <ScalarProperty Name="returnTimeShedule" ColumnName="returnTimeShedule" />
+          <ScalarProperty Name="returnDateShedule" ColumnName="returnDateShedule" />
+          <ScalarProperty Name="departureTimeFact" ColumnName="departureTimeFact" />
+          <ScalarProperty Name="departureDateFact" ColumnName="departureDateFact" />
+          <ScalarProperty Name="departureTimeShedule" ColumnName="departureTimeShedule" />
+          <ScalarProperty Name="departureDateShedule" ColumnName="departureDateShedule" />
+          <ScalarProperty Name="speedometerOnReturn" ColumnName="speedometerOnReturn" />
+          <ScalarProperty Name="speedometerOnDeparture" ColumnName="speedometerOnDeparture" />
+          <ScalarProperty Name="driversTableNumber" ColumnName="driversTableNumber" />
+          <ScalarProperty Name="trailerID" ColumnName="trailerID" />
+          <ScalarProperty Name="carID" ColumnName="carID" />
+          <ScalarProperty Name="carrierID" ColumnName="carrierID" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="waybillNumber" ColumnName="waybillNumber" />
+          <ScalarProperty Name="waybillID" ColumnName="waybillID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transportStateReport">
+      <EntityTypeMapping TypeName="TrafficModel.transportStateReport">
+        <MappingFragment StoreEntitySet="transportStateReport">
+          <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="PointOfDelivery" ColumnName="PointOfDelivery" />
+          <ScalarProperty Name="PointOfShipment" ColumnName="PointOfShipment" />
+          <ScalarProperty Name="Shipper" ColumnName="Shipper" />
+          <ScalarProperty Name="DeliveryPeriod" ColumnName="DeliveryPeriod" />
+          <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="tableNumber" ColumnName="tableNumber" />
+          <ScalarProperty Name="transportID" ColumnName="transportID" />
+          <ScalarProperty Name="routeID" ColumnName="routeID" />
+          <ScalarProperty Name="organizationID" ColumnName="organizationID" />
+          <ScalarProperty Name="reportID" ColumnName="reportID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

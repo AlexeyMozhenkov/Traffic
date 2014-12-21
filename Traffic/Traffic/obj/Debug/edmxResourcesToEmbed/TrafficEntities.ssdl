@@ -300,12 +300,19 @@
     </Key>
     <Property Name="reportID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="organizationID" Type="bigint" Nullable="false" />
-    <Property Name="routeID" Type="bigint" />
+    <Property Name="routeID" Type="bigint" Nullable="false" />
     <Property Name="transportID" Type="bigint" Nullable="false" />
-    <Property Name="tableNumber" Type="bigint" Nullable="false" />
-    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="notes" Type="nvarchar" MaxLength="250" />
-    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="tableNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="notes" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DepartureDate" Type="date" Nullable="false" />
+    <Property Name="DeliveryPeriod" Type="date" Nullable="false" />
+    <Property Name="Shipper" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="PointOfShipment" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="PointOfDelivery" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Customer" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Shipment" Type="nvarchar" MaxLength="150" Nullable="false" />
   </EntityType>
   <EntityType Name="Trips">
     <Key>
@@ -354,7 +361,7 @@
     <Property Name="carrierID" Type="bigint" />
     <Property Name="carID" Type="bigint" />
     <Property Name="trailerID" Type="int" />
-    <Property Name="driversTableNumber" Type="int" />
+    <Property Name="driversTableNumber" Type="nvarchar" MaxLength="50" />
     <Property Name="speedometerOnDeparture" Type="float" />
     <Property Name="speedometerOnReturn" Type="float" />
     <Property Name="departureDateShedule" Type="date" />

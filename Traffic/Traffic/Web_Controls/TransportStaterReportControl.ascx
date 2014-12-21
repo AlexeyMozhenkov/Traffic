@@ -107,7 +107,7 @@
     </asp:TableRow>
         <asp:TableRow runat="server">
         <asp:TableCell runat="server">
-            <asp:Label ID="lbl_6" runat="server" Text="Примечания"></asp:Label>
+            <asp:Label ID="lbl_6" runat="server" Text="Обратная загрузка"></asp:Label>
 
         </asp:TableCell>
 
@@ -122,7 +122,8 @@
 
         </asp:TableCell>
     </asp:TableRow>
-        <asp:TableRow runat="server">
+
+    <asp:TableRow runat="server">
         <asp:TableCell runat="server">
             <asp:Label ID="lbl_7" runat="server" Text="Местонахождение"></asp:Label>
 
@@ -140,7 +141,82 @@
         </asp:TableCell>
     </asp:TableRow>
 
-   
+    <asp:TableRow runat="server">
+        <asp:TableCell runat="server">
+            <asp:Label ID="Label2" runat="server" Text="Дата отправления"></asp:Label>
+        </asp:TableCell>
+        <asp:TableCell runat="server">
+            <asp:TextBox ID="txt_8" runat="server" Width="200px" TextMode="Date"></asp:TextBox>
+        </asp:TableCell>
+        <asp:TableCell runat="server" ForeColor="#CC0000">
+        </asp:TableCell>
+    </asp:TableRow>
+
+    <asp:TableRow runat="server">
+        <asp:TableCell runat="server">
+            <asp:Label ID="Label3" runat="server" Text="Срок поставки"></asp:Label>
+        </asp:TableCell>
+        <asp:TableCell runat="server">
+            <asp:TextBox ID="txt_9" runat="server" Width="200px" TextMode="Date"></asp:TextBox>
+        </asp:TableCell>
+        <asp:TableCell runat="server" ForeColor="#CC0000">
+        </asp:TableCell>
+    </asp:TableRow>
+
+   <asp:TableRow runat="server">
+        <asp:TableCell runat="server">
+            <asp:Label ID="Label4" runat="server" Text="Отправитель"></asp:Label>
+        </asp:TableCell>
+        <asp:TableCell runat="server">
+            <asp:TextBox ID="txt_10" runat="server" Width="200px" MaxLength="150"></asp:TextBox>
+        </asp:TableCell>
+        <asp:TableCell runat="server" ForeColor="#CC0000">
+        </asp:TableCell>
+    </asp:TableRow>
+
+    <asp:TableRow runat="server">
+        <asp:TableCell runat="server">
+            <asp:Label ID="Label5" runat="server" Text="Пункт отправления"></asp:Label>
+        </asp:TableCell>
+        <asp:TableCell runat="server">
+            <asp:TextBox ID="txt_11" runat="server" Width="200px" MaxLength="150"></asp:TextBox>
+        </asp:TableCell>
+        <asp:TableCell runat="server" ForeColor="#CC0000">
+        </asp:TableCell>
+    </asp:TableRow>
+
+    <asp:TableRow runat="server">
+        <asp:TableCell runat="server">
+            <asp:Label ID="Label6" runat="server" Text="Пункт назначения"></asp:Label>
+        </asp:TableCell>
+        <asp:TableCell runat="server">
+            <asp:TextBox ID="txt_12" runat="server" Width="200px" MaxLength="150"></asp:TextBox>
+        </asp:TableCell>
+        <asp:TableCell runat="server" ForeColor="#CC0000">
+        </asp:TableCell>
+    </asp:TableRow>
+
+    <asp:TableRow runat="server">
+        <asp:TableCell runat="server">
+            <asp:Label ID="Label7" runat="server" Text="Заказчик"></asp:Label>
+        </asp:TableCell>
+        <asp:TableCell runat="server">
+            <asp:TextBox ID="txt_13" runat="server" Width="200px" MaxLength="150"></asp:TextBox>
+        </asp:TableCell>
+        <asp:TableCell runat="server" ForeColor="#CC0000">
+        </asp:TableCell>
+    </asp:TableRow>
+    <asp:TableRow runat="server">
+        <asp:TableCell runat="server">
+            <asp:Label ID="Label8" runat="server" Text="Груз"></asp:Label>
+        </asp:TableCell>
+        <asp:TableCell runat="server">
+            <asp:TextBox ID="txt_14" runat="server" Width="200px" MaxLength="150"></asp:TextBox>
+        </asp:TableCell>
+        <asp:TableCell runat="server" ForeColor="#CC0000">
+        </asp:TableCell>
+    </asp:TableRow>
+
     <asp:TableRow runat="server">
         <asp:TableCell runat="server" ColumnSpan="3" VerticalAlign="Top">
             <asp:ValidationSummary runat="server" ID="valr_Summary"></asp:ValidationSummary>

@@ -49,7 +49,7 @@ namespace Traffic
             }
             return (All);
         }
-        public static void AddReport( long organizationID, long? routeID, long transportID, long tableNumber, string status, string notes, string location)
+        public static void AddReport(long organizationID, long routeID, long transportID, string tableNumber, string status, string notes, string location, DateTime DepartureDate, DateTime DeliveryPeriod, string Shipper, string PointOfShipment, string PointOfDelivery, string Customer, string Shipment)
         {
             var Item = new transportStateReport {
                 //reportID = reportID,
@@ -59,7 +59,14 @@ namespace Traffic
                 tableNumber = tableNumber,
                 status = status,
                 notes = notes,
-                location = location
+                location = location,
+                DepartureDate = DepartureDate,
+                DeliveryPeriod = DeliveryPeriod,
+                Shipper = Shipper,
+                PointOfShipment = PointOfShipment,
+                PointOfDelivery = PointOfDelivery,
+                Customer = Customer,
+                Shipment = Shipment
             };
             using (var db = new trafficEntities())
             {
@@ -85,7 +92,7 @@ namespace Traffic
             return TC;
         }
 
-        public static void EditByID(long reportID, long organizationID, long? routeID, long transportID, long tableNumber, string status, string notes, string location)
+        public static void EditByID(long reportID, long organizationID, long routeID, long transportID, string tableNumber, string status, string notes, string location, DateTime DepartureDate, DateTime DeliveryPeriod, string Shipper, string PointOfShipment, string PointOfDelivery, string Customer, string Shipment)
         {
             using (var db = new trafficEntities())
             {
@@ -101,7 +108,14 @@ namespace Traffic
                 updateItem.status = status;
                 updateItem.notes = notes;
                 updateItem.location = location;
-                
+                updateItem.DepartureDate = DepartureDate;
+                updateItem.DeliveryPeriod = DeliveryPeriod;
+                updateItem.Shipper = Shipper;
+                updateItem.PointOfShipment = PointOfShipment;
+                updateItem.PointOfDelivery = PointOfDelivery;
+                updateItem.Customer = Customer;
+                updateItem.Shipment = Shipment;
+
                 db.SaveChanges();
             }
         }
